@@ -15,7 +15,7 @@
         $(menuOverlay).fadeOut();
         document.body.style.overflow = '';
     }
-    
+
 
     function fixedHeader() {
         scrolled = window.pageYOffset || document.documentElement.scrollTop;

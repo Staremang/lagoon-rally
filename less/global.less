@@ -123,20 +123,22 @@ h1, .h1 {
   overflow: hidden;
 }
 
-.hero {
+.hero-top {
   background-color: #1a5b7c;
   //	bac-
   color: white;
   text-align: center;
   height: 560px;
-  padding-top: 139px;
 
+  &__block {
+    padding-top: 139px;
+    position: relative;
+  }
   &__title {
     font-style: normal;
     font-weight: 600;
     line-height: 40px;
     font-size: 30px;
-    text-align: center;
     letter-spacing: -0.02em;
 
     max-width: 288px;
@@ -152,21 +154,167 @@ h1, .h1 {
     margin-left: auto;
     margin-right: auto;
   }
-  &__registration {
-    margin-top: 59px;
+  &__list {
+    display: none;
+
+    padding-left: 0;
+    list-style: none;
+    margin: 0;
+    position: absolute;
+    left: 15px;
+    top: 479px;
   }
-  &__reg-title {
+  &__list-item {
+    font-weight: 500;
+    line-height: normal;
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    position: relative;
+    margin-bottom: 41px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      width: 5px;
+      height: 5px;
+      background: #FFFFFF;
+      opacity: 0.3;
+      left: -16px;
+      top: 5px;
+    }
+  }
+
+  &__btn {
+    margin: 35px auto 0;
+  }
+
+  @media all and (min-width: @width-md) {
+    height: 622px;
+    &__title {
+      font-weight: 500;
+      line-height: 58px;
+      font-size: 50px;
+      max-width: 390px;
+    }
+
+    &__subtitle {
+      line-height: 26px;
+      font-size: 18px;
+      max-width: 300px;
+    }
+  }
+  @media all and (min-width: @width-lg) {
+    text-align: left;
+    height: 740px;
+    &__list {
+      display: block;
+    }
+    &__block {
+      padding: 178px 0 0 195px;
+    }
+
+    &__title {
+      line-height: 81px;
+      font-size: 70px;
+      max-width: 550px;
+      margin-left: 0;
+      margin-bottom: 33px;
+    }
+
+    &__subtitle {
+      margin-left: 0;
+      max-width: none;
+      font-size: 20px;
+    }
+
+    &__btn {
+      margin-top: 80px;
+      width: 271px;
+      margin-left: 0;
+    }
+  }
+}
+
+.hero-bottom {
+
+  height: 154px;
+  position: relative;
+
+  display: none;
+  @media all and (min-width: @width-lg) {
+    display: block;
+  }
+  &__arrow-down {
+    font-weight: 300;
+    line-height: 21px;
+    font-size: 14px;
+    width: 110px;
+    padding-left: 25px;
+    padding-top: 45px;
+    position: absolute;
+    left: calc(50% + 240px);
+    top: 0;
+    background: url("../img/icons/arrow-down.svg") no-repeat;
+  }
+}
+
+.special-offer-desktop {
+  width: 271px;
+  height: 351px;
+  background: url("../img/special-offer-bg.jpg") no-repeat;
+  background-size: 100% 100%;
+  padding: 17px 20px;
+  position: relative;
+
+  display: none;
+  @media all and (min-width: @width-lg) {
+    display: block;
+  }
+  &__title {
+    font-weight: bold;
+    line-height: 27px;
+    font-size: 20px;
+    margin-bottom: 15px;
+  }
+  &__subtitle {
+    line-height: 23px;
+    font-size: 15px;
+  }
+  &__date {
+    position: absolute;
+    left: 20px;
+    bottom: 20px;
+    font-weight: 500;
+    line-height: 21px;
+    font-size: 14px;
+
+    color: #2A227F;
+  }
+}
+
+.registration-date {
+  width: 200px;
+  margin: 59px auto 0;
+  text-align: center;
+  &__title {
     font-style: normal;
     font-weight: 500;
     line-height: normal;
     font-size: 13px;
   }
-  &__reg-date {
+  &__date {
     font-style: normal;
     font-weight: 500;
     line-height: normal;
     font-size: 30px;
     letter-spacing: -0.02em;
+  }
+  @media all and (min-width: @width-lg) {
+    position: absolute;
+    right: 0;
+    top: 202px;
+    margin-top: 0;
   }
 }
 
@@ -205,6 +353,7 @@ h1, .h1 {
       margin-bottom: 32px;
       max-width: 434px;
     }
+
     &__subtitle {
       line-height: 24px;
       font-size: 15px;
@@ -222,11 +371,13 @@ h1, .h1 {
       //bottom: -113px;
       transform: matrix(-1, 0, 0, 1, 0, 0);
     }
+
     &__title {
       margin-bottom: 32px;
       max-width: 730px;
       margin-left: 396px;
     }
+
     &__subtitle {
       line-height: 41px;
       font-size: 20px;
@@ -278,8 +429,8 @@ h1, .h1 {
       }
       .cards-list__description {
         opacity: 1;
-      //  display: block;
-      //  visibility: visible;
+        //  display: block;
+        //  visibility: visible;
       }
     }
 
@@ -306,7 +457,7 @@ h1, .h1 {
       height: 25vw;
       border-right: 2px solid white;
       border-left: 0;
-      margin-bottom: 0!important;
+      margin-bottom: 0 !important;
 
       &:nth-child(4) {
         border-right: 0;
@@ -861,23 +1012,29 @@ h1, .h1 {
         padding-top: 4px;
       }
     }
+
     &__item {
       margin-bottom: 79px;
     }
+
     &__item-1 {
       max-width: 340px;
     }
+
     &__item-2 {
       padding-left: 81px;
       max-width: 420px;
     }
+
     &__item-3 {
       max-width: 360px;
     }
+
     &__item-4 {
       max-width: 295px;
       margin-left: auto;
     }
+
     &__item-5 {
       max-width: 280px;
       margin-left: auto;
