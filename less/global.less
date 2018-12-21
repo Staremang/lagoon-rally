@@ -28,6 +28,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-size: 14px;
   background: #FAFAFA;
+  line-height: 22px;
 }
 
 img,
@@ -489,7 +490,170 @@ h1, .h1 {
   }
 }
 
+.program {
+  overflow: hidden;
+  &__title {
+    margin-bottom: 20px;
+  }
+}
+.program-badge {
+  //transform: rotate(19.03deg);
+  height: 230px;
+  transform-origin: right bottom;
+  position: relative;
+  &:before {
+    content: '';
+    background: url("../img/icons/ellipse.svg") no-repeat;
+    width: 215px;
+    height: 230px;
+    position: absolute;
 
+    //opacity: 0.4;
+    filter: blur(100px);
+    transform: rotate(-17.32deg);
+
+    right: 50%;
+    bottom: -60px;
+  }
+  &__plate {
+
+    background: #0B3E6A;
+    color: white;
+    font-weight: 500;
+    line-height: 21px;
+    font-size: 13px;
+    padding: 20px;
+    position: absolute;
+
+
+
+    width: 297px;
+    left: 50%;
+    transform: translateX(-50%) rotate(20deg);
+    bottom: 31px;
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      background: url('../img/icons/line-waves.svg') no-repeat;
+      background-size: contain;
+    }
+    &:before {
+      transform: rotate(28.14deg);
+      top: -52px;
+      left: 85px;
+      width: 34px;
+      height: 22px;
+    }
+    &:after {
+      bottom: -50px;
+      left: 63px;
+      width: 34px;
+      height: 22px;
+      transform: rotate(155.11deg);
+
+
+      //width: 65px;
+      //height: 42px;
+    }
+  }
+}
+.program-list {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item {
+    padding: 17px 20px;
+    background-color: white;
+    background-size: 100% 100%;
+
+    border-right: 1px solid #DFDFDF;
+    border-bottom: 1px solid #DFDFDF;
+    flex: 0 0 50%;
+    max-width: 50%;
+    height: 259/320*100vw;
+
+    font-weight: 500;
+    line-height: 20px;
+    font-size: 14px;
+    letter-spacing: -0.02em;
+
+    &:nth-child(1) {
+      background-image: url("../img/program-list-1.jpg");
+    }
+    &:nth-child(2) {
+      background-image: url("../img/program-list-2.jpg");
+    }
+    &:nth-child(3) {
+      background-image: url("../img/program-list-3.jpg");
+    }
+    &:nth-child(4) {
+      background-image: url("../img/program-list-4.jpg");
+    }
+    &:nth-child(5) {
+      background-image: url("../img/program-list-5.jpg");
+      border-bottom: none;
+    }
+    &:nth-child(6) {
+      background-image: url("../img/program-list-6.jpg");
+      border-bottom: none;
+    }
+
+    @media all and (min-width: @width-sm) {
+      flex: 0 0 100/3%;
+      max-width: 100/3%;
+      height: 416/768*100vw;
+      padding: 25px 30px;
+
+      line-height: 26px;
+      font-size: 18px;
+      &:nth-child(4) {
+        border-bottom: none;
+      }
+    }
+    @media all and (min-width: @width-lg) {
+      flex: 0 0 100/6%;
+      max-width: 100/6%;
+      height: 390/1440*100vw;
+      border-bottom: none;
+      padding: 20px 30px;
+
+      line-height: 20px;
+      font-size: 14px;
+    }
+    @media all and (min-width: @width-xl) {
+      line-height: 26px;
+      font-size: 18px;
+    }
+  }
+}
+
+
+.home-on-water {
+  padding-top: 40px;
+  &__why {
+    max-width: 190px;
+    margin-bottom: 24px;
+  }
+  &__this-is {
+    font-weight: 500;
+    line-height: 26px;
+    font-size: 15px;
+    max-width: 222px;
+    margin-bottom: 5px;
+    > a {
+      color: #00A0D2;
+    }
+  }
+  &__this-is-2 {
+    line-height: normal;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 48px;
+  }
+}
 .advantages {
 
   @media all and (min-width: @width-md) {
@@ -544,6 +708,7 @@ h1, .h1 {
 }
 .catamaran-3d {
   background: url("../img/ocean.png") no-repeat center bottom;
+  padding-bottom: 56px;
   &__bird-1 {
 
   }
@@ -569,7 +734,11 @@ h1, .h1 {
     }
   }
   &__control {
-    text-align: center;
+    //text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 35px;
   }
   &__btn-left,
   &__btn-right {
@@ -608,6 +777,8 @@ h1, .h1 {
     letter-spacing: -0.02em;
 
     color: #FCFCFC;
+
+    margin: 0 44px;
   }
   &__note {
     max-width: 300px;
