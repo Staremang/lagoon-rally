@@ -11,7 +11,24 @@
 </head>
 <body>
 <header class="header">
-    <div class="container"></div>
+    <div class="container header__container">
+
+        <button class="header__open-menu" id="open-menu"></button>
+        <a href="#" class="header__logo"></a>
+        <a href="tel:+7 (915) 133-79-88" class="header__phone-btn"></a>
+
+        <div class="header-menu-overlay"></div>
+        <div class="header-menu">
+            <button class="header-menu__close-menu" id="close-menu"></button>
+            <nav class="header-menu__nav">
+                <a href="#" class="header-menu__link">Карта путешествия</a>
+                <a href="#" class="header-menu__link">Катамаран</a>
+                <a href="#" class="header-menu__link">Катамаран</a>
+                <a href="#" class="header-menu__link">Забронировать</a>
+            </nav>
+            <a href="tel:+7 (915) 133-79-88" class="header-menu__tel">+7 (915) 133-79-88 </a>
+        </div>
+    </div>
 </header>
 <div class="wrapper">
     <section class="hero">
@@ -25,6 +42,7 @@
         </div>
     </section>
     <section class="second-section">
+        <img src="images/girl.png" alt="" class="second-section__img">
         <div class="container">
             <h1 class="second-section__title">Cледующие пять лет ты будешь наслаждаться воспоминаниями об отдыхе с
                 Lagoon
@@ -37,21 +55,22 @@
     </section>
     <div class="cards-list">
         <div class="cards-list__item">
-            <img src="img/card-1.jpg" alt="">
             <div class="cards-list__content">
-                <div class="cards-list__title">Поднимай паруса</div>
-                <div class="cards-list__description"></div>
+                <div class="cards-list__title">Поднимай <br>паруса</div>
+                <div class="cards-list__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi,
+                    iusto.
+                </div>
             </div>
         </div>
         <div class="cards-list__item">
-            <img src="img/card-2.jpg" alt="">
             <div class="cards-list__content">
                 <div class="cards-list__title">Открывай</div>
-                <div class="cards-list__description"></div>
+                <div class="cards-list__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa,
+                    in!
+                </div>
             </div>
         </div>
         <div class="cards-list__item">
-            <img src="img/card-3.jpg" alt="">
             <div class="cards-list__content">
                 <div class="cards-list__title">Погружайся</div>
                 <div class="cards-list__description">Ежедневные дискотеки,
@@ -60,11 +79,11 @@
             </div>
         </div>
         <div class="cards-list__item">
-            <img src="img/card-4.jpg" alt="">
-
             <div class="cards-list__content">
                 <div class="cards-list__title">Знакомься</div>
-                <div class="cards-list__description"></div>
+                <div class="cards-list__description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab,
+                    accusamus.
+                </div>
             </div>
         </div>
     </div>
@@ -160,11 +179,13 @@
             </div>
         </div>
         <div class="program-badge">
-            <div class="program-badge__plate">Мы делаем из поездки «тусовку», где люди получают удовольствие от общения друг
-                с другом. Тусогория сближает людей!</div>
+            <div class="program-badge__plate">Мы делаем из поездки «тусовку», где люди получают удовольствие от общения
+                друг
+                с другом. Тусогория сближает людей!
+            </div>
         </div>
         <div class="program-list">
-            <div class="program-list__item">Торжественное <br>открытие Тусогории </div>
+            <div class="program-list__item">Торжественное <br>открытие Тусогории</div>
             <div class="program-list__item">Утренние <br>зарядки</div>
             <div class="program-list__item">Интерактивы</div>
             <div class="program-list__item">Фотокросс</div>
@@ -181,21 +202,21 @@
             <div class="home-on-water__this-is-2">это большой дом на воде</div>
             <div class="advantages">
                 <div class="advantages__left">
-                    <div class="advantages__item">
-                        <div class="advantages__title"><span class="advantages__number">1</span> Остойчивость</div>
+                    <div class="advantages__item advantages__item-1">
+                        <div class="advantages__title" data-index="1">Остойчивость</div>
                         <div class="advantages__description">Наличие 2х корпусов повышает стабильность катамарна на
                             воде, уменьшает качку
-                            и вллияние морской болезни.
+                            <span class="nowrap">и вллияние</span> морской болезни.
                         </div>
                     </div>
-                    <div class="advantages__item">
-                        <div class="advantages__title"><span class="advantages__number">2</span> Комфорт</div>
+                    <div class="advantages__item advantages__item-2">
+                        <div class="advantages__title" data-index="2">Комфорт</div>
                         <div class="advantages__description">Простор и поистине домашний уют катамаранов оценен по
                             достоинству подавляющим числом наших клиентов.
                         </div>
                     </div>
-                    <div class="advantages__item">
-                        <div class="advantages__title"><span class="advantages__number">3</span> Проходимость</div>
+                    <div class="advantages__item advantages__item-3">
+                        <div class="advantages__title" data-index="3">Проходимость</div>
                         <div class="advantages__description">Маленькая осадка корпуса повышает общую проходимость
                             катамарана, что позволит тебе поплавать на мелководье и приблизиться
                             к труднодоступным местам.
@@ -203,15 +224,15 @@
                     </div>
                 </div>
                 <div class="advantages__right">
-                    <div class="advantages__item">
-                        <div class="advantages__title"><span class="advantages__number">4</span> Большие каюты</div>
+                    <div class="advantages__item advantages__item-4">
+                        <div class="advantages__title" data-index="4">Большие каюты</div>
                         <div class="advantages__description">Помогут вам хорошенько отдохнуть после насыщенного дня. В
                             каюте смогут разместиться 2 взрослых человека и при необходимости 2 ребенка. В каждой каюте
                             тебя ждут двуспальная кровать, постельное белье, прекрасный вид.
                         </div>
                     </div>
-                    <div class="advantages__item">
-                        <div class="advantages__title"><span class="advantages__number">5</span> Безопасность</div>
+                    <div class="advantages__item advantages__item-5">
+                        <div class="advantages__title" data-index="5">Безопасность</div>
                         <div class="advantages__description">Это одна, из главных причин почему катмараны так популярны
                             сейчас на рынке морского туризма.
                         </div>
@@ -595,11 +616,14 @@
     <section class="uniqueness">
         <div class="container">
             <h1 class="uniqueness__title">Уникальность нашего предложения</h1>
-            <div class="uniqueness__description-m">Обычно наши круизы пользуются большим спросом, можно и не успеть.</div>
+            <div class="uniqueness__description-m">Обычно наши круизы пользуются большим спросом, можно и не успеть.
+            </div>
             <div class="uniqueness__description-d">Мы соеднияем в себе сразу 3 вида отдыха. Убери 1 любой компонент и ты
                 получишь стандартное туристическое предложение, каких очень много на рынке.
             </div>
-            <div class="uniqueness__subtitle">Наше путешествие включает <span class="nowrap">в себя сразу 3</span> разных направления:</div>
+            <div class="uniqueness__subtitle">Наше путешествие включает <span class="nowrap">в себя сразу 3</span>
+                разных направления:
+            </div>
             <div class="uniqueness__block">
                 <div class="uniqueness__item uniqueness__item-1">
                     <div class="uniqueness__figure"></div>
@@ -611,7 +635,7 @@
                 </div>
                 <div class="uniqueness__item uniqueness__item-3">
                     <div class="uniqueness__figure"></div>
-                    <div class="uniqueness__item-name">Пляжный отдых </div>
+                    <div class="uniqueness__item-name">Пляжный отдых</div>
                 </div>
             </div>
 
@@ -751,5 +775,8 @@
         </div>
     </div>
 </footer>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>

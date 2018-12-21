@@ -171,8 +171,68 @@ h1, .h1 {
 }
 
 .second-section {
+  padding: 30px 0;
+  position: relative;
+  &__img {
+    position: absolute;
+    width: auto;
+    //width: 229px;
+    height: 306px;
+    right: -97px;
+    bottom: -84px;
+  }
   &__title {
     margin-bottom: 26px;
+    max-width: 269px;
+  }
+  &__subtitle {
+    line-height: 22px;
+    font-size: 14px;
+    max-width: 184px;
+  }
+
+  @media all and (min-width: @width-sm) {
+    &__img {
+      //width: 343px;
+      height: 458px;
+      right: -55px;
+      bottom: -113px;
+    }
+  }
+  @media all and (min-width: @width-md) {
+    padding: 50px 0 40px;
+    &__title {
+      margin-bottom: 32px;
+      max-width: 434px;
+    }
+    &__subtitle {
+      line-height: 24px;
+      font-size: 15px;
+      max-width: 383px;
+    }
+  }
+  @media all and (min-width: @width-xl) {
+    padding: 73px 0 140px;
+    &__img {
+      //width: auto;
+      height: 689px;
+      bottom: -176px;
+      right: auto;
+      left: calc(50% - 730px);
+      //bottom: -113px;
+      transform: matrix(-1, 0, 0, 1, 0, 0);
+    }
+    &__title {
+      margin-bottom: 32px;
+      max-width: 730px;
+      margin-left: 396px;
+    }
+    &__subtitle {
+      line-height: 41px;
+      font-size: 20px;
+      max-width: 650px;
+      margin-left: 396px;
+    }
   }
 }
 
@@ -184,19 +244,18 @@ h1, .h1 {
   text-align: center;
   &__item {
     display: flex;
-    flex: 0 0 50%;
-    max-width: 50%;
+
     align-items: center;
     justify-content: center;
     position: relative;
 
-    @media all and (min-width: @width-sm) {
-      flex: 1 1;
-      margin-right: 2px;
-      &:last-child {
-        margin-right: 0;
-      }
-    }
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    flex: 0 0 50%;
+    max-width: 50%;
+    height: 50vw;
+
     &:before {
       content: '';
       position: absolute;
@@ -209,32 +268,92 @@ h1, .h1 {
       opacity: 0;
       transition: opacity .3s ease;
     }
+
     &:hover {
       &:before {
         opacity: 0.6;
       }
+      .cards-list__content {
+        transform: translateY(-50px);
+      }
       .cards-list__description {
-        display: block;
-        visibility: visible;
+        opacity: 1;
+      //  display: block;
+      //  visibility: visible;
+      }
+    }
+
+    &:nth-child(1) {
+      background-image: url("../img/card-1.jpg");
+      border-right: 1px solid white;
+      margin-bottom: 2px;
+    }
+    &:nth-child(2) {
+      background-image: url("../img/card-2.jpg");
+      border-left: 1px solid white;
+      margin-bottom: 2px;
+    }
+    &:nth-child(3) {
+      background-image: url("../img/card-3.jpg");
+    }
+    &:nth-child(4) {
+      background-image: url("../img/card-4.jpg");
+    }
+
+    @media all and (min-width: @width-sm) {
+      flex: 0 0 25%;
+      max-width: 25%;
+      height: 25vw;
+      border-right: 2px solid white;
+      border-left: 0;
+      margin-bottom: 0!important;
+
+      &:nth-child(4) {
+        border-right: 0;
       }
     }
   }
   &__content {
-    position: absolute;
+    position: relative;
+    width: 100%;
+    //position: absolute;
+    //left: 50%;
+    //top: 50%;
+    //transform: translate(-50%, -50%);
+
     transition: all .3s ease;
   }
   &__title {
-    font-style: normal;
     font-weight: 600;
     line-height: 27px;
     font-size: 20px;
     letter-spacing: -0.02em;
     transition: all .3s ease;
+
+    @media all and (min-width: @width-md) {
+      line-height: 29px;
+      font-size: 22px;
+    }
+    @media all and (min-width: @width-xl) {
+      line-height: 48px;
+      font-size: 36px;
+    }
   }
   &__description {
-    display: none;
-    visibility: hidden;
+    //display: none;
+    //visibility: hidden;
+    position: absolute;
+    top: 100%;
+    width: 100%;
     transition: all .3s ease;
+    opacity: 0;
+
+    padding: 15px 10px 0;
+    @media all and (min-width: @width-xl) {
+      line-height: 26px;
+      font-size: 18px;
+      padding: 15px 56px 0;
+    }
   }
 }
 
@@ -496,6 +615,7 @@ h1, .h1 {
     margin-bottom: 20px;
   }
 }
+
 .program-badge {
   //transform: rotate(19.03deg);
   height: 230px;
@@ -525,8 +645,6 @@ h1, .h1 {
     padding: 20px;
     position: absolute;
 
-
-
     width: 297px;
     left: 50%;
     transform: translateX(-50%) rotate(20deg);
@@ -553,12 +671,12 @@ h1, .h1 {
       height: 22px;
       transform: rotate(155.11deg);
 
-
       //width: 65px;
       //height: 42px;
     }
   }
 }
+
 .program-list {
   position: relative;
   display: flex;
@@ -630,7 +748,6 @@ h1, .h1 {
   }
 }
 
-
 .home-on-water {
   padding-top: 40px;
   &__why {
@@ -654,7 +771,58 @@ h1, .h1 {
     margin-bottom: 48px;
   }
 }
+
 .advantages {
+
+  &__item {
+    margin-bottom: 36px;
+    max-width: 264px;
+
+  }
+  &__title {
+    font-weight: 600;
+    line-height: 26px;
+    font-size: 18px;
+    margin-bottom: 10px;
+
+    &:before,
+    &:after {
+      display: inline-block;
+      width: 28px;
+      height: 28px;
+      background: #00A0D2;
+      border-radius: 50%;
+      vertical-align: middle;
+      margin-bottom: 3px;
+      text-align: center;
+
+      font-size: 15px;
+      color: #FFFFFF;
+    }
+    &:before {
+      content: attr(data-index);
+      margin-right: 15px;
+    }
+  }
+
+  //&__item-1 {
+  //  max-width: 340px;
+  //}
+  //&__item-2 {
+  //  padding-left: 81px;
+  //  max-width: 420px;
+  //}
+  //&__item-3 {
+  //  max-width: 360px;
+  //}
+  //&__item-4 {
+  //  max-width: 295px;
+  //  margin-left: auto;
+  //}
+  //&__item-5 {
+  //  max-width: 280px;
+  //  margin-left: auto;
+  //}
 
   @media all and (min-width: @width-md) {
     display: flex;
@@ -663,52 +831,88 @@ h1, .h1 {
       flex: 0 0 50%;
       max-width: 50%;
     }
+
     &__right {
       flex: 0 0 50%;
       max-width: 50%;
       padding-left: 15px;
     }
   }
-  &__item {
-    margin-bottom: 36px;
-    max-width: 264px;
-    //&:nth-child(1) {
-    //  max-width: 264px;
-    //}
-    //&:nth-child(2) {
-    //  max-width: 264px;
-    //}
-  }
-  &__title {
-    font-weight: 600;
-    line-height: 26px;
-    font-size: 18px;
-    margin-bottom: 10px;
-  }
-  &__number {
-    display: inline-block;
-    width: 28px;
-    height: 28px;
-    background: #00A0D2;
-    border-radius: 50%;
-    margin-right: 15px;
-    vertical-align: middle;
-    margin-bottom: 3px;
-    text-align: center;
+  @media all and (min-width: @width-lg) {
+    &__left {
+      flex: 0 0 auto;
+    }
 
-    font-size: 15px;
-    letter-spacing: -0.02em;
-    color: #FFFFFF;
+    &__right {
+      padding-left: 0;
+      flex: 0 0 auto;
+      text-align: right;
+    }
+
+    &__title {
+      line-height: 29px;
+      font-size: 20px;
+      margin-bottom: 20px;
+      &:before,
+      &:after {
+        width: 36px;
+        height: 36px;
+        font-size: 18px;
+        padding-top: 4px;
+      }
+    }
+    &__item {
+      margin-bottom: 79px;
+    }
+    &__item-1 {
+      max-width: 340px;
+    }
+    &__item-2 {
+      padding-left: 81px;
+      max-width: 420px;
+    }
+    &__item-3 {
+      max-width: 360px;
+    }
+    &__item-4 {
+      max-width: 295px;
+      margin-left: auto;
+    }
+    &__item-5 {
+      max-width: 280px;
+      margin-left: auto;
+    }
+
+    &__item-4,
+    &__item-5 {
+      .advantages__title {
+        &:before {
+          content: none;
+        }
+        &:after {
+          content: attr(data-index);
+          margin-left: 15px;
+        }
+      }
+    }
   }
   &__description {
     line-height: 22px;
     font-size: 14px;
     letter-spacing: -0.02em;
+    @media all and (min-width: @width-lg) {
+      line-height: 24px;
+      font-size: 15px;
+    }
   }
 }
+
 .catamaran-3d {
   background: url("../img/ocean.png") no-repeat center bottom;
   padding-bottom: 56px;
+  @media all and (min-width: @width-lg) {
+    margin-top: -700px;
+  }
   &__bird-1 {
 
   }
@@ -731,6 +935,10 @@ h1, .h1 {
       height: 100%;
       left: 0;
       top: 0;
+    }
+    @media all and (min-width: @width-lg) {
+      width: 982px;
+      height: 941px;
     }
   }
   &__control {
@@ -838,6 +1046,7 @@ h1, .h1 {
     }
   }
 }
+
 .pano-tour {
   &__btn {
     display: block;
@@ -867,8 +1076,6 @@ h1, .h1 {
     color: #423700;
   }
 }
-
-
 
 .booking-ships {
   @media all and (min-width: @width-md) {
@@ -980,9 +1187,11 @@ h1, .h1 {
       max-width: 100px;
       margin: 30px auto 0;
     }
+
     &__item {
       position: absolute;
     }
+
     &__item-1 {
       left: 50%;
       z-index: 2;
@@ -992,6 +1201,7 @@ h1, .h1 {
         height: 439px;
       }
     }
+
     &__item-2 {
       right: 0;
       top: 100px;
@@ -1001,6 +1211,7 @@ h1, .h1 {
         height: 297px;
       }
     }
+
     &__item-3 {
       left: 0;
       top: 147px;
@@ -1012,7 +1223,6 @@ h1, .h1 {
     }
   }
 }
-
 
 .about-us {
   &__container {
