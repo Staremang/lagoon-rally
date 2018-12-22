@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -8,32 +8,39 @@
     <title>Lagoon rally</title>
 
     <link rel="stylesheet" href="css/main.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&amp;subset=cyrillic">
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&amp;subset=cyrillic">
 
 </head>
 <body>
-<header class="header">
-    <div class="container header__container">
-
-        <button class="header__open-menu" id="open-menu"></button>
-        <a href="#" class="header__logo"></a>
-        <a href="tel:+7 (915) 133-79-88" class="header__phone-btn"></a>
-
-        <div class="header-menu-overlay"></div>
-        <div class="header-menu">
-            <button class="header-menu__close-menu" id="close-menu"></button>
-            <nav class="header-menu__nav">
-                <a href="#" class="header-menu__link">Карта путешествия</a>
-                <a href="#" class="header-menu__link">Катамаран</a>
-                <a href="#" class="header-menu__link">Карта</a>
-                <a href="#" class="header-menu__link active">Забронировать</a>
-            </nav>
-            <a href="tel:+7 (915) 133-79-88" class="header-menu__tel">+7 (915) 133-79-88 </a>
+<div class="wrapper">
+    <div class="special-offer-mobile">
+        <div class="special-offer-mobile__container">
+            <a href="#" class="special-offer-mobile__link">Специальное новогоднее предложение</a>
+            <button class="special-offer-mobile__close"></button>
         </div>
     </div>
-</header>
-<div class="wrapper">
     <section class="hero">
+        <header class="header">
+            <div class="container header__container">
+
+                <button class="header__open-menu" id="open-menu"></button>
+                <a href="#" class="header__logo"></a>
+                <a href="tel:+7 (915) 133-79-88" class="header__phone-btn"></a>
+
+                <div class="header-menu-overlay"></div>
+                <div class="header-menu">
+                    <button class="header-menu__close-menu" id="close-menu"></button>
+                    <nav class="header-menu__nav">
+                        <a href="#" class="header-menu__link">Карта путешествия</a>
+                        <a href="#" class="header-menu__link">Катамаран</a>
+                        <a href="#" class="header-menu__link">Карта</a>
+                        <a href="#" class="header-menu__link active">Забронировать</a>
+                    </nav>
+                    <a href="tel:+7 (915) 133-79-88" class="header-menu__tel">+7 (915) 133-79-88 </a>
+                </div>
+            </div>
+        </header>
         <div class="hero-top">
             <div class="container hero__container">
                 <div class="hero-top__block">
@@ -746,10 +753,22 @@
         </div>
     </div>
     <div class="gallery">
-        <div class="gallery__item"><div></div></div>
-        <div class="gallery__item"><div></div></div>
-        <div class="gallery__item"><div></div></div>
-        <div class="gallery__item"><div></div></div>
+        <a data-fancybox href="images/gallery-prev-1.jpg" class="gallery__item"><img
+                src="images/gallery-prev-1.jpg"></a>
+        <a data-fancybox href="images/gallery-prev-2.jpg" class="gallery__item"><img
+                src="images/gallery-prev-2.jpg"></a>
+        <a data-fancybox href="images/gallery-prev-3.jpg" class="gallery__item"><img
+                src="images/gallery-prev-3.jpg"></a>
+        <a data-fancybox href="images/gallery-prev-4.jpg" class="gallery__item"><img
+                src="images/gallery-prev-4.jpg"></a>
+        <a data-fancybox href="images/gallery-prev-1.jpg" class="gallery__item"><img
+                src="images/gallery-prev-1.jpg"></a>
+        <a data-fancybox href="images/gallery-prev-2.jpg" class="gallery__item"><img
+                src="images/gallery-prev-2.jpg"></a>
+        <a data-fancybox href="images/gallery-prev-3.jpg" class="gallery__item"><img
+                src="images/gallery-prev-3.jpg"></a>
+        <a data-fancybox href="images/gallery-prev-4.jpg" class="gallery__item"><img
+                src="images/gallery-prev-4.jpg"></a>
     </div>
     <div class="pano-tour-info">
         <div class="container">
@@ -760,8 +779,8 @@
     </div>
     <div class="pano-tour">
         <button class="pano-tour__btn"><span class="pano-tour__title">Открыть 3D-тур по катамарану</span></button>
-        <div class="pano-tour__container" style="height: 700px">
-            ...
+        <div class="pano-tour__container" style="height: 700px; background-color: #0d95e8">
+            N
         </div>
     </div>
     <section class="booking">
@@ -1267,6 +1286,7 @@
 
 <script type="text/javascript" src="libs/jquery-3.3.1.min.js"></script>
 <script type="text/javascript" src="libs/slick.min.js"></script>
+<script type="text/javascript" src="libs/jquery.fancybox.min.js"></script>
 
 <script type="text/javascript" src="js/main.js"></script>
 </body>

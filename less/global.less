@@ -131,9 +131,118 @@ h1, .h1 {
   //opacity: 0.5;
 }
 
+.page-hero {
+  height: 580px;
+  color: white;
+  text-align: center;
+
+  background: #0d95e8;
+  background-size: cover;
+  padding-top: 149px;
+  &__title {
+    font-weight: 600;
+    line-height: 40px;
+    font-size: 30px;
+    letter-spacing: -0.02em;
+    margin-top: 0;
+  }
+  &__description {
+    line-height: 22px;
+    font-size: 15px;
+    max-width: 200px;
+  }
+  @media all and (min-width: @width-md) {
+    padding-top: 164px;
+    &__title {
+      font-weight: 500;
+      line-height: 58px;
+      font-size: 50px;
+    }
+    &__description {
+      line-height: 23px;
+      font-size: 16px;
+      max-width: 367px;
+    }
+  }
+  @media all and (min-width: @width-lg) {
+    padding-top: 200px;
+    text-align: left;
+
+    &__title {
+      line-height: 81px;
+      font-size: 70px;
+    }
+    &__description {
+      line-height: 34px;
+      font-size: 20px;
+      max-width: 457px;
+    }
+  }
+}
+
+
+
+
+.special-offer-mobile {
+  text-decoration: none;
+  background: url("../img/special-offer-element-mobile.jpg") right bottom no-repeat, url("../img/special-offer-bg-mobile.jpg") center no-repeat;
+  background-size: contain, cover;
+  display: block;
+
+  @media all and (min-width: @width-lg) {
+    display: none;
+  }
+  &__container {
+    padding-left: 20px;
+    padding-right: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    max-width: 540px;
+    margin-left: auto;
+    margin-right: auto;
+    @media all and (min-width: @width-md) {
+      max-width: 740px;
+    }
+  }
+  &__link {
+    font-weight: 600;
+    line-height: normal;
+    font-size: 14px;
+    letter-spacing: -0.02em;
+    color: white;
+    text-decoration: none;
+  }
+  &__close {
+
+    display: inline-block;
+    border-radius: 0;
+    padding: 0;
+    outline: none;
+    border: 0;
+    cursor: pointer;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    vertical-align: middle;
+    transform: translateZ(0);
+    text-align: center;
+    -webkit-tap-highlight-color: transparent;
+
+    width: 26px;
+    height: 26px;
+    background: #FFE872 data-uri("../img/icons/close-2.svg") center no-repeat;
+  }
+}
+
+.hero {
+  position: relative;
+}
+
 .hero-top {
-  background-color: #1a5b7c;
-  //	bac-
+  background: #1a5b7c url("../img/hero-bg.jpg") no-repeat center;
+  background-size: cover;
   color: white;
   text-align: center;
   height: 560px;
@@ -1038,6 +1147,7 @@ h1, .h1 {
     &__content {
       max-width: 135px;
     }
+
     &__item {
       flex: 1 1;
       margin-right: 2px;
@@ -1054,13 +1164,16 @@ h1, .h1 {
       height: 650px;
       padding-top: 300px;
     }
+
     &__content {
       max-width: 215px;
     }
+
     &__title {
       line-height: 48px;
       font-size: 36px;
     }
+
     &__link {
 
       font-size: 26px;
@@ -1101,9 +1214,11 @@ h1, .h1 {
     &__title {
       margin-bottom: 32px;
     }
+
     &__block {
 
     }
+
     &__girls {
       width: 531px;
       height: 482px;
@@ -1120,9 +1235,11 @@ h1, .h1 {
       margin-bottom: 54px;
       text-align: right;
     }
+
     &__block {
 
     }
+
     &__girls {
       width: 571px;
       height: 519px;
@@ -1180,10 +1297,10 @@ h1, .h1 {
       line-height: 24px;
       font-size: 17px;
     }
+
     &__item {
       padding: 18px 20px;
       margin-bottom: 31px;
-
 
       &:nth-child(1) {
         order: 1;
@@ -1224,13 +1341,15 @@ h1, .h1 {
   }
 }
 
-
-
-
 .section-captain {
   position: relative;
   padding-top: 18px;
   background: white;
+
+  > .container {
+    position: relative;
+    z-index: 1;
+  }
   &__title {
     max-width: 193px;
     margin-bottom: 34px;
@@ -1285,11 +1404,13 @@ h1, .h1 {
     margin-right: 12px;
   }
   &__btn {
+    z-index: 2;
     width: 100%;
     height: 92px;
   }
 
   @media all and (min-width: @width-md) {
+    padding-top: 38px;
     &__title {
       max-width: 386px;
       margin-bottom: 24px;
@@ -1316,7 +1437,7 @@ h1, .h1 {
       z-index: 1;
     }
   }
-  @media all and (min-width: @width-lg) {
+  @media all and (min-width: @width-xl) {
     padding-top: 76px;
     &__title {
       max-width: 550px;
@@ -1358,8 +1479,11 @@ h1, .h1 {
     background: url("../img/smoke.jpg") no-repeat;
     background-size: contain;
     position: absolute;
-    right: 0;
+    right: -50px;
     bottom: 0;
+
+    width: 410px;
+    height: 311px;
   }
   &__photo {
     background: url("../img/captain.png") no-repeat;
@@ -1367,22 +1491,41 @@ h1, .h1 {
     position: absolute;
     right: 0;
     bottom: 0;
+
+    width: 259px;
+    height: 295px;
   }
 
   @media all and (min-width: @width-md) {
     position: absolute;
     right: 0;
-    bottom: 0;
+    top: 0;
+    height: 392px;
+    width: 514px;
+    &__waves {
+      width: 514px;
+      height: 390px;
+    }
+
+    &__photo {
+      width: 324px;
+      height: 370px;
+      right: 59px;
+      bottom: 0;
+    }
   }
-  @media all and (min-width: @width-lg) {
+  @media all and (min-width: @width-xl) {
     width: 926px;
     height: 100%;
+    top: auto;
+    bottom: 0;
     &__waves {
       width: 926px;
       height: 702px;
 
       bottom: 26px;
     }
+
     &__photo {
       width: 587px;
       height: 667px;
@@ -1431,11 +1574,13 @@ h1, .h1 {
       font-size: 20px;
       margin-bottom: 30px;
     }
+
     &__name {
       line-height: 23px;
       font-size: 16px;
       margin-top: 18px;
     }
+
     &__item {
       > img {
         height: 100px;
@@ -1465,6 +1610,7 @@ h1, .h1 {
       max-width: 600px;
       margin-bottom: 41px;
     }
+
     &__subtitle {
       line-height: 34px;
       font-size: 20px;
@@ -1540,6 +1686,7 @@ h1, .h1 {
       right: 10%;
       bottom: 40px;
     }
+
     &__plate {
       line-height: 29px;
       font-size: 18px;
@@ -1568,7 +1715,6 @@ h1, .h1 {
   position: relative;
   display: flex;
   flex-wrap: wrap;
-
 
   @media all and (min-width: @width-lg) {
     margin-top: 160px;
@@ -1670,11 +1816,13 @@ h1, .h1 {
       line-height: 34px;
       font-size: 20px;
     }
+
     &__this-is {
       max-width: none;
       line-height: 38px;
       font-size: 22px;
     }
+
     &__this-is-2 {
       line-height: 38px;
       font-size: 26px;
@@ -1687,10 +1835,12 @@ h1, .h1 {
       margin-left: 404px;
       margin-bottom: 36px;
     }
+
     &__this-is {
       margin-left: 404px;
       margin-bottom: 0;
     }
+
     &__this-is-2 {
       line-height: 54px;
       font-size: 37px;
@@ -1940,12 +2090,14 @@ h1, .h1 {
       height: 941px;
       //margin-bottom: 56px;
     }
+
     &__control {
       position: relative;
       z-index: 1;
       margin-top: -39px;
       margin-bottom: 30px;
     }
+
     &__note {
       line-height: 26px;
       font-size: 18px;
@@ -1962,19 +2114,24 @@ h1, .h1 {
 .gallery {
   //height: 230px;
   margin-top: 10px;
+  margin-bottom: 100px;
   &__item {
-    height: 180px;
+    //height: 180px;
     padding: 0 5px;
     outline: none;
-    > div {
-      width: 280px;
-      height: 180px;
-      background: #0d95e8;
+    //> div {
+    //  width: 280px;
+    //  height: 180px;
+    //  background: #0d95e8;
+    //}
+    > img {
+      width: 100%;
     }
   }
   @media all and (min-width: @width-lg) {
+    margin-bottom: 0;
     &__item {
-      height: 230px;
+      //height: 230px;
       padding: 0 1px;
     }
   }
@@ -2012,9 +2169,11 @@ h1, .h1 {
     &__subtitle {
       max-width: none;
     }
+
     &__title {
       max-width: 366px;
     }
+
     &__waves {
       width: 489px;
       height: 335px;
@@ -2031,9 +2190,11 @@ h1, .h1 {
       font-size: 20px;
       margin-bottom: 24px;
     }
+
     &__title {
       max-width: 490px;
     }
+
     &__waves {
       width: 489px;
       height: 335px;
@@ -2084,6 +2245,7 @@ h1, .h1 {
     &__btn {
       height: 126px;
     }
+
     &__title {
       line-height: normal;
       font-size: 22px;
@@ -2094,6 +2256,7 @@ h1, .h1 {
 
 .booking {
   padding-top: 40px;
+  padding-bottom: 100px;
   &__title {
     margin-bottom: 21px;
   }
@@ -2101,11 +2264,16 @@ h1, .h1 {
     line-height: 22px;
     font-size: 14px;
   }
+  @media all and (min-width: @width-md) {
+
+  }
   @media all and (min-width: @width-lg) {
     padding-top: 137px;
+    padding-bottom: 0;
     &__title {
       margin-bottom: 36px;
     }
+
     &__subtitle {
       line-height: 34px;
       font-size: 20px;
@@ -2115,7 +2283,7 @@ h1, .h1 {
 }
 
 .booking-ships {
-  margin: 0 -20px;
+  margin: 47px -20px 0;
   &__item {
     text-align: center;
     padding: 0 20px;
@@ -2149,6 +2317,7 @@ h1, .h1 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    margin: 65px 0 0;
     &__item {
       padding: 0;
     }
@@ -2160,6 +2329,7 @@ h1, .h1 {
       max-width: 100/5%;
       margin-bottom: 74px;
     }
+
     &__free {
 
     }
@@ -2289,15 +2459,18 @@ h1, .h1 {
     &__block {
       height: 900px;
     }
+
     &__title {
       margin-bottom: 40px;
     }
+
     &__description-d {
       line-height: 34px;
       font-size: 20px;
       max-width: 876px;
       margin-bottom: 121px;
     }
+
     &__subtitle {
       line-height: 37px;
       font-size: 25px;
