@@ -1313,6 +1313,7 @@ h1, .h1 {
 
     &__btn {
       height: 106px;
+      z-index: 1;
     }
   }
   @media all and (min-width: @width-lg) {
@@ -1950,12 +1951,32 @@ h1, .h1 {
       font-size: 18px;
     }
   }
+  @media all and (min-width: @width-xl) {
+    background-size: 100% auto;
+  }
+  @media all and (min-width: 1700px) {
+    background-size: 100% 500px;
+  }
 }
 
 .gallery {
-  height: 230px;
+  //height: 230px;
+  margin-top: 10px;
   &__item {
-    //height: 230px;
+    height: 180px;
+    padding: 0 5px;
+    outline: none;
+    > div {
+      width: 280px;
+      height: 180px;
+      background: #0d95e8;
+    }
+  }
+  @media all and (min-width: @width-lg) {
+    &__item {
+      height: 230px;
+      padding: 0 1px;
+    }
   }
 }
 
@@ -2024,6 +2045,9 @@ h1, .h1 {
 }
 
 .pano-tour {
+  overflow: hidden;
+  height: 96px;
+  transition: height .3s ease;
   &__btn {
     display: block;
     border-radius: 0;
@@ -2053,8 +2077,10 @@ h1, .h1 {
   }
   &__container {
     height: 0;
+    transition: height .3s ease;
   }
   @media all and (min-width: @width-lg) {
+    height: 126px;
     &__btn {
       height: 126px;
     }
@@ -2067,11 +2093,13 @@ h1, .h1 {
 }
 
 .booking {
+  padding-top: 40px;
   &__title {
-
+    margin-bottom: 21px;
   }
   &__subtitle {
-
+    line-height: 22px;
+    font-size: 14px;
   }
   @media all and (min-width: @width-lg) {
     padding-top: 137px;
@@ -2087,8 +2115,11 @@ h1, .h1 {
 }
 
 .booking-ships {
+  margin: 0 -20px;
   &__item {
     text-align: center;
+    padding: 0 20px;
+    outline: none;
   }
   &__name {
     font-weight: 500;
@@ -2118,6 +2149,9 @@ h1, .h1 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    &__item {
+      padding: 0;
+    }
   }
   @media all and (min-width: @width-lg) {
     margin: 106px -35px 0;
@@ -2250,7 +2284,7 @@ h1, .h1 {
       }
     }
   }
-  @media all and (min-width: @width-lg) {
+  @media all and (min-width: @width-xl) {
     padding-top: 90px;
     &__block {
       height: 900px;
