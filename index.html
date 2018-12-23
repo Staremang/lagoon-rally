@@ -647,7 +647,12 @@
             <div class="captain-photo__waves"></div>
             <div class="captain-photo__photo"></div>
         </div>
-        <button class="btn-orange section-captain__btn">Посмотреть видеоприглашение</button>
+        <button class="btn-view-video">
+            <span class="btn-view-video__icon"></span>
+            <span class="btn-view-video__content">
+                <span class="btn-view-video__name">Посмотреть видеоприглашение</span>
+            </span>
+        </button>
 
         <div class="container">
             <div class="escort">
@@ -778,9 +783,17 @@
         </div>
     </div>
     <div class="pano-tour">
-        <button class="pano-tour__btn"><span class="pano-tour__title">Открыть 3D-тур по катамарану</span></button>
-        <div class="pano-tour__container" style="height: 700px; background-color: #0d95e8">
-            N
+        <button class="btn-view-pano" data-collapse="button">
+            <span class="btn-view-pano__icon"></span>
+            <span class="btn-view-pano__content">
+                <span class="btn-view-pano__name">Открыть 3D-тур по катамарану</span>
+            </span>
+            <span class="btn-view-pano__arrow"></span>
+        </button>
+        <div data-collapse="body">
+            <div class="pano-tour__container">
+                <div style="height: 100%; background-color: #0d95e8">Панорама</div>
+            </div>
         </div>
     </div>
     <section class="booking">

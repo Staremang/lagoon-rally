@@ -44,23 +44,10 @@
 }
 
 .question {
-  overflow: hidden;
-  transition: height 1s ease;
-
-  height: 70px;
   margin-bottom: 10px;
 
   &:last-child {
     margin-bottom: 0;
-  }
-
-  &.active {
-    //height: auto;
-    .question__icon {
-      &:after {
-        transform: rotate(0);
-      }
-    }
   }
 
   &__header {
@@ -76,6 +63,14 @@
     width: 100%;
     position: relative;
     text-align: left;
+
+    &.active {
+      .question__icon {
+        &:after {
+          transform: rotate(0);
+        }
+      }
+    }
   }
   &__title {
     line-height: 22px;
@@ -120,7 +115,6 @@
     font-size: 14px;
   }
   @media all and (min-width: @width-md) {
-    height: 92px;
     margin-bottom: 20px;
     &__header {
       padding: 10px 92px 10px 30px;
@@ -153,7 +147,6 @@
     }
   }
   @media all and (min-width: @width-lg) {
-    height: 122px;
     margin-bottom: 30px;
     &__header {
       padding: 10px 40px;

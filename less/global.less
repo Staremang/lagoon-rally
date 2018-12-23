@@ -89,6 +89,7 @@ h1, .h1 {
   letter-spacing: 0.1em;
   color: #423700;
   height: 64px;
+  //display: flex;
   &:hover {
     background-color: #FFDF34;
   }
@@ -1450,9 +1451,6 @@ h1, .h1 {
     margin-right: 12px;
   }
   &__btn {
-    z-index: 2;
-    width: 100%;
-    height: 92px;
   }
 
   @media all and (min-width: @width-md) {
@@ -1479,8 +1477,6 @@ h1, .h1 {
     }
 
     &__btn {
-      height: 106px;
-      z-index: 1;
     }
   }
   @media all and (min-width: @width-xl) {
@@ -1503,12 +1499,6 @@ h1, .h1 {
     }
 
     &__btn {
-      position: absolute;
-      width: 588px;
-      //left: 50%;
-      right: 130px;
-      bottom: -61px;
-      height: 126px;
     }
 
     &__social {
@@ -1579,6 +1569,81 @@ h1, .h1 {
       right: 130px;
       bottom: 65px;
     }
+  }
+}
+
+.btn-view-video {
+  font-family: inherit;
+  //display: block;
+  border-radius: 0;
+  padding: 0;
+  outline: none;
+  border: 0;
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transform: translateZ(0);
+  -webkit-tap-highlight-color: transparent;
+
+  background-color: #FFE872;
+
+  display: flex;
+  justify-content: center;
+  text-align: left;
+  height: 92px;
+  z-index: 2;
+  width: 100%;
+  &:hover {
+    background-color: #FFDF34;
+  }
+  &__icon {
+    transform: translateY(4px);
+    background: url("../img/icons/video.svg") no-repeat;
+    background-size: contain;
+
+    width: 24px;
+    height: 17px;
+  }
+  &__content {
+    max-width: 170px;
+    margin-left: 10px;
+  }
+  &__name {
+    font-weight: 500;
+    line-height: 23px;
+    font-size: 16px;
+    letter-spacing: -0.02em;
+
+    border-bottom: 1px dashed rgba(66, 55, 0, 0.3);
+  }
+  @media all and (min-width: @width-sm) {
+    &__content {
+      max-width: none;
+    }
+  }
+  @media all and (min-width: @width-md) {
+    height: 106px;
+    &__name {
+      color: #423700;
+      line-height: normal;
+      font-size: 22px;
+    }
+    &__icon {
+      width: 30px;
+      height: 22px;
+    }
+    &__content {
+      margin-left: 15px;
+    }
+  }
+  @media all and (min-width: @width-xl) {
+    position: absolute;
+    width: 588px;
+    //left: 50%;
+    right: 130px;
+    bottom: -61px;
+    height: 126px;
   }
 }
 
@@ -1875,7 +1940,7 @@ h1, .h1 {
     }
 
   }
-  @media all and (min-width: @width-lg) {
+  @media all and (min-width: @width-xl) {
     padding-top: 163px;
     &__why {
       margin-left: 404px;
@@ -1963,7 +2028,7 @@ h1, .h1 {
       padding-left: 15px;
     }
   }
-  @media all and (min-width: @width-lg) {
+  @media all and (min-width: @width-xl) {
     margin-top: 174px;
     &__left {
       flex: 0 0 auto;
@@ -2036,7 +2101,7 @@ h1, .h1 {
     line-height: 22px;
     font-size: 14px;
     letter-spacing: -0.02em;
-    @media all and (min-width: @width-lg) {
+    @media all and (min-width: @width-xl) {
       line-height: 24px;
       font-size: 15px;
     }
@@ -2044,16 +2109,46 @@ h1, .h1 {
 }
 
 .catamaran-3d {
-  background: url("../img/ocean.png") no-repeat center bottom;
-  padding-bottom: 56px;
-  &__bird-1 {
+  background: url("../img/ocean.png") no-repeat -120px bottom;
+  background-size: 992px auto;
 
+  padding-bottom: 56px;
+  position: relative;
+  &__bird-1 {
+    position: absolute;
+    background: url("../img/bird-1.png") no-repeat;
+    background-size: contain;
+
+    width: 78px;
+    height: 65px;
+
+    left: 50%;
+    top: -40px;
+    margin-left: -126px;
   }
   &__bird-2 {
+    position: absolute;
+    background: url("../img/bird-2.png") no-repeat;
+    background-size: contain;
 
+    width: 115px;
+    height: 85px;
+
+    left: 50%;
+    top: 25px;
+    margin-left: 45px;
   }
   &__bird-3 {
+    position: absolute;
+    background: url("../img/bird-3.png") no-repeat;
+    background-size: contain;
 
+    width: 79px;
+    height: 68px;
+
+    left: 50%;
+    top: 143px;
+    margin-left: -135px;
   }
   &__view {
     width: 552px;
@@ -2128,9 +2223,72 @@ h1, .h1 {
     color: #FCFCFC;
     margin: 0 auto;
   }
+
+  @media all and (min-width: @width-md) {
+    background-position: center bottom;
+    margin-top: -150px;
+    &__bird-1 {
+      background-image: url("../img/bird-1-d.png");
+      top: 308px;
+      width: 118px;
+      height: 96px;
+      margin-left: -300px;
+    }
+    &__bird-2 {
+      background-image: url("../img/bird-2-d.png");
+      top: 158px;
+      width: 159px;
+      height: 128px;
+      margin-left: 160px;
+    }
+    &__bird-3 {
+      margin-left: -180px;
+    }
+    &__view {
+      width: 788px;
+      height: 755px;
+    }
+  }
   @media all and (min-width: @width-lg) {
+    background-size: auto;
+
+  }
+  @media all and (min-width: @width-xl) {
     margin-top: -726px;
     padding-bottom: 150px;
+    background-size: 100% auto;
+
+    &__bird-1 {
+      width: 233px;
+      height: 190px;
+
+      top: -200px;
+      margin-left: -570px;
+    }
+    &__bird-2 {
+      width: 210px;
+      height: 169px;
+      top: -362px;
+      margin-left: 380px;
+    }
+    &__bird-3 {
+      width: 102px+10;
+      height: 85px+10;
+      top: -362px;
+      margin-left: -310px;
+    }
+
+    &__logo {
+      position: absolute;
+      background: url("../img/lagoon-logo.png") no-repeat;
+      background-size: contain;
+      width: 122px;
+      height: 54px;
+      top: -132px;
+      left: 50%;
+      margin-left: 467px;
+    }
+
     &__view {
       width: 982px;
       height: 941px;
@@ -2148,9 +2306,6 @@ h1, .h1 {
       line-height: 26px;
       font-size: 18px;
     }
-  }
-  @media all and (min-width: @width-xl) {
-    background-size: 100% auto;
   }
   @media all and (min-width: 1700px) {
     background-size: 100% 500px;
@@ -2253,8 +2408,6 @@ h1, .h1 {
 
 .pano-tour {
   overflow: hidden;
-  height: 96px;
-  transition: height .3s ease;
   &__btn {
     display: block;
     border-radius: 0;
@@ -2283,11 +2436,9 @@ h1, .h1 {
     color: #423700;
   }
   &__container {
-    height: 0;
-    transition: height .3s ease;
+    height: 500px;
   }
   @media all and (min-width: @width-lg) {
-    height: 126px;
     &__btn {
       height: 126px;
     }
@@ -2296,6 +2447,110 @@ h1, .h1 {
       line-height: normal;
       font-size: 22px;
     }
+
+  }
+  &__container {
+    height: 700px;
+  }
+}
+
+.btn-view-pano {
+  font-family: inherit;
+  //display: block;
+  border-radius: 0;
+  outline: none;
+  border: 0;
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  transform: translateZ(0);
+  -webkit-tap-highlight-color: transparent;
+
+  background: #FFEF9D;
+
+  display: flex;
+  justify-content: flex-start;
+
+  text-align: left;
+  height: 92px;
+  z-index: 2;
+  width: 100%;
+  padding: 0 20px;
+  //&:hover {
+  //  background-color: #FFDF34;
+  //}
+  &.active {
+    .btn-view-pano__arrow {
+      transform: scaleY(-1);
+    }
+  }
+  &__icon {
+    //transform: translateY(4px);
+    background: url("../img/icons/unity.svg") no-repeat;
+    background-size: contain;
+
+    width: 26px;
+    height: 24px;
+  }
+  &__content {
+    max-width: 170px;
+    margin-left: 20px;
+  }
+  &__name {
+    font-weight: 500;
+    line-height: 26px;
+    font-size: 18px;
+    letter-spacing: -0.02em;
+
+    border-bottom: 1px dashed rgba(66, 55, 0, 0.3);
+  }
+  &__arrow {
+    width: 15px;
+    height: 8px;
+    background: url("../img/icons/arrow-down-btn.svg") no-repeat;
+    background-size: contain;
+
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    margin-top: -4px;
+    transition: transform .3s ease;
+  }
+  @media all and (min-width: @width-sm) {
+    align-items: center;
+    justify-content: center;
+    &__content {
+      max-width: none;
+    }
+    &__arrow {
+      position: relative;
+      top: auto;
+      right: auto;
+      margin-top: 0;
+      margin-left: 12px;
+    }
+  }
+  @media all and (min-width: @width-md) {
+    height: 106px;
+    &__name {
+      color: #423700;
+      line-height: normal;
+      font-size: 22px;
+    }
+    &__icon {
+      width: 33px;
+      height: 31px;
+    }
+    &__content {
+      margin-left: 12px;
+    }
+    &__arrow {
+      width: 22px;
+      height: 12px;
+    }
+  }
+  @media all and (min-width: @width-xl) {
 
   }
 }
@@ -2409,15 +2664,17 @@ h1, .h1 {
     font-size: 20px;
     letter-spacing: -0.02em;
 
-    margin: 0 auto 26px;
-    max-width: 380px;
+    margin-bottom: 26px;
     @media all and (min-width: @width-md) {
+      max-width: 380px;
+      margin: 0 auto 36px;
       line-height: 29px;
       font-size: 20px;
     }
   }
   &__block {
     position: relative;
+    text-align: center;
     @media all and (min-width: @width-md) {
       height: 600px;
     }
@@ -2456,6 +2713,7 @@ h1, .h1 {
     font-weight: 500;
     line-height: 26px;
     font-size: 18px;
+    margin: 20px 0;
   }
   @media all and (min-width: @width-md) {
     text-align: center;
@@ -2563,15 +2821,16 @@ h1, .h1 {
 }
 
 .about-us {
+  padding-top: 50px;
+  &__title {
 
+  }
   &__container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+
   }
   &__logo {
-    margin-top: 13px;
-    margin-bottom: 32px;
+    margin-top: 37px;
+    margin-bottom: 37px;
     display: block;
     width: 162px;
     height: 46px;
@@ -2585,15 +2844,27 @@ h1, .h1 {
   }
 
   @media all and (min-width: @width-md) {
+    &__container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
     &__description {
       line-height: 26px;
       font-size: 15px;
       max-width: 510px;
     }
+    &__logo {
+      margin-top: 13px;
+      margin-bottom: 16px;
+    }
   }
 
   @media all and (min-width: @width-lg) {
     padding-top: 47px;
+    &__logo {
+      margin-bottom: 32px;
+    }
   }
   @media all and (min-width: @width-xl) {
     &__description {
@@ -2848,8 +3119,9 @@ h1, .h1 {
   text-align: center;
   background: url("../img/water-3.png") no-repeat center;
   background-size: auto 100%;
+  background-position: center 40px;
 
-  padding: 0 0 188px;
+  padding: 60px 0 188px;
   margin-bottom: -127px;
   &__title {
     max-width: 220px;
@@ -2862,6 +3134,7 @@ h1, .h1 {
   @media all and (min-width: @width-md) {
     padding: 3px 0 265px;
     background-size: 100% 100%;
+    background-position: center;
     margin-bottom: -66px;
     &__title {
       max-width: none;
@@ -3040,16 +3313,18 @@ h1, .h1 {
     padding-top: 134px;
     position: relative;
     height: 634px;
-    &:after {
-      content: '';
-      width: 557px;
-      height: 592px;
-      //height: 634px;
-      background: url("../img/call-me-phone.png");
-      background-size: contain;
-      position: absolute;
-      bottom: 0;
-      right: 218px;
+    @media all and (min-width: @width-md) {
+      &:after {
+        content: '';
+        width: 557px;
+        height: 592px;
+        //height: 634px;
+        background: url("../img/call-me-phone.png");
+        background-size: contain;
+        position: absolute;
+        bottom: 0;
+        right: 218px;
+      }
     }
     @media all and (min-width: @width-xl) {
       position: absolute;
