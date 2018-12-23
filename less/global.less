@@ -132,13 +132,18 @@ h1, .h1 {
 }
 
 .page-hero {
-  height: 580px;
   color: white;
   text-align: center;
 
   background: #0d95e8;
   background-size: cover;
   padding-top: 149px;
+  height: 415px;
+
+  &_faq {
+    background-image: url("../img/faq-hero-bg.jpg");
+    background-position: center;
+  }
   &__title {
     font-weight: 600;
     line-height: 40px;
@@ -150,9 +155,47 @@ h1, .h1 {
     line-height: 22px;
     font-size: 15px;
     max-width: 200px;
+    margin: 12px auto 74px;
+  }
+  &__back-link {
+    display: inline-block;
+    margin-top: 22px;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    line-height: normal;
+    font-size: 16px;
+    &:before {
+      content: '';
+      display: inline-block;
+      background: url("../img/icons/arrow-left-hero.svg") no-repeat;
+      background-size: contain;
+      width: 14px;
+      height: 12px;
+      margin-right: 7px;
+    }
+  }
+  &__back-text {
+    position: relative;
+    color: inherit;
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background: white;
+      opacity: .3;
+      bottom: -4px;
+      left: 0;
+    }
   }
   @media all and (min-width: @width-md) {
     padding-top: 164px;
+    height: 500px;
+    &_faq {
+      background-position: left bottom;
+    }
     &__title {
       font-weight: 500;
       line-height: 58px;
@@ -162,11 +205,13 @@ h1, .h1 {
       line-height: 23px;
       font-size: 16px;
       max-width: 367px;
+
     }
   }
   @media all and (min-width: @width-lg) {
     padding-top: 200px;
     text-align: left;
+    height: 580px;
 
     &__title {
       line-height: 81px;
@@ -176,6 +221,7 @@ h1, .h1 {
       line-height: 34px;
       font-size: 20px;
       max-width: 457px;
+      margin-left: 0;
     }
   }
 }

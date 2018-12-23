@@ -66,7 +66,7 @@ function init3dTour() {
 
     $panoTourButton.on('click', function () {
         if (!panoTourOpened) {
-            $panoTour.css('height', $panoTourButton.height() + $panoTourContainer.height());
+            $panoTour.css('height', $panoTourButton.innerHeight() + $panoTourContainer.innerHeight());
             panoTourOpened = true;
         } else {
             $panoTour.css('height', '');
@@ -107,10 +107,26 @@ function initBookingSlider() {
     $(window).resize(buildSlider);
 }
 
+function initFaqCollapse() {
+    var $buttonCollapse = $('.question__header');
+
+    $buttonCollapse.on('click', function (e) {
+        var $collapse = $(this).parent();
+        e.preventDefault();
+
+        if (!$collapse.hasClass('active')) {
+            $collapse.addClass('active').css('height', $(this).innerHeight() + $(this).parent().children('.question__collapse').innerHeight());
+        } else {
+            $collapse.removeClass('active').css('height', '');
+        }
+    })
+}
+
 
 initHeader();
 init3dTour();
 initBookingSlider();
+initFaqCollapse();
 
 $('.gallery').slick({
 
@@ -140,7 +156,7 @@ $('.gallery').slick({
 });
 
 $('[data-fancybox="images"]').fancybox({
-    selector : '.slick-slide:not(.slick-cloned)',
+    selector: '.slick-slide:not(.slick-cloned)',
     animationEffect: "fade",
     transitionEffect: "slide",
 });
