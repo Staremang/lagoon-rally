@@ -467,6 +467,13 @@ $('.gallery').slick({
     ]
 });
 
+$('.booking-gallery').slick({
+    slidesToScroll: 1,
+    slidesToShow: 1,
+    arrows: true,
+    dots: true
+});
+
 $('[data-fancybox="images"]').fancybox({
     selector: '.slick-slide:not(.slick-cloned)',
     animationEffect: "fade",

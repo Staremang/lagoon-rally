@@ -1334,8 +1334,8 @@ body.compensate-for-scrollbar {
 .slick-next {
   position: absolute;
   display: block;
-  height: 20px;
-  width: 20px;
+  height: 24px;
+  width: 51px;
   line-height: 0px;
   font-size: 0px;
   cursor: pointer;
@@ -1354,7 +1354,6 @@ body.compensate-for-scrollbar {
 .slick-prev:focus,
 .slick-next:focus {
   outline: none;
-  background: transparent;
   color: transparent;
 }
 .slick-prev:hover:before,
@@ -1368,7 +1367,12 @@ body.compensate-for-scrollbar {
   opacity: 0.25;
 }
 .slick-prev {
-  left: -25px;
+  left: 30px;
+  background-image: url("../img/icons/arrow-left-white.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  z-index: 1;
 }
 [dir="rtl"] .slick-prev {
   left: auto;
@@ -1381,7 +1385,11 @@ body.compensate-for-scrollbar {
   content: "→";
 }
 .slick-next {
-  right: -25px;
+  right: 30px;
+  background-image: url("../img/icons/arrow-right-white.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
 }
 [dir="rtl"] .slick-next {
   left: -25px;
@@ -3572,6 +3580,10 @@ h1,
 }
 .btn-orange:hover {
   background-color: #FFDF34;
+}
+.btn-orange_border {
+  background: white;
+  border: 2px solid #FFE872;
 }
 .icon {
   width: 30px;
@@ -7314,7 +7326,7 @@ h1,
   background: white;
   margin-left: auto;
   margin-right: auto;
-  max-width: 1180px;
+  max-width: 930px;
 }
 .booking-page__header {
   padding: 16px 20px 17px;
@@ -7343,6 +7355,9 @@ h1,
   border-bottom: 0;
 }
 @media all and (min-width: 992px) {
+  .booking-page__wrapper {
+    max-width: 1180px;
+  }
   .booking-page__header {
     padding: 35px 41px 43px;
   }
@@ -7387,6 +7402,33 @@ h1,
 .booking-included__wrapper p {
   line-height: 20px;
   font-size: 14px;
+}
+.booking-included__wrapper ul {
+  list-style: none;
+  padding-left: 20px;
+}
+.booking-included__wrapper li {
+  position: relative;
+  margin: 10px 0;
+}
+.booking-included__wrapper li:before {
+  content: '';
+  position: absolute;
+  left: -18px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  width: 5px;
+  height: 5px;
+  background: #000000;
+  opacity: 0.3;
+}
+@media all and (min-width: 992px) {
+  .booking-included__wrapper {
+    padding-left: 41px;
+    padding-right: 41px;
+  }
 }
 .booking-price {
   font-weight: 500;
@@ -7540,19 +7582,28 @@ h1,
   font-size: 13px;
   letter-spacing: -0.02em;
 }
+.booking-table__row {
+  height: 30px;
+  vertical-align: top;
+}
 .booking-table__name {
   opacity: 0.5;
   font-weight: normal;
+  width: 115px;
 }
 .booking-table__val {
   font-weight: 500;
 }
 @media all and (min-width: 992px) {
   .booking-table {
-    padding-top: 25px;
-    padding-bottom: 25px;
+    padding-top: 19px;
+    padding-bottom: 19px;
     font-size: 14px;
   }
+}
+.booking-form {
+  padding-top: 24px;
+  padding-bottom: 30px;
 }
 .booking-form__title {
   font-weight: 500;
@@ -7560,6 +7611,7 @@ h1,
   font-size: 18px;
   letter-spacing: -0.02em;
   margin-bottom: 28px;
+  margin-top: 0;
 }
 .booking-form__row {
   display: -webkit-box;
@@ -7578,8 +7630,22 @@ h1,
 .booking-form__input {
   margin-bottom: 15px;
 }
+.booking-form__checkbox-1 {
+  margin-bottom: 40px;
+}
+.booking-form__checkbox-2 {
+  margin-bottom: 26px;
+  margin-top: 14px;
+}
+.booking-form__checkbox-2 [type="checkbox"] + span:not(.lever):before {
+  margin-top: 0;
+}
+.booking-form__checkbox-2 [type="checkbox"] + span:not(.lever):after {
+  margin-top: 6px;
+}
 .booking-form__btn {
   width: 100%;
+  height: 64px;
 }
 .for-pay {
   display: -webkit-box;
@@ -7588,6 +7654,7 @@ h1,
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  margin-bottom: 40px;
 }
 .for-pay__name {
   font-weight: normal;
@@ -7602,4 +7669,21 @@ h1,
   font-size: 20px;
   text-align: right;
   letter-spacing: -0.02em;
+}
+.booking-call-me {
+  margin-top: 58px;
+  margin-bottom: 27px;
+  padding-right: 130px;
+  letter-spacing: -0.02em;
+}
+.booking-call-me__title {
+  font-weight: 500;
+  line-height: normal;
+  font-size: 18px;
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+.booking-call-me__description {
+  line-height: 22px;
+  font-size: 15px;
 }

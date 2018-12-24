@@ -4,7 +4,7 @@
     background: white;
     margin-left: auto;
     margin-right: auto;
-    max-width: 1180px;
+    max-width: 930px;
   }
   &__header {
     padding: 16px 20px 17px;
@@ -37,6 +37,9 @@
   }
 
   @media all and (min-width: @width-lg) {
+    &__wrapper {
+      max-width: 1180px;
+    }
     &__header {
       padding: 35px 41px 43px;
     }
@@ -89,10 +92,29 @@
       font-size: 14px;
     }
     ul {
-
+      list-style: none;
+      padding-left: 20px;
     }
     li {
-
+      position: relative;
+      margin: 10px 0;
+      &:before {
+        content: '';
+        position: absolute;
+        left: -18px;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 5px;
+        height: 5px;
+        background: #000000;
+        opacity: 0.3;
+      }
+    }
+  }
+  @media all and (min-width: @width-lg) {
+    &__wrapper {
+      padding-left: 41px;
+      padding-right: 41px;
     }
   }
 }
@@ -250,27 +272,35 @@
   line-height: 19px;
   font-size: 13px;
   letter-spacing: -0.02em;
+  &__row {
+    height: 30px;
+    vertical-align: top;
+  }
   &__name {
     opacity: 0.5;
     font-weight: normal;
+    width: 115px;
   }
   &__val {
     font-weight: 500;
   }
   @media all and (min-width: @width-lg) {
-    padding-top: 25px;
-    padding-bottom: 25px;
+    padding-top: 19px;
+    padding-bottom: 19px;
     font-size: 14px;
   }
 }
 
 .booking-form {
+  padding-top: 24px;
+  padding-bottom: 30px;
   &__title {
     font-weight: 500;
     line-height: normal;
     font-size: 18px;
     letter-spacing: -0.02em;
     margin-bottom: 28px;
+    margin-top: 0;
   }
   &__row {
     display: flex;
@@ -285,14 +315,31 @@
   &__input {
     margin-bottom: 15px;
   }
+  &__checkbox-1 {
+    margin-bottom: 40px;
+  }
+  &__checkbox-2 {
+    margin-bottom: 26px;
+    margin-top: 14px;
+    [type="checkbox"] + span:not(.lever) {
+      &:before {
+        margin-top: 0;
+      }
+      &:after {
+        margin-top: 6px;
+      }
+    }
+  }
   &__btn {
     width: 100%;
+    height: 64px;
   }
 }
 
 .for-pay {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 40px;
   &__name {
 
     font-weight: normal;
@@ -308,5 +355,22 @@
     font-size: 20px;
     text-align: right;
     letter-spacing: -0.02em;
+  }
+}
+.booking-call-me {
+  margin-top: 58px;
+  margin-bottom: 27px;
+  padding-right: 130px;
+  letter-spacing: -0.02em;
+  &__title {
+    font-weight: 500;
+    line-height: normal;
+    font-size: 18px;
+    margin-bottom: 20px;
+    margin-top: 0;
+  }
+  &__description {
+    line-height: 22px;
+    font-size: 15px;
   }
 }
