@@ -4808,6 +4808,44 @@ h1,
   -ms-transform: translateX(-45%);
   transform: translateX(-45%);
 }
+.second-section-benefits__girls.active .second-section-benefits__circle:before {
+  opacity: 1;
+}
+.second-section-benefits__girls.active .second-section-benefits__circle:after {
+  border-width: 20px;
+}
+.second-section-benefits__circle {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-color: #FFF6C8;
+  overflow: hidden;
+}
+.second-section-benefits__circle:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: url("../img/sea.jpg") no-repeat;
+  background-size: contain;
+  opacity: 0;
+  -webkit-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+}
+.second-section-benefits__circle:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  border: 40px solid #FFE872;
+  border-radius: 50%;
+  -webkit-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+}
 @media all and (min-width: 768px) {
   .second-section-benefits {
     padding-top: 50px;
