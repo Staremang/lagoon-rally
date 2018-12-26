@@ -717,7 +717,7 @@ h1, .h1 {
     bottom: 32/1978 * 100%;
 
     @media all and (min-width: @width-md) {
-      visibility: hidden;
+      visibility: visible;
     }
   }
 }
@@ -729,6 +729,7 @@ h1, .h1 {
   &__icon {
     fill: #A5A5A5;
   }
+  &:hover,
   &.active {
     .map-point__text,
     .map-point__icon {
@@ -853,6 +854,11 @@ h1, .h1 {
 
 .route-point-info {
   position: relative;
+  &__tabs {
+    > [data-day]:not(.active) {
+      display: none;
+    }
+  }
   &__header-top {
     display: flex;
     justify-content: space-between;
@@ -902,6 +908,11 @@ h1, .h1 {
     &.active {
       background: #FFE872;
       border-color: #FFE872;
+    }
+
+    &:hover {
+      background: rgba(255, 232, 114, 0.6);
+      border: 1px solid rgba(0, 0, 0, 0.3);
     }
   }
 
@@ -1010,11 +1021,67 @@ h1, .h1 {
         opacity: 1;
       }
     }
+
+    &:nth-child(1) {
+      .benefits__content:after {
+        background-image: url("../img/icons/i-wave.svg");
+        left: 57.44%;
+        right: 12.87%;
+        top: 67.89%;
+        bottom: 12.12%;
+      }
+    }
+    &:nth-child(2) {
+      .benefits__content:after {
+        background-image: url("../img/icons/i-map.svg");
+        left: 58.97%;
+        right: 10.77%;
+        top: 64.79%;
+        bottom: 10.59%;
+      }
+    }
+    &:nth-child(3) {
+      .benefits__content:after {
+        background-image: url("../img/icons/i-boat.svg");
+        left: 52.31%;
+        right: 12.82%;
+        top: 69.53%;
+        bottom: 12.17%;
+      }
+    }
+    &:nth-child(4) {
+      .benefits__content:after {
+        background-image: url("../img/icons/i-temp.svg");
+        width: 26.66px;
+        height: 57px;
+        left: 144.6px;
+        top: 114px;
+      }
+    }
+    &:nth-child(5) {
+      .benefits__content:after {
+        background-image: url("../img/icons/i-calendar.svg");
+        left: 65.13%;
+        right: 11.79%;
+        top: 65.26%;
+        bottom: 11.05%;
+      }
+    }
+    &:nth-child(6) {
+      .benefits__content:after {
+        background-image: url("../img/icons/i-map-2.svg");
+        width: 93px;
+        height: 71.07px;
+        left: 86px;
+        top: 101.36px;
+      }
+    }
   }
   &__content {
     position: relative;
     overflow: hidden;
     background: white;
+    padding: 13px 14px;
     &:before {
       content: '';
       position: absolute;
@@ -1028,6 +1095,12 @@ h1, .h1 {
       bottom: 14px;
       transition: transform 1s ease;
     }
+    &:after {
+      content: '';
+      position: absolute;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
   }
   &__description {
     position: absolute;
@@ -1040,9 +1113,15 @@ h1, .h1 {
     transition: opacity 1s ease;
   }
   &__title {
-    position: absolute;
-    top: 13px;
-    left: 14px;
+    position: relative;
+    //position: absolute;
+    //top: 13px;
+    //left: 14px;
+
+    font-weight: 500;
+    line-height: 20px;
+    font-size: 14px;
+    letter-spacing: -0.02em;
   }
 
   @media all and (min-width: @width-sm) {
@@ -1058,6 +1137,27 @@ h1, .h1 {
       }
     }
   }
+  @media all and (min-width: @width-md) {
+    &__content {
+      &:before {
+        width: 87px;
+        height: 87px;
+        right: 17px;
+        bottom: 17px;
+      }
+    }
+    &__title {
+      line-height: 22px;
+      font-size: 16px;
+    }
+  }
+  //@media all and (min-width: @width-xl) {
+  //
+  //  &__title {
+  //    line-height: 22px;
+  //    font-size: 16px;
+  //  }
+  //}
   @media all and (min-width: @width-xl) {
     max-width: 1180px;
     margin-bottom: 316px;
@@ -2156,7 +2256,8 @@ h1, .h1 {
   }
   &__view {
     width: 552px;
-    height: 529px;
+    height: 552px;
+    //height: 529px;
     //margin: 0 auto;
     margin-left: 50%;
     transform: translateX(-50%);
@@ -2230,7 +2331,7 @@ h1, .h1 {
 
   @media all and (min-width: @width-md) {
     background-position: center bottom;
-    margin-top: -150px;
+    margin-top: -183px;
     &__bird-1 {
       background-image: url("../img/bird-1-d.png");
       top: 308px;
@@ -2250,7 +2351,8 @@ h1, .h1 {
     }
     &__view {
       width: 788px;
-      height: 755px;
+      height: 788px;
+      //height: 755px;
     }
   }
   @media all and (min-width: @width-lg) {
@@ -2258,7 +2360,7 @@ h1, .h1 {
 
   }
   @media all and (min-width: @width-xl) {
-    margin-top: -726px;
+    margin-top: -767px;
     padding-bottom: 150px;
     background-size: 100% auto;
 
@@ -2295,7 +2397,8 @@ h1, .h1 {
 
     &__view {
       width: 982px;
-      height: 941px;
+      height: 982px;
+      //height: 941px;
       //margin-bottom: 56px;
     }
 
@@ -2335,6 +2438,7 @@ h1, .h1 {
   }
   @media all and (min-width: @width-lg) {
     margin-bottom: 0;
+    margin-top: 2px;
     &__item {
       //height: 230px;
       padding: 0 1px;
@@ -2401,11 +2505,11 @@ h1, .h1 {
     }
 
     &__waves {
-      width: 489px;
-      height: 335px;
+      width: 741px;
+      height: 509px;
 
-      bottom: -62px;
-      right: -133px;
+      bottom: -96px;
+      right: 0;
     }
   }
 }
@@ -2601,6 +2705,10 @@ h1, .h1 {
   }
   &__catamaran {
     margin-bottom: 18px;
+    > svg {
+      background: url('../img/icons/catamaran-bg.svg') no-repeat;
+      background-size: contain;
+    }
   }
   &__free {
     line-height: 26px;
@@ -3616,5 +3724,157 @@ h1, .h1 {
     height: 24px;
     display: block;
     opacity: 0.4;
+  }
+}
+
+
+
+
+.booking-pop-up {
+  background: #FFFFFF;
+  box-shadow: 0px 20px 34px rgba(0, 0, 0, 0.1);
+  width: 688px;
+  //height: 451px;
+  z-index: 999;
+  position: absolute;
+  left: 598px;
+  top: 10662px;
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 22px;
+    height: 30px;
+    background: url("../img/icons/vector.svg") no-repeat;
+  }
+  &.r-t:before {
+    right: 45px;
+    top: -15px;
+  }
+  &.r-b:before {
+    right: 45px;
+    bottom: -15px;
+  }
+  &.l-t:before {
+    left: 45px;
+    top: -15px;
+  }
+  &.l-b:before {
+    left: 45px;
+    bottom: -15px;
+  }
+}
+.booking-seat-info {
+  position: relative;
+  padding: 18px 24px 30px;
+  &__title {
+    font-weight: 500;
+    line-height: normal;
+    font-size: 26px;
+    margin-bottom: 9px;
+  }
+  &__subtitle {
+    font-weight: 500;
+    line-height: normal;
+    font-size: 18px;
+
+    color: #000000;
+
+    opacity: 0.5;
+    margin-bottom: 23px;
+  }
+  &__date {
+    position: absolute;
+    right: 12px;
+    top: 17px;
+  }
+  &__date-title {
+    font-weight: 500;
+    line-height: normal;
+    font-size: 13px;
+    letter-spacing: -0.02em;
+
+    color: #000000;
+
+    opacity: 0.5;
+    margin-bottom: 5px;
+  }
+  &__date-val {
+    font-weight: 500;
+    line-height: normal;
+    font-size: 25px;
+    letter-spacing: -0.02em;
+
+    color: #000000;
+  }
+  &__body {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 24px;
+  }
+  &__gallery {
+
+    width: 235px;
+    height: 224px;
+    background: gray;
+  }
+  &__info {
+
+  }
+  &__info-title {
+
+    font-weight: 500;
+    line-height: normal;
+    font-size: 13px;
+    letter-spacing: -0.02em;
+
+    color: #000000;
+
+    opacity: 0.5;
+    margin-bottom: 5px;
+  }
+  &__info-val {
+    margin-bottom: 23px;
+
+    font-weight: 500;
+    line-height: normal;
+    font-size: 25px;
+    letter-spacing: -0.02em;
+
+    .f-13 {
+      font-size: 13px;
+    }
+    .f-21 {
+      font-size: 21px;
+    }
+  }
+  &__list {
+    font-weight: 500;
+    line-height: 19px;
+    font-size: 13px;
+    letter-spacing: -0.02em;
+
+    list-style: none;
+    padding-left: 5px;
+    margin: 0;
+  }
+  &__list-item {
+    margin-bottom: 13px;
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      left: -15px;
+      top: 8px;
+      width: 5px;
+      height: 5px;
+
+      background: #000000;
+      opacity: 0.3;
+    }
+  }
+  &__buttons {
+    display: flex;
+    justify-content: space-between;
   }
 }

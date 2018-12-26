@@ -479,3 +479,159 @@ $('[data-fancybox="images"]').fancybox({
     animationEffect: "fade",
     transitionEffect: "slide",
 });
+
+
+// Maps
+$('[data-day-link]').on('click', function (e) {
+    e.preventDefault();
+
+    var day = $(this).data('day-link');
+
+    $('[data-day-link]').removeClass('active');
+    $(this).addClass('active');
+
+    $('[data-day]').removeClass('active');
+    $('[data-day=' + day + ']').addClass('active');
+
+
+});
+
+
+// Booking pop up
+
+(function () {
+    var $bookingPopup = $(".booking-pop-up"),
+        $seat = $('.booking-ships__position'),
+        $parentContainer,
+        popupTimer;
+
+    function getCoords(elem) {
+        var box = elem.getBoundingClientRect();
+
+        return {
+            top: box.top + pageYOffset,
+            left: box.left + pageXOffset,
+            bottom: box.bottom + pageYOffset,
+            right: box.right + pageXOffset
+        };
+    }
+
+
+    $bookingPopup.hide();
+    $seat.on('mouseover', function () {
+        clearTimeout(popupTimer);
+        // console.log();
+        $('.booking-seat-info').hide();
+        $($(this).data('target')).show();
+
+        // $bookingPopup.empty().append( $($(this).data('target')).clone(true) );
+
+        // $bookingPopup.find('.booking-seat-info__gallery').slick();
+
+        $bookingPopup.show();
+        $bookingPopup.removeClass('r-t');
+        $bookingPopup.removeClass('r-b');
+        $bookingPopup.removeClass('l-t');
+        $bookingPopup.removeClass('l-b');
+
+
+        // show popup
+        var seatPos = getCoords(this),
+            popupHeight = 446,
+            popupWidth = 688;
+
+        if (document.documentElement.clientWidth - seatPos.left < popupWidth) { // Слева от места
+
+            if (this.getBoundingClientRect().top < popupHeight) { // Под местом
+                $bookingPopup.css({"top": seatPos.bottom + 20, "left": seatPos.right - popupWidth + 30});
+                $bookingPopup.addClass('r-t');
+            } else { // Над местом
+                $bookingPopup.css({"top": seatPos.top - popupHeight - 20, "left": seatPos.right - popupWidth + 30});
+                $bookingPopup.addClass('r-b');
+            }
+        } else {
+            if (this.getBoundingClientRect().top < popupHeight) {
+                $bookingPopup.css({"top": seatPos.bottom + 20, "left": seatPos.left - 30});
+                $bookingPopup.addClass('l-t');
+            } else {
+                $bookingPopup.css({"top": seatPos.top - popupHeight - 20, "left": seatPos.left - 30});
+                $bookingPopup.addClass('l-b');
+            }
+        }
+    });
+
+    $seat.on('mouseout', function () {
+        popupTimer = setTimeout(function () {
+            $bookingPopup.hide();
+            // $bookingPopup.removeClass('r-t');
+            // $bookingPopup.removeClass('r-b');
+            // $bookingPopup.removeClass('l-t');
+            // $bookingPopup.removeClass('l-b');
+        }, 500)
+    });
+
+
+    $bookingPopup.on('mouseover', function () {
+        clearTimeout(popupTimer);
+    });
+
+    $bookingPopup.on('mouseout', function () {
+        popupTimer = setTimeout(function () {
+            $bookingPopup.hide();
+        }, 500)
+    })
+})();
+$('.booking-seat-info__gallery').slick();
+
+
+function initCatamaram3d() {
+
+    var $catamaran3d = $('.catamaran-3d__view'),
+        activeIndex = 3;
+
+    $catamaran3d.children().hide();
+    $catamaran3d.children().eq(activeIndex).show();
+
+    $('.catamaran-3d__btn-left').on('click', function () {
+
+
+        activeIndex++;
+
+        if (activeIndex > 15) {
+            activeIndex = 0;
+        }
+
+        $catamaran3d.children().hide();
+        $catamaran3d.children().eq(activeIndex).show();
+    });
+    $('.catamaran-3d__btn-right').on('click', function () {
+        activeIndex--;
+
+        if (activeIndex < 0) {
+            activeIndex = 15;
+        }
+
+        $catamaran3d.children().hide();
+        $catamaran3d.children().eq(activeIndex).show();
+    });
+}
+
+initCatamaram3d();
+
+
+
+function initSpinner() {
+    $('.spinner').each(function (i, e) {
+        var val = $(e).children('.spinner__val').html();
+
+        $(e).children('.spinner__btn-down').on('click', function () {
+            val--;
+            $(e).children('.spinner__val').html(val);
+        })
+        $(e).children('.spinner__btn-up').on('click', function () {
+            val++;
+            $(e).children('.spinner__val').html(val);
+        })
+    })
+};
+initSpinner()
