@@ -4167,9 +4167,9 @@ h1,
 }
 .map {
   width: 1440px;
-  height: 1978px;
+  height: 2010px;
   position: absolute;
-  top: 0;
+  top: -324px;
   left: 50%;
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
@@ -4192,6 +4192,73 @@ h1,
   .map__point {
     visibility: visible;
   }
+}
+.map__mark {
+  fill: #A5A5A5;
+}
+.map__island {
+  fill: #F4F4F4;
+  stroke: #D5D5D5;
+  stroke-width: 1px;
+}
+.map__area.hover .map__island {
+  stroke: #BCBCBC;
+  stroke-width: 2px;
+}
+.map__area.active .map__mark {
+  fill: #00A0D2;
+}
+.map__area.active .map__island {
+  stroke: #00A0D2;
+  stroke-width: 2px;
+}
+.map__days {
+  position: absolute;
+  width: 683px;
+  height: 650px;
+  top: 1279px;
+  left: 12.31%;
+}
+.map__day {
+  font-weight: 500;
+  line-height: 29px;
+  font-size: 20px;
+  letter-spacing: -0.02em;
+  color: #1F1F1F;
+  position: absolute;
+  text-decoration: none;
+}
+.map__day.active {
+  font-weight: 600;
+  color: #00A0D2;
+}
+.map__day_1 {
+  top: 0;
+  left: 14%;
+}
+.map__day_2 {
+  left: 4%;
+  top: 10%;
+}
+.map__day_3 {
+  left: 0;
+  top: 61%;
+}
+.map__day_4 {
+  bottom: 0;
+  right: 30%;
+}
+.map__day_5 {
+  bottom: 3%;
+  right: 0;
+}
+.map__day_6 {
+  right: 31%;
+  top: 41%;
+}
+.map__day_7 {
+  top: 0;
+  left: 32.4%;
 }
 .map-point__text {
   fill: black;
@@ -4808,16 +4875,12 @@ h1,
   -ms-transform: translateX(-45%);
   transform: translateX(-45%);
 }
-.second-section-benefits__girls.active .second-section-benefits__circle:before {
-  opacity: 1;
-}
-.second-section-benefits__girls.active .second-section-benefits__circle:after {
-  border-width: 20px;
-}
 .second-section-benefits__circle {
+  left: 21px;
+  top: 56px;
   position: absolute;
-  width: 300px;
-  height: 300px;
+  width: 463px;
+  height: 463px;
   border-radius: 50%;
   background-color: #FFF6C8;
   overflow: hidden;
@@ -4840,7 +4903,7 @@ h1,
   width: 100%;
   height: 100%;
   background-color: transparent;
-  border: 40px solid #FFE872;
+  border: 86px solid #FFE872;
   border-radius: 50%;
   -webkit-transition: all .3s ease;
   -o-transition: all .3s ease;
@@ -4878,6 +4941,23 @@ h1,
     left: auto;
     right: 53%;
     bottom: 92px;
+    background: none;
+  }
+  .second-section-benefits__girls:after {
+    content: '';
+    background: url('../img/girls-2.png') no-repeat;
+    background-size: contain;
+    position: absolute;
+    width: 571px;
+    height: 518px;
+  }
+  .second-section-benefits__girls.active .second-section-benefits__circle:before,
+  .second-section-benefits__girls:hover .second-section-benefits__circle:before {
+    opacity: 1;
+  }
+  .second-section-benefits__girls.active .second-section-benefits__circle:after,
+  .second-section-benefits__girls:hover .second-section-benefits__circle:after {
+    border-width: 50px;
   }
 }
 .benefits-list {

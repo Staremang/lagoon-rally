@@ -481,20 +481,6 @@ $('[data-fancybox="images"]').fancybox({
 });
 
 
-// Maps
-$('[data-day-link]').on('click', function (e) {
-    e.preventDefault();
-
-    var day = $(this).data('day-link');
-
-    $('[data-day-link]').removeClass('active');
-    $(this).addClass('active');
-
-    $('[data-day]').removeClass('active');
-    $('[data-day=' + day + ']').addClass('active');
-
-
-});
 
 
 // Booking pop up
@@ -634,4 +620,51 @@ function initSpinner() {
         })
     })
 };
-initSpinner()
+initSpinner();
+
+
+
+// Maps
+$('[data-day-link]').on('click', function (e) {
+    e.preventDefault();
+
+    var day = $(this).data('day-link');
+
+    $('[data-day-link]').removeClass('active');
+    $(this).addClass('active');
+
+    $('[data-day]').removeClass('active');
+    $('[data-day=' + day + ']').addClass('active');
+
+
+});
+
+$('.map__day').on('click', function (e) {
+    e.preventDefault();
+
+    var t = $(this).data('day');
+
+    $('.map__day').removeClass('active');
+    $(this).addClass('active');
+
+    $('.map__area').removeClass('active');
+    $('.day-' + t).addClass('active');
+
+
+    $('[data-day-link]').removeClass('active');
+    $('[data-day]').removeClass('active');
+    $('[data-day=' + t + ']').addClass('active');
+    $('[data-day-link=' + t + ']').addClass('active');
+});
+$('.map__day').on('mouseover', function () {
+    var t = $(this).data('day');
+
+    $('.map__area').removeClass('hover');
+    $('.day-' + t).addClass('hover');
+});
+$('.map__day').on('mouseout', function () {
+    // var t = $(this).data('day');
+
+    $('.map__area').removeClass('hover');
+    // $('.day-' + t).addClass('active');
+});

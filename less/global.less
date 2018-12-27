@@ -694,9 +694,9 @@ h1, .h1 {
 
 .map {
   width: 1440px;
-  height: 1978px;
+  height: 2010px;
   position: absolute;
-  top: 0;
+  top: -324px;
   left: 50%;
   transform: translateX(-50%);
   //position: relative;
@@ -719,6 +719,90 @@ h1, .h1 {
     @media all and (min-width: @width-md) {
       visibility: visible;
     }
+  }
+  &__mark {
+    fill: #A5A5A5;
+  }
+  &__island {
+    fill: #F4F4F4;
+    stroke: #D5D5D5;
+    stroke-width: 1px;
+  }
+  &__area {
+    &.hover {
+      .map__island {
+        stroke: #BCBCBC;
+        stroke-width: 2px;
+      }
+    }
+    &.active {
+      //z-index: o;
+      .map__mark {
+        fill: #00A0D2
+      }
+      .map__island {
+        //filter: url(#filter0_d);
+        stroke: #00A0D2;
+        stroke-width: 2px;
+      }
+    }
+  }
+  &__days {
+    //display: none;
+
+    position: absolute;
+    width: 683px;
+    height: 650px;
+
+    top: 1279px;
+    //left: 177px;
+    left: 12.31%;
+  }
+  &__day {
+
+    font-weight: 500;
+    line-height: 29px;
+    font-size: 20px;
+    letter-spacing: -0.02em;
+
+    color: #1F1F1F;
+
+    position: absolute;
+    text-decoration: none;
+
+    &.active {
+      font-weight: 600;
+      color: #00A0D2;
+    }
+    &_1 {
+      top: 0;
+      left: 14%;
+    }
+    &_2 {
+      left: 4%;
+      top: 10%;
+    }
+    &_3 {
+      left: 0;
+      top: 61%;
+    }
+    &_4 {
+      bottom: 0;
+      right: 30%;
+    }
+    &_5 {
+      bottom: 3%;
+      right: 0;
+    }
+    &_6 {
+      right: 31%;
+      top: 41%;
+    }
+    &_7 {
+      top: 0;
+      left: 32.4%;
+    }
+
   }
 }
 
@@ -1357,21 +1441,14 @@ h1, .h1 {
     left: 50%;
     transform: translateX(-45%);
 
-    &.active {
-      .second-section-benefits__circle {
-        &:before {
-          opacity: 1;
-        }
-        &:after {
-          border-width: 20px;
-        }
-      }
-    }
   }
   &__circle {
+    left: 21px;
+    top: 56px;
+
     position: absolute;
-    width: 300px;
-    height: 300px;
+    width: 463px;
+    height: 463px;
     border-radius: 50%;
     background-color: #FFF6C8;
     overflow: hidden;
@@ -1392,7 +1469,7 @@ h1, .h1 {
       width: 100%;
       height: 100%;
       background-color: transparent;
-      border: 40px solid #FFE872;
+      border: 86px solid #FFE872;
       border-radius: 50%;
       transition: all .3s ease;
     }
@@ -1437,6 +1514,28 @@ h1, .h1 {
       left: auto;
       right: 53%;
       bottom: 92px;
+      background: none;
+
+      &:after {
+        content: '';
+        background: url('../img/girls-2.png') no-repeat;
+        background-size: contain;
+        position: absolute;
+
+        width: 571px;
+        height: 518px;
+      }
+
+      &.active, &:hover {
+        .second-section-benefits__circle {
+          &:before {
+            opacity: 1;
+          }
+          &:after {
+            border-width: 50px;
+          }
+        }
+      }
     }
   }
 }
