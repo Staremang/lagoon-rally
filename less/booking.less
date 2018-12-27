@@ -371,18 +371,26 @@
   }
   &__checkbox-1 {
     margin-bottom: 40px;
+    [type="checkbox"] + span:not(.lever) {
+      &:before {
+        margin-top: 3px;
+      }
+      &:after {
+        margin-top: 9px;
+      }
+    }
   }
   &__checkbox-2 {
     margin-bottom: 26px;
     margin-top: 14px;
-    [type="checkbox"] + span:not(.lever) {
-      &:before {
-        margin-top: 0;
-      }
-      &:after {
-        margin-top: 6px;
-      }
-    }
+    //[type="checkbox"] + span:not(.lever) {
+    //  &:before {
+    //    margin-top: 0;
+    //  }
+    //  &:after {
+    //    margin-top: 6px;
+    //  }
+    //}
   }
   &__btn {
     width: 100%;

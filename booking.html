@@ -228,7 +228,7 @@
                                 чтобы ответить на все оставшиеся вопросы
                             </div>
                         </div>
-                        <button class="booking-form__btn btn-orange btn-orange_border">подать заявку
+                        <button class="booking-form__btn btn-orange btn-orange_border" data-fancybox data-src="#call-me">подать заявку
                             на обратный звонок
                         </button>
                     </div>
@@ -256,6 +256,28 @@
         </div>
     </div>
 </footer>
+
+<div id="call-me" class="popup">
+    <h2 class="popup__title">Пока не приняли решение?</h2>
+    <div class="popup__subtitle">Оставьте заявку на звонок и мы перезвоним вам, чтобы ответить на все оставшиеся вопросы</div>
+    <div class="popup__form">
+        <div class="popup__input-group input-field">
+            <input id="popup-name" type="text" class="validate" required>
+            <label for="popup-name">Ф. И. О.</label>
+        </div>
+        <div class="popup__input-group input-field">
+            <input id="popup-tel" type="tel" class="validate" required>
+            <label for="popup-tel">Номер телефона</label>
+        </div>
+        <div class="popup__checkbox">
+            <label>
+                <input type="checkbox"/>
+                <span>Согласен на обработку персональных данных</span>
+            </label>
+        </div>
+        <button class="popup__btn btn-orange" type="submit">Отправить</button>
+    </div>
+</div>
 
 <script type="text/javascript" src="libs/jquery-3.3.1.min.js"></script>
 <script type="text/javascript" src="libs/slick.min.js"></script>

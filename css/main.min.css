@@ -544,7 +544,7 @@ body.compensate-for-scrollbar {
   overflow-y: auto;
 }
 .fancybox-bg {
-  background: #1e1e1e;
+  background: #0B3E6A;
   opacity: 0;
   -webkit-transition-duration: inherit;
   -o-transition-duration: inherit;
@@ -557,7 +557,7 @@ body.compensate-for-scrollbar {
   transition-timing-function: cubic-bezier(0.47, 0, 0.74, 0.71);
 }
 .fancybox-is-open .fancybox-bg {
-  opacity: .9;
+  opacity: .94;
   -webkit-transition-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
   -o-transition-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
   transition-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
@@ -897,10 +897,12 @@ body.compensate-for-scrollbar {
   opacity: 1;
 }
 .fancybox-slide--html .fancybox-close-small {
-  color: currentColor;
+  color: #00A0D2;
   padding: 10px;
-  right: 0;
-  top: 0;
+  right: 33px;
+  top: 33px;
+  background: #F5F5F5;
+  border-radius: 50%;
 }
 .fancybox-slide--image.fancybox-is-scaling .fancybox-content {
   overflow: hidden;
@@ -3195,7 +3197,7 @@ textarea.textarea:not(.browser-default).invalid {
   width: 22px;
   height: 22px;
   z-index: 0;
-  margin-top: 3px;
+  margin-top: -1px;
   -webkit-transition: .2s;
   -o-transition: .2s;
   transition: .2s;
@@ -3210,7 +3212,7 @@ textarea.textarea:not(.browser-default).invalid {
   width: 10px;
   height: 10px;
   z-index: 0;
-  margin-top: 9px;
+  margin-top: 5px;
   margin-left: 6px;
   -webkit-transition: .2s;
   -o-transition: .2s;
@@ -3601,6 +3603,44 @@ h1,
 }
 .icon-vk {
   background-image: url("data:image/svg+xml,%3Csvg%20width%3D%2230%22%20height%3D%2230%22%20viewBox%3D%220%200%2030%2030%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M15%200C6.71573%200%200%206.71573%200%2015C0%2023.2843%206.71573%2030%2015%2030C23.2843%2030%2030%2023.2843%2030%2015C30%206.71573%2023.2843%200%2015%200ZM16.2213%2019.7351C16.0734%2019.8911%2015.7847%2019.9226%2015.7847%2019.9226H14.8284C14.8284%2019.9226%2012.7186%2020.047%2010.86%2018.1481C8.83318%2016.0764%207.04346%2011.966%207.04346%2011.966C7.04346%2011.966%206.94016%2011.6963%207.05207%2011.5665C7.17806%2011.4198%207.52161%2011.4106%207.52161%2011.4106L9.80747%2011.396C9.80747%2011.396%2010.0227%2011.4306%2010.1768%2011.5419C10.3044%2011.6341%2010.3756%2011.8054%2010.3756%2011.8054C10.3756%2011.8054%2010.745%2012.7226%2011.2341%2013.5522C12.1896%2015.1723%2012.6341%2015.5264%2012.9581%2015.3528C13.4307%2015.1%2013.2891%2013.0629%2013.2891%2013.0629C13.2891%2013.0629%2013.2977%2012.3239%2013.0512%2011.9944C12.8602%2011.7394%2012.5003%2011.6648%2012.3414%2011.6441C12.2123%2011.6272%2012.4236%2011.3338%2012.6975%2011.2024C13.1091%2011.005%2013.8353%2010.9935%2014.6938%2011.0019C15.3629%2011.0088%2015.5554%2011.0495%2015.8167%2011.1118C16.4234%2011.2555%2016.4044%2011.716%2016.3636%2012.7098C16.3513%2013.007%2016.3372%2013.352%2016.3372%2013.7504C16.3372%2013.8399%2016.3345%2013.9354%2016.3318%2014.0335C16.3176%2014.5427%2016.3013%2015.1258%2016.6431%2015.3428C16.8184%2015.4534%2017.2465%2015.3589%2018.3178%2013.5737C18.8257%2012.7272%2019.206%2011.7324%2019.206%2011.7324C19.206%2011.7324%2019.2898%2011.555%2019.4189%2011.4789C19.5511%2011.4014%2019.7296%2011.4252%2019.7296%2011.4252L22.1351%2011.4106C22.1351%2011.4106%2022.8582%2011.3253%2022.9748%2011.6464C23.0977%2011.9821%2022.7048%2012.7672%2021.722%2014.053C20.7896%2015.2732%2020.3359%2015.7224%2020.3775%2016.1197C20.4079%2016.41%2020.7029%2016.6726%2021.2688%2017.1879C22.4504%2018.2647%2022.767%2018.8312%2022.8431%2018.9673C22.8494%2018.9786%2022.8541%2018.9869%2022.8574%2018.9923C23.3872%2019.855%2022.2697%2019.9226%2022.2697%2019.9226L20.1326%2019.9517C20.1326%2019.9517%2019.674%2020.0408%2019.0699%2019.6337C18.7534%2019.4206%2018.4441%2019.0726%2018.1496%2018.7411C17.6998%2018.2349%2017.2842%2017.7672%2016.9296%2017.8777C16.334%2018.0636%2016.352%2019.3226%2016.352%2019.3226C16.352%2019.3226%2016.3567%2019.5922%2016.2213%2019.7351Z%22%20fill%3D%22%234C6C91%22%2F%3E%0A%3C%2Fsvg%3E%0A");
+}
+.popup {
+  text-align: center;
+}
+.popup__title {
+  font-weight: 500;
+  line-height: 54px;
+  font-size: 37px;
+  text-align: center;
+  letter-spacing: -0.02em;
+  color: #000000;
+  margin-bottom: 21px;
+}
+.popup__subtitle {
+  font-weight: normal;
+  line-height: 26px;
+  font-size: 18px;
+  text-align: center;
+  letter-spacing: -0.02em;
+  margin-bottom: 55px;
+  max-width: 460px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.popup__form {
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.popup__input-group {
+  margin-bottom: 15px;
+}
+.popup__checkbox {
+  margin-top: 32px;
+}
+.popup__btn {
+  width: 100%;
+  margin-top: 24px;
 }
 .nowrap {
   white-space: nowrap;
@@ -8024,15 +8064,15 @@ h1,
 .booking-form__checkbox-1 {
   margin-bottom: 40px;
 }
+.booking-form__checkbox-1 [type="checkbox"] + span:not(.lever):before {
+  margin-top: 3px;
+}
+.booking-form__checkbox-1 [type="checkbox"] + span:not(.lever):after {
+  margin-top: 9px;
+}
 .booking-form__checkbox-2 {
   margin-bottom: 26px;
   margin-top: 14px;
-}
-.booking-form__checkbox-2 [type="checkbox"] + span:not(.lever):before {
-  margin-top: 0;
-}
-.booking-form__checkbox-2 [type="checkbox"] + span:not(.lever):after {
-  margin-top: 6px;
 }
 .booking-form__btn {
   width: 100%;
