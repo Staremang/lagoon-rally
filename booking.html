@@ -14,7 +14,7 @@
 </head>
 <body>
 <div class="wrapper">
-    <header class="header">
+    <header class="header" data-fixed="true">
         <div class="container header__container">
 
             <button class="header__open-menu" id="open-menu"></button>
@@ -50,7 +50,7 @@
                 <div class="booking-info">
                     <div class="booking-info__name">Amalia II</div>
                     <div class="booking-info__description">Lagoon 40 - 4 + 2 cab</div>
-                    <a href="#" class="booking-info__link">Выбрать другой катамаран</a>
+                    <a href="#set-seat" data-fancybox="" class="booking-info__link">Выбрать другой катамаран</a>
                     <div class="booking-info__row">
                         <div class="booking-info__col">
                             <div class="booking-info__title">Год выпуска</div>
@@ -84,10 +84,10 @@
                         <img src="images/booking-gallery-2.jpg" alt="">
                     </div>
                 </div>
-                <!--<button class="" data-collapse="button" data-target="#info-1">-->
-                    <!--<span class="">Фото и доп. информация</span>-->
-                <!--</button>-->
-                <div class="booking-included" id="info-1">
+                <button class="booking-page-button" data-collapse="button" data-target="#info-1">
+                    <span class="">Фото и доп. информация</span>
+                </button>
+                <div class="booking-included" id="info-1" data-collapse="body">
                     <div class="booking-included__wrapper">
                         <h3>В стоимость аренды катамарана входит:</h3>
                         <ul>
@@ -186,7 +186,7 @@
                     <div class="booking-form">
                         <h3 class="booking-form__title">К оплате</h3>
                         <div class="for-pay">
-                            <div class="for-pay__name">Аренда катамарана (50% стоимости)</div>
+                            <div class="for-pay__name">Аренда катамарана <span class="nowrap">(50% стоимости)</span></div>
                             <div class="for-pay__price">300 000 ₽</div>
                         </div>
                         <div class="booking-form__checkbox-1">
@@ -228,8 +228,9 @@
                                 чтобы ответить на все оставшиеся вопросы
                             </div>
                         </div>
-                        <button class="booking-form__btn btn-orange btn-orange_border" data-fancybox data-src="#call-me">подать заявку
-                            на обратный звонок
+                        <button class="booking-form__btn btn-orange btn-orange_border" data-fancybox data-src="#call-me">
+                            подать заявку
+                            <span class="nowrap">на обратный звонок</span>
                         </button>
                     </div>
                 </div>
@@ -257,7 +258,7 @@
     </div>
 </footer>
 
-<div id="call-me" class="popup">
+<div id="call-me" class="popup" style="display: none">
     <h2 class="popup__title">Пока не приняли решение?</h2>
     <div class="popup__subtitle">Оставьте заявку на звонок и мы перезвоним вам, чтобы ответить на все оставшиеся вопросы</div>
     <div class="popup__form">
@@ -279,6 +280,294 @@
     </div>
 </div>
 
+<div id="set-seat" class="booking-set-seat" style="display: none">
+    <h2 class="booking-set-seat__title">Выберите катамаран или отдельную каюту</h2>
+    <div class="booking-ships">
+        <div class="booking-ships__item">
+            <div class="booking-ships__name">Vicki</div>
+            <div class="booking-ships__catamaran">
+                <svg width="179" height="107" viewBox="0 0 179 107" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path data-target="#seat-2-1" class="booking-ships__position" fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M84.4149 106.385C110.076 105.725 127.553 103.732 142.173 101.175V82.2797L109.684 79.5029H84.4149V106.385Z"/>
+                    <path data-target="#seat-2-1" class="booking-ships__position booking-ships__position_free"
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M82.1934 79.5029H29.9894V104.954C42.5293 106.224 58.2198 106.961 81.6381 106.438C81.8236 106.434 82.0087 106.43 82.1934 106.425V79.5029Z"/>
+                    <path data-target="#seat-2-1" class="booking-ships__position booking-ships__position_free"
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M84.4149 27.2993H109.128L142.173 24.5225V5.62714C127.553 3.0694 110.076 1.07654 84.4149 0.416992V27.2993Z"/>
+                    <path data-target="#seat-2-1" class="booking-ships__position booking-ships__position_free"
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M82.1934 0.375862C82.0087 0.371585 81.8236 0.367376 81.6381 0.363236C58.2198 -0.159585 42.5293 0.577462 29.9894 1.84764V27.2988H82.1934V0.375862Z"/>
+                </svg>
+            </div>
+            <div class="booking-ships__free">Свободно: <b>3 из 4</b> кают</div>
+        </div>
+        <div class="booking-ships__item">
+            <div class="booking-ships__name">Wonderland, Done</div>
+            <div class="booking-ships__catamaran">
+                <svg width="179" height="107" viewBox="0 0 179 107" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path data-target="#seat-2-1" class="booking-ships__position" fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M84.4149 106.385C110.076 105.725 127.553 103.732 142.173 101.175V82.2797L109.684 79.5029H84.4149V106.385Z"/>
+                    <path data-target="#seat-2-1" class="booking-ships__position booking-ships__position_free"
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M82.1934 79.5029H29.9894V104.954C42.5293 106.224 58.2198 106.961 81.6381 106.438C81.8236 106.434 82.0087 106.43 82.1934 106.425V79.5029Z"/>
+                    <path data-target="#seat-2-1" class="booking-ships__position booking-ships__position_free"
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M84.4149 27.2993H109.128L142.173 24.5225V5.62714C127.553 3.0694 110.076 1.07654 84.4149 0.416992V27.2993Z"/>
+                    <path data-target="#seat-2-1" class="booking-ships__position booking-ships__position_free"
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M82.1934 0.375862C82.0087 0.371585 81.8236 0.367376 81.6381 0.363236C58.2198 -0.159585 42.5293 0.577462 29.9894 1.84764V27.2988H82.1934V0.375862Z"/>
+                </svg>
+            </div>
+            <div class="booking-ships__free">Свободно: <b>3 из 4</b> кают</div>
+
+        </div>
+        <div class="booking-ships__item">
+            <div class="booking-ships__name">Amalia II</div>
+            <div class="booking-ships__catamaran">
+                <svg width="179" height="107" viewBox="0 0 179 107" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path data-target="#seat-2-1" class="booking-ships__position" fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M84.4149 106.385C110.076 105.725 127.553 103.732 142.173 101.175V82.2797L109.684 79.5029H84.4149V106.385Z"/>
+                    <path data-target="#seat-2-1" class="booking-ships__position booking-ships__position_free"
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M82.1934 79.5029H29.9894V104.954C42.5293 106.224 58.2198 106.961 81.6381 106.438C81.8236 106.434 82.0087 106.43 82.1934 106.425V79.5029Z"/>
+                    <path data-target="#seat-2-1" class="booking-ships__position booking-ships__position_free"
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M84.4149 27.2993H109.128L142.173 24.5225V5.62714C127.553 3.0694 110.076 1.07654 84.4149 0.416992V27.2993Z"/>
+                    <path data-target="#seat-2-1" class="booking-ships__position booking-ships__position_free"
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M82.1934 0.375862C82.0087 0.371585 81.8236 0.367376 81.6381 0.363236C58.2198 -0.159585 42.5293 0.577462 29.9894 1.84764V27.2988H82.1934V0.375862Z"/>
+                </svg>
+            </div>
+            <div class="booking-ships__free">Свободно: <b>3 из 4</b> кают</div>
+        </div>
+        <div class="booking-ships__item">
+            <div class="booking-ships__name">Macawi</div>
+            <div class="booking-ships__catamaran">
+                <svg width="179" height="107" viewBox="0 0 179 107" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path data-target="#seat-2-1" class="booking-ships__position" fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M84.4149 106.385C110.076 105.725 127.553 103.732 142.173 101.175V82.2797L109.684 79.5029H84.4149V106.385Z"/>
+                    <path data-target="#seat-2-1" class="booking-ships__position booking-ships__position_free"
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M82.1934 79.5029H29.9894V104.954C42.5293 106.224 58.2198 106.961 81.6381 106.438C81.8236 106.434 82.0087 106.43 82.1934 106.425V79.5029Z"/>
+                    <path data-target="#seat-2-1" class="booking-ships__position booking-ships__position_free"
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M84.4149 27.2993H109.128L142.173 24.5225V5.62714C127.553 3.0694 110.076 1.07654 84.4149 0.416992V27.2993Z"/>
+                    <path data-target="#seat-2-1" class="booking-ships__position booking-ships__position_free"
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M82.1934 0.375862C82.0087 0.371585 81.8236 0.367376 81.6381 0.363236C58.2198 -0.159585 42.5293 0.577462 29.9894 1.84764V27.2988H82.1934V0.375862Z"/>
+                </svg>
+            </div>
+            <div class="booking-ships__free">Свободно: <b>3 из 4</b> кают</div>
+        </div>
+        <div class="booking-ships__item">
+            <div class="booking-ships__name">Blondie II</div>
+            <div class="booking-ships__catamaran">
+                <svg width="179" height="107" viewBox="0 0 179 107" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path data-target="#seat-2-1" class="booking-ships__position" fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M84.4149 106.385C110.076 105.725 127.553 103.732 142.173 101.175V82.2797L109.684 79.5029H84.4149V106.385Z"/>
+                    <path data-target="#seat-2-1" class="booking-ships__position booking-ships__position_free"
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M82.1934 79.5029H29.9894V104.954C42.5293 106.224 58.2198 106.961 81.6381 106.438C81.8236 106.434 82.0087 106.43 82.1934 106.425V79.5029Z"/>
+                    <path data-target="#seat-2-1" class="booking-ships__position booking-ships__position_free"
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M84.4149 27.2993H109.128L142.173 24.5225V5.62714C127.553 3.0694 110.076 1.07654 84.4149 0.416992V27.2993Z"/>
+                    <path data-target="#seat-2-1" class="booking-ships__position booking-ships__position_free"
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M82.1934 0.375862C82.0087 0.371585 81.8236 0.367376 81.6381 0.363236C58.2198 -0.159585 42.5293 0.577462 29.9894 1.84764V27.2988H82.1934V0.375862Z"/>
+                </svg>
+            </div>
+            <div class="booking-ships__free">Свободно: <b>3 из 4</b> кают</div>
+        </div>
+        <div class="booking-ships__item">
+            <div class="booking-ships__name">Vicki</div>
+            <div class="booking-ships__catamaran">
+                <svg width="179" height="107" viewBox="0 0 179 107" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path data-target="#seat-2-1" class="booking-ships__position" fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M84.4149 106.385C110.076 105.725 127.553 103.732 142.173 101.175V82.2797L109.684 79.5029H84.4149V106.385Z"/>
+                    <path data-target="#seat-2-1" class="booking-ships__position booking-ships__position_free"
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M82.1934 79.5029H29.9894V104.954C42.5293 106.224 58.2198 106.961 81.6381 106.438C81.8236 106.434 82.0087 106.43 82.1934 106.425V79.5029Z"/>
+                    <path data-target="#seat-2-1" class="booking-ships__position booking-ships__position_free"
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M84.4149 27.2993H109.128L142.173 24.5225V5.62714C127.553 3.0694 110.076 1.07654 84.4149 0.416992V27.2993Z"/>
+                    <path data-target="#seat-2-1" class="booking-ships__position booking-ships__position_free"
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M82.1934 0.375862C82.0087 0.371585 81.8236 0.367376 81.6381 0.363236C58.2198 -0.159585 42.5293 0.577462 29.9894 1.84764V27.2988H82.1934V0.375862Z"/>
+                </svg>
+            </div>
+            <div class="booking-ships__free">Свободно: <b>3 из 4</b> кают</div>
+        </div>
+        <div class="booking-ships__item">
+            <div class="booking-ships__name">Vicki</div>
+            <div class="booking-ships__catamaran">
+                <svg width="179" height="107" viewBox="0 0 179 107" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path data-target="#seat-2-1" class="booking-ships__position" fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M84.4149 106.385C110.076 105.725 127.553 103.732 142.173 101.175V82.2797L109.684 79.5029H84.4149V106.385Z"/>
+                    <path data-target="#seat-2-1" class="booking-ships__position booking-ships__position_free"
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M82.1934 79.5029H29.9894V104.954C42.5293 106.224 58.2198 106.961 81.6381 106.438C81.8236 106.434 82.0087 106.43 82.1934 106.425V79.5029Z"/>
+                    <path data-target="#seat-2-1" class="booking-ships__position booking-ships__position_free"
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M84.4149 27.2993H109.128L142.173 24.5225V5.62714C127.553 3.0694 110.076 1.07654 84.4149 0.416992V27.2993Z"/>
+                    <path data-target="#seat-2-1" class="booking-ships__position booking-ships__position_free"
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M82.1934 0.375862C82.0087 0.371585 81.8236 0.367376 81.6381 0.363236C58.2198 -0.159585 42.5293 0.577462 29.9894 1.84764V27.2988H82.1934V0.375862Z"/>
+                </svg>
+            </div>
+            <div class="booking-ships__free">Свободно: <b>3 из 4</b> кают</div>
+        </div>
+        <div class="booking-ships__item">
+            <div class="booking-ships__name">Vicki</div>
+            <div class="booking-ships__catamaran">
+                <svg width="179" height="107" viewBox="0 0 179 107" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path data-target="#seat-2-1" class="booking-ships__position" fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M84.4149 106.385C110.076 105.725 127.553 103.732 142.173 101.175V82.2797L109.684 79.5029H84.4149V106.385Z"/>
+                    <path data-target="#seat-2-1" class="booking-ships__position booking-ships__position_free"
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M82.1934 79.5029H29.9894V104.954C42.5293 106.224 58.2198 106.961 81.6381 106.438C81.8236 106.434 82.0087 106.43 82.1934 106.425V79.5029Z"/>
+                    <path data-target="#seat-2-1" class="booking-ships__position booking-ships__position_free"
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M84.4149 27.2993H109.128L142.173 24.5225V5.62714C127.553 3.0694 110.076 1.07654 84.4149 0.416992V27.2993Z"/>
+                    <path data-target="#seat-2-1" class="booking-ships__position booking-ships__position_free"
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M82.1934 0.375862C82.0087 0.371585 81.8236 0.367376 81.6381 0.363236C58.2198 -0.159585 42.5293 0.577462 29.9894 1.84764V27.2988H82.1934V0.375862Z"/>
+                </svg>
+            </div>
+            <div class="booking-ships__free">Свободно: <b>3 из 4</b> кают</div>
+        </div>
+        <div class="booking-ships__item">
+            <div class="booking-ships__name">Vicki</div>
+            <div class="booking-ships__catamaran">
+                <svg width="179" height="107" viewBox="0 0 179 107" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path data-target="#seat-2-1" class="booking-ships__position" fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M84.4149 106.385C110.076 105.725 127.553 103.732 142.173 101.175V82.2797L109.684 79.5029H84.4149V106.385Z"/>
+                    <path data-target="#seat-2-1" class="booking-ships__position booking-ships__position_free"
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M82.1934 79.5029H29.9894V104.954C42.5293 106.224 58.2198 106.961 81.6381 106.438C81.8236 106.434 82.0087 106.43 82.1934 106.425V79.5029Z"/>
+                    <path data-target="#seat-2-1" class="booking-ships__position booking-ships__position_free"
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M84.4149 27.2993H109.128L142.173 24.5225V5.62714C127.553 3.0694 110.076 1.07654 84.4149 0.416992V27.2993Z"/>
+                    <path data-target="#seat-2-1" class="booking-ships__position booking-ships__position_free"
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M82.1934 0.375862C82.0087 0.371585 81.8236 0.367376 81.6381 0.363236C58.2198 -0.159585 42.5293 0.577462 29.9894 1.84764V27.2988H82.1934V0.375862Z"/>
+                </svg>
+            </div>
+            <div class="booking-ships__free">Свободно: <b>3 из 4</b> кают</div>
+        </div>
+        <div class="booking-ships__item">
+            <div class="booking-ships__name">Vicki</div>
+            <div class="booking-ships__catamaran">
+                <svg width="179" height="107" viewBox="0 0 179 107" fill="none"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path data-target="#seat-2-1" class="booking-ships__position" fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M84.4149 106.385C110.076 105.725 127.553 103.732 142.173 101.175V82.2797L109.684 79.5029H84.4149V106.385Z"/>
+                    <path data-target="#seat-2-1" class="booking-ships__position booking-ships__position_free"
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M82.1934 79.5029H29.9894V104.954C42.5293 106.224 58.2198 106.961 81.6381 106.438C81.8236 106.434 82.0087 106.43 82.1934 106.425V79.5029Z"/>
+                    <path data-target="#seat-2-1" class="booking-ships__position booking-ships__position_free"
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M84.4149 27.2993H109.128L142.173 24.5225V5.62714C127.553 3.0694 110.076 1.07654 84.4149 0.416992V27.2993Z"/>
+                    <path data-target="#seat-2-1" class="booking-ships__position booking-ships__position_free"
+                          fill-rule="evenodd"
+                          clip-rule="evenodd"
+                          d="M82.1934 0.375862C82.0087 0.371585 81.8236 0.367376 81.6381 0.363236C58.2198 -0.159585 42.5293 0.577462 29.9894 1.84764V27.2988H82.1934V0.375862Z"/>
+                </svg>
+            </div>
+            <div class="booking-ships__free">Свободно: <b>3 из 4</b> кают</div>
+        </div>
+    </div>
+
+</div>
+
+<div class="booking-pop-up">
+    <div class="booking-seat-info" id="seat-2-1">
+        <div class="booking-seat-info__title">Amalia II</div>
+        <div class="booking-seat-info__subtitle">Lagoon 40 - 4 + 2 cab</div>
+        <div class="booking-seat-info__date">
+            <div class="booking-seat-info__date-title">Год выпуска</div>
+            <div class="booking-seat-info__date-val">2019</div>
+        </div>
+        <div class="booking-seat-info__body">
+            <div class="booking-seat-info__gallery">
+                <img src="images/seat-1.jpg" alt="">
+                <img src="images/seat-1.jpg" alt="">
+                <img src="images/seat-1.jpg" alt="">
+                <img src="images/seat-1.jpg" alt="">
+            </div>
+            <div class="booking-seat-info__info">
+                <div class="booking-seat-info__info-title">Площадь</div>
+                <div class="booking-seat-info__info-val">12 м<sup>2</sup></div>
+                <div class="booking-seat-info__info-title">Вместимость</div>
+                <div class="booking-seat-info__info-val">2 <span class="f-13">человека</span></div>
+                <div class="booking-seat-info__info-title">Стоимость</div>
+                <div class="booking-seat-info__info-val"><span class="f-21">200 000 ₽</span></div>
+            </div>
+            <ul class="booking-seat-info__list">
+                <li class="booking-seat-info__list-item">Двуспальная кровать</li>
+                <li class="booking-seat-info__list-item">Шкафы для хранения</li>
+                <li class="booking-seat-info__list-item">Палубный люк и иллюминаторы</li>
+                <li class="booking-seat-info__list-item">Лампы освещения</li>
+                <li class="booking-seat-info__list-item">Санузел в каюте</li>
+                <li class="booking-seat-info__list-item">Общая кухня</li>
+                <li class="booking-seat-info__list-item">Кухонные приборы</li>
+            </ul>
+        </div>
+        <div class="booking-seat-info__buttons">
+            <button class="btn-orange">Забронировать каюту</button>
+            <button class="btn-orange btn-orange_border">Забронировать весь катамаран</button>
+        </div>
+    </div>
+    <!-- ... -->
+</div>
 <script type="text/javascript" src="libs/jquery-3.3.1.min.js"></script>
 <script type="text/javascript" src="libs/slick.min.js"></script>
 <script type="text/javascript" src="libs/jquery.fancybox.min.js"></script>

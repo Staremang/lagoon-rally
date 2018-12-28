@@ -120,32 +120,25 @@ h1, .h1 {
 
 .popup {
   text-align: center;
+  padding-left: 20px;
+  padding-right: 20px;
+  letter-spacing: -0.02em;
   &__title {
-
     font-weight: 500;
-    line-height: 54px;
-    font-size: 37px;
-    text-align: center;
-    letter-spacing: -0.02em;
+    margin-top: 0;
 
-    color: #000000;
-
-    margin-bottom: 21px;
-
+    margin-bottom: 18px;
+    line-height: 27px;
+    font-size: 20px;
   }
   &__subtitle {
-
-    font-weight: normal;
-    line-height: 26px;
-    font-size: 18px;
-    text-align: center;
-    letter-spacing: -0.02em;
-
-    margin-bottom: 55px;
-
     max-width: 460px;
     margin-left: auto;
     margin-right: auto;
+
+    margin-bottom: 25px;
+    line-height: 20px;
+    font-size: 14px;
   }
   &__form {
     max-width: 400px;
@@ -156,12 +149,32 @@ h1, .h1 {
     margin-bottom: 15px;
   }
   &__checkbox {
-    margin-top: 32px;
+    margin-top: 26px;
+    text-align: left;
     //margin-bottom: 24px;
   }
   &__btn {
     width: 100%;
     margin-top: 24px;
+  }
+
+  @media all and (min-width: @width-md) {
+    padding-left: 100px;
+    padding-right: 100px;
+    &__title {
+      line-height: 54px;
+      font-size: 37px;
+      margin-bottom: 21px;
+    }
+    &__subtitle {
+      line-height: 26px;
+      font-size: 18px;
+      margin-bottom: 55px;
+    }
+    &__checkbox {
+      margin-top: 32px;
+    }
+
   }
 }
 
@@ -194,6 +207,10 @@ h1, .h1 {
 
   &_faq {
     background-image: url("../img/faq-hero-bg.jpg");
+    background-position: center;
+  }
+  &_booking {
+    background-image: url("../img/booking-bg-mobile.jpg");
     background-position: center;
   }
   &__title {
@@ -265,6 +282,9 @@ h1, .h1 {
     text-align: left;
     height: 580px;
 
+    &_booking {
+      background-image: url("../img/booking-bg.jpg");
+    }
     &__title {
       line-height: 81px;
       font-size: 70px;
@@ -2883,6 +2903,10 @@ h1, .h1 {
     text-align: center;
     padding: 0 20px;
     outline: none;
+
+
+    //background: #F7F7F7;
+    //border-radius: 9px;
   }
   &__name {
     font-weight: 500;
@@ -3921,7 +3945,7 @@ h1, .h1 {
   box-shadow: 0px 20px 34px rgba(0, 0, 0, 0.1);
   width: 688px;
   //height: 451px;
-  z-index: 999;
+  z-index: 99999;
   position: absolute;
   left: 598px;
   top: 10662px;
@@ -4062,5 +4086,9 @@ h1, .h1 {
   &__buttons {
     display: flex;
     justify-content: space-between;
+    .btn-orange_border {
+      flex: 1 1;
+      margin-left: 10px;
+    }
   }
 }
