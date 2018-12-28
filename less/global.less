@@ -166,11 +166,13 @@ h1, .h1 {
       font-size: 37px;
       margin-bottom: 21px;
     }
+
     &__subtitle {
       line-height: 26px;
       font-size: 18px;
       margin-bottom: 55px;
     }
+
     &__checkbox {
       margin-top: 32px;
     }
@@ -265,11 +267,13 @@ h1, .h1 {
     &_faq {
       background-position: left bottom;
     }
+
     &__title {
       font-weight: 500;
       line-height: 58px;
       font-size: 50px;
     }
+
     &__description {
       line-height: 23px;
       font-size: 16px;
@@ -285,10 +289,12 @@ h1, .h1 {
     &_booking {
       background-image: url("../img/booking-bg.jpg");
     }
+
     &__title {
       line-height: 81px;
       font-size: 70px;
     }
+
     &__description {
       line-height: 34px;
       font-size: 20px;
@@ -297,9 +303,6 @@ h1, .h1 {
     }
   }
 }
-
-
-
 
 .special-offer-mobile {
   text-decoration: none;
@@ -763,9 +766,8 @@ h1, .h1 {
   width: 1440px;
   height: 2010px;
   position: absolute;
-  top: -324px;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 0;
+  left: 0;
   //position: relative;
   &__map {
     position: absolute;
@@ -809,13 +811,14 @@ h1, .h1 {
       }
       .map__island {
         //filter: url(#filter0_d);
+        filter: url(#dropshadow);
         stroke: #00A0D2;
         stroke-width: 2px;
       }
     }
   }
   &__days {
-    //display: none;
+    display: none;
 
     position: absolute;
     width: 683px;
@@ -870,6 +873,18 @@ h1, .h1 {
       left: 32.4%;
     }
 
+  }
+  @media all and (min-width: @width-md) {
+    top: -654px;
+    left: 72%;
+    transform: translateX(-50%);
+    &__days {
+      display: block;
+    }
+  }
+  @media all and (min-width: @width-lg) {
+    top: -324px;
+    left: 50%;
   }
 }
 
@@ -979,6 +994,16 @@ h1, .h1 {
     font-size: 14px;
     position: relative;
   }
+  @media all and (min-width: @width-md) {
+    padding-left: 330px;
+    &__title {
+      max-width: 300px;
+    }
+
+    &__subtitle {
+      max-width: 300px;
+    }
+  }
   @media all and (min-width: @width-lg) {
     padding-top: 56px;
     padding-left: 404px;
@@ -1084,7 +1109,11 @@ h1, .h1 {
     }
   }
 
+  @media all and (min-width: @width-md) {
+    margin-top: 650px;
+  }
   @media all and (min-width: @width-lg) {
+    margin-top: 0;
     max-width: 390px;
     margin-left: auto;
     &__header-top {
@@ -1297,6 +1326,7 @@ h1, .h1 {
         bottom: 17px;
       }
     }
+
     &__title {
       line-height: 22px;
       font-size: 16px;
@@ -1939,10 +1969,12 @@ h1, .h1 {
       line-height: normal;
       font-size: 22px;
     }
+
     &__icon {
       width: 30px;
       height: 22px;
     }
+
     &__content {
       margin-left: 15px;
     }
@@ -2545,6 +2577,7 @@ h1, .h1 {
       height: 96px;
       margin-left: -300px;
     }
+
     &__bird-2 {
       background-image: url("../img/bird-2-d.png");
       top: 158px;
@@ -2552,9 +2585,11 @@ h1, .h1 {
       height: 128px;
       margin-left: 160px;
     }
+
     &__bird-3 {
       margin-left: -180px;
     }
+
     &__view {
       width: 788px;
       height: 788px;
@@ -2577,12 +2612,14 @@ h1, .h1 {
       top: -200px;
       margin-left: -570px;
     }
+
     &__bird-2 {
       width: 210px;
       height: 169px;
       top: -362px;
       margin-left: 380px;
     }
+
     &__bird-3 {
       width: 102px+10;
       height: 85px+10;
@@ -2837,6 +2874,7 @@ h1, .h1 {
     &__content {
       max-width: none;
     }
+
     &__arrow {
       position: relative;
       top: auto;
@@ -2852,13 +2890,16 @@ h1, .h1 {
       line-height: normal;
       font-size: 22px;
     }
+
     &__icon {
       width: 33px;
       height: 31px;
     }
+
     &__content {
       margin-left: 12px;
     }
+
     &__arrow {
       width: 22px;
       height: 12px;
@@ -2903,7 +2944,6 @@ h1, .h1 {
     text-align: center;
     padding: 0 20px;
     outline: none;
-
 
     //background: #F7F7F7;
     //border-radius: 9px;
@@ -3171,11 +3211,13 @@ h1, .h1 {
       flex-wrap: wrap;
       justify-content: space-between;
     }
+
     &__description {
       line-height: 26px;
       font-size: 15px;
       max-width: 510px;
     }
+
     &__logo {
       margin-top: 13px;
       margin-bottom: 16px;
@@ -3937,9 +3979,6 @@ h1, .h1 {
   }
 }
 
-
-
-
 .booking-pop-up {
   background: #FFFFFF;
   box-shadow: 0px 20px 34px rgba(0, 0, 0, 0.1);
@@ -3974,6 +4013,7 @@ h1, .h1 {
     bottom: -15px;
   }
 }
+
 .booking-seat-info {
   position: relative;
   padding: 18px 24px 30px;

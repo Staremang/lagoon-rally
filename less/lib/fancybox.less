@@ -419,10 +419,15 @@ body.compensate-for-scrollbar {
   //color: currentColor;
   color: #00A0D2;
   padding: 10px;
-  right: 33px;
-  top: 33px;
+  right: 10px;
+  top: 10px;
   background: #F5F5F5;
   border-radius: 50%;
+
+  @media all and (min-width: @width-lg) {
+    right: 33px;
+    top: 33px;
+  }
 }
 
 .fancybox-slide--image.fancybox-is-scaling .fancybox-content {

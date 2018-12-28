@@ -899,10 +899,16 @@ body.compensate-for-scrollbar {
 .fancybox-slide--html .fancybox-close-small {
   color: #00A0D2;
   padding: 10px;
-  right: 33px;
-  top: 33px;
+  right: 10px;
+  top: 10px;
   background: #F5F5F5;
   border-radius: 50%;
+}
+@media all and (min-width: 992px) {
+  .fancybox-slide--html .fancybox-close-small {
+    right: 33px;
+    top: 33px;
+  }
 }
 .fancybox-slide--image.fancybox-is-scaling .fancybox-content {
   overflow: hidden;
@@ -4234,11 +4240,8 @@ h1,
   width: 1440px;
   height: 2010px;
   position: absolute;
-  top: -324px;
-  left: 50%;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%);
+  top: 0;
+  left: 0;
 }
 .map__map {
   position: absolute;
@@ -4274,10 +4277,13 @@ h1,
   fill: #00A0D2;
 }
 .map__area.active .map__island {
+  -webkit-filter: url(#dropshadow);
+  filter: url(#dropshadow);
   stroke: #00A0D2;
   stroke-width: 2px;
 }
 .map__days {
+  display: none;
   position: absolute;
   width: 683px;
   height: 650px;
@@ -4324,6 +4330,24 @@ h1,
 .map__day_7 {
   top: 0;
   left: 32.4%;
+}
+@media all and (min-width: 768px) {
+  .map {
+    top: -654px;
+    left: 72%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+  }
+  .map__days {
+    display: block;
+  }
+}
+@media all and (min-width: 992px) {
+  .map {
+    top: -324px;
+    left: 50%;
+  }
 }
 .map-point__text {
   fill: black;
@@ -4417,6 +4441,17 @@ h1,
   line-height: 22px;
   font-size: 14px;
   position: relative;
+}
+@media all and (min-width: 768px) {
+  .route-text {
+    padding-left: 330px;
+  }
+  .route-text__title {
+    max-width: 300px;
+  }
+  .route-text__subtitle {
+    max-width: 300px;
+  }
 }
 @media all and (min-width: 992px) {
   .route-text {
@@ -4522,8 +4557,14 @@ h1,
     margin-right: 0;
   }
 }
+@media all and (min-width: 768px) {
+  .route-point-info {
+    margin-top: 650px;
+  }
+}
 @media all and (min-width: 992px) {
   .route-point-info {
+    margin-top: 0;
     max-width: 390px;
     margin-left: auto;
   }

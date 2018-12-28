@@ -661,6 +661,8 @@ $('[data-day-link]').on('click', function (e) {
     $('[data-day]').removeClass('active');
     $('[data-day=' + day + ']').addClass('active');
 
+    $('.map__area').removeClass('active');
+    $('.day-' + day).addClass('active');
 
 });
 
