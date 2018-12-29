@@ -5,6 +5,121 @@ var widthPoint = {
     xl: 1230
 };
 
+/**
+ * anchor.js - jQuery Plugin
+ * Jump to a specific section smoothly
+ *
+ * @dependencies    jQuery v1.5.0 http://jquery.com
+ * @author            Cornel Boppart <cornel@bopp-art.com>
+ * @copyright        Author
+
+ * @version        1.0.5 (02/11/2014)
+ */
+
+;
+(function ($) {
+
+    window.anchor = {
+
+        /**
+         * Default settings
+         *
+         */
+        settings: {
+            transitionDuration: 2000,
+            transitionTimingFunction: 'swing',
+            labels: {
+                error: 'Couldn\'t find any section'
+            }
+        },
+
+        /**
+         * Initializes the plugin
+         *
+         * @param    {object}    options    The plugin options (Merged with default settings)
+         * @return    {object}    this    The current element itself
+         */
+        init: function (options) {
+            // Apply merged settings to the current object
+            $(this).data('settings', $.extend(anchor.settings, options));
+
+            return this.each(function () {
+                var $this = $(this);
+
+                $this.unbind('click').click(function (event) {
+                    event.preventDefault();
+                    anchor.jumpTo(
+                        anchor.getTopOffsetPosition($this),
+                        $this.data('settings')
+                    );
+                });
+            });
+        },
+
+        /**
+         * Gets the top offset position
+         *
+         * @param    {object}    $object                The root object to get sections position from
+         * @return    {int}        topOffsetPosition    The top offset position
+         */
+        getTopOffsetPosition: function ($object) {
+            var href = $object.attr('href'),
+                $section = $($(href).get(0)),
+                documentHeight = $(document).height(),
+                browserHeight = $(window).height();
+
+            if (!$section || $section.length < 1) {
+                throw new ReferenceError(anchor.settings.labels.error);
+            }
+
+            if (($section.offset().top + browserHeight) > documentHeight) {
+                return documentHeight - browserHeight;
+            } else {
+                return $section.offset().top;
+            }
+        },
+
+        /**
+         * Jumps to the specific position
+         *
+         * @param    {int}        topOffsetPosition    The top offset position
+         * @param    {object}    settings            The object specific settings
+         * @return    {void}
+         */
+        jumpTo: function (topOffsetPosition, settings) {
+            var $viewport = $('html, body');
+
+            $viewport.animate({
+                    scrollTop: topOffsetPosition
+                },
+                settings.transitionDuration,
+                settings.transitionTimingFunction
+            );
+
+            // Stop the animation immediately, if a user manually scrolls during the animation.
+            $viewport.bind('scroll mousedown DOMMouseScroll mousewheel keyup', function (event) {
+                if (event.which > 0 || event.type === 'mousedown' || event.type === 'mousewheel') {
+                    $viewport.stop().unbind('scroll mousedown DOMMouseScroll mousewheel keyup');
+                }
+            });
+        }
+
+    };
+
+    $.fn.anchor = function (method) {
+        // Method calling logic
+        if (anchor[method]) {
+            return anchor[method].apply(this, Array.prototype.slice.call(arguments, 1));
+        } else if (typeof method === 'object' || !method) {
+            return anchor.init.apply(this, arguments);
+        } else {
+            return $.error('Method ' + method + ' does not exist on jQuery.anchor');
+        }
+    };
+
+})(jQuery);
+
+
 function initHeader() {
     var $menu = $('.header-menu'),
         $menuOverlay = $('.header-menu-overlay'),
@@ -485,12 +600,14 @@ $('[data-fancybox="images"]').fancybox({
     transitionEffect: "slide",
 });
 
-
+$('a[data-anchor]').anchor({
+    transitionDuration: 1000
+});
 
 
 // Booking pop up
 
-(function () {
+function initBookingPopup() {
 
     $('.booking-seat-info__gallery').slick();
 
@@ -580,7 +697,9 @@ $('[data-fancybox="images"]').fancybox({
             $bookingPopup.hide();
         }, 500)
     })
-})();
+}
+
+initBookingPopup();
 
 
 function initCatamaram3d() {
@@ -613,10 +732,37 @@ function initCatamaram3d() {
         $catamaran3d.children().hide();
         $catamaran3d.children().eq(activeIndex).show();
     });
+
+    $catamaran3d.on('mousedown', function (e) {
+        e.preventDefault();
+
+        var startDrag = e.pageX,
+            activeIndexDrag;
+
+        function handler(e) {
+
+            activeIndexDrag = activeIndex + Math.floor((startDrag - e.pageX) / 40);
+            activeIndexDrag = activeIndexDrag % 15;
+
+            $catamaran3d.children().hide();
+            $catamaran3d.children().eq(activeIndexDrag).show();
+        }
+
+        $(window).on('mousemove.catamaran', handler);
+
+        $catamaran3d.on('mouseup.catamaran', function h() {
+            activeIndex = activeIndexDrag;
+            $(window).off('mousemove.catamaran', handler);
+            $catamaran3d.off('mouseup.catamaran', h);
+        });
+
+        $catamaran3d.on('dragstart', function () {
+            return false;
+        });
+    });
 }
 
 initCatamaram3d();
-
 
 
 function initSpinner() {
@@ -645,53 +791,74 @@ function initSpinner() {
         });
     })
 }
+
 initSpinner();
 
 
-
 // Maps
-$('[data-day-link]').on('click', function (e) {
-    e.preventDefault();
 
-    var day = $(this).data('day-link');
+function initMaps() {
 
-    $('[data-day-link]').removeClass('active');
-    $(this).addClass('active');
+    $('[data-day-link]').on('click', function (e) {
+        e.preventDefault();
 
-    $('[data-day]').removeClass('active');
-    $('[data-day=' + day + ']').addClass('active');
+        var day = $(this).data('day-link');
 
-    $('.map__area').removeClass('active');
-    $('.day-' + day).addClass('active');
+        $('[data-day-link]').removeClass('active');
+        $(this).addClass('active');
 
-});
+        $('[data-day]').removeClass('active');
+        $('[data-day=' + day + ']').addClass('active');
 
-$('.map__day').on('click', function (e) {
-    e.preventDefault();
+        $('.map__area').removeClass('active');
+        $('.day-' + day).addClass('active');
 
-    var t = $(this).data('day');
+    });
 
-    $('.map__day').removeClass('active');
-    $(this).addClass('active');
+    $('.map__day').on('click', function (e) {
+        e.preventDefault();
 
-    $('.map__area').removeClass('active');
-    $('.day-' + t).addClass('active');
+        var t = $(this).data('day');
+
+        $('.map__day').removeClass('active');
+        $(this).addClass('active');
+
+        $('.map__area').removeClass('active');
+        $('.day-' + t).addClass('active');
 
 
-    $('[data-day-link]').removeClass('active');
-    $('[data-day]').removeClass('active');
-    $('[data-day=' + t + ']').addClass('active');
-    $('[data-day-link=' + t + ']').addClass('active');
-});
-$('.map__day').on('mouseover', function () {
-    var t = $(this).data('day');
+        $('[data-day-link]').removeClass('active');
+        $('[data-day]').removeClass('active');
+        $('[data-day=' + t + ']').addClass('active');
+        $('[data-day-link=' + t + ']').addClass('active');
+    });
+    $('.map__day').on('mouseover', function () {
+        var t = $(this).data('day');
 
-    $('.map__area').removeClass('hover');
-    $('.day-' + t).addClass('hover');
-});
-$('.map__day').on('mouseout', function () {
-    // var t = $(this).data('day');
+        $('.map__area').removeClass('hover');
+        $('.day-' + t).addClass('hover');
+    });
+    $('.map__day').on('mouseout', function () {
+        // var t = $(this).data('day');
 
-    $('.map__area').removeClass('hover');
-    // $('.day-' + t).addClass('active');
-});
+        $('.map__area').removeClass('hover');
+        // $('.day-' + t).addClass('active');
+    });
+}
+initMaps();
+
+
+function initParallax() {
+    var startX, startY, offsetX, offsetY;
+    $('.section-captain').on('mouseenter', function (e) {
+        startX = e.pageX;
+    });
+    $('.section-captain').on('mousemove.parallax', function (e) {
+        offsetX = e.pageX - window.pageXOffset - startX;
+        offsetY = e.pageY - window.pageYOffset - this.getBoundingClientRect().top;
+
+        $('.captain-photo__photo').css('transform', 'translateY(' + (offsetX)/30 + 'px)');
+        $('.captain-photo__waves').css('transform', 'translateX(' + (offsetY)/20 + 'px)');
+    });
+}
+initParallax();

@@ -3325,10 +3325,9 @@ textarea.textarea:not(.browser-default).invalid {
     color: #0B3E6A;
   }
   .header.fixed .header__logo {
-    width: 115px;
-    height: 151px;
-    background-color: #0B3E6A;
-    background-size: 79px 105px;
+    width: 143px;
+    height: 100%;
+    background-image: url("../img/logo-2.svg");
     background-position: center;
     top: 0;
   }
