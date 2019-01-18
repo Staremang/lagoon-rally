@@ -579,6 +579,9 @@ $('.gallery').slick({
                 arrows: false,
                 centerMode: true,
                 dots: true,
+                variableWidth: true,
+                infinite: true,
+                slidesToShow: 1
                 // draggable: true
                 // centerPadding: '40px',
                 // slidesToShow: 1
