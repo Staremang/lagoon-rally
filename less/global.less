@@ -64,7 +64,9 @@ h1, .h1 {
 
 .btn-orange {
   font-family: inherit;
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border-radius: 0;
   //padding: 0;
   outline: none;
@@ -89,7 +91,7 @@ h1, .h1 {
   letter-spacing: 0.1em;
   color: #423700;
   height: 64px;
-  padding: 24px 0;
+  //padding: 24px 0;
   //display: flex;
   &:hover {
     background-color: #FFDF34;
@@ -97,7 +99,7 @@ h1, .h1 {
   &_border {
     background: white;
     border: 2px solid #FFE872;
-    padding: 22px 0;
+    //padding: 22px 0;
   }
 }
 
@@ -2495,8 +2497,9 @@ h1, .h1 {
 
 .ocean {
   background: url("../img/water.png") no-repeat bottom;
+  background-size: 100% auto;
   //background-size: 100% 432px;
-  background-size: auto;
+  //background-size: auto;
   position: absolute;
   //height: 100%;
   //width: 100%;
@@ -2604,7 +2607,6 @@ h1, .h1 {
   @media all and (min-width: @width-md) {
     left: 50%;
     transform: translateX(-50%);
-    background-size: 100% auto;
   }
   @media all and (min-width: @width-lg) {
     width: 1440px;
@@ -4230,6 +4232,29 @@ h1, .h1 {
   left: 0;
   overflow: auto;
   padding-top: 60px;
+  &__close {
+
+    display: inline-block;
+    border-radius: 0;
+    padding: 0;
+    outline: none;
+    border: 0;
+    cursor: pointer;
+    text-decoration: none;
+    position: absolute;
+    overflow: hidden;
+    vertical-align: middle;
+    transform: translateZ(0);
+    text-align: center;
+    -webkit-tap-highlight-color: transparent;
+
+    width: 26px;
+    height: 26px;
+    background: data-uri("../img/icons/close-2.svg") center no-repeat;
+    background-size: 20px 20px;
+    left: 20px;
+    top: 20px;
+  }
 
   @media all and (min-width: @width-lg) {
     box-shadow: 0px 20px 34px rgba(0, 0, 0, 0.1);
@@ -4266,27 +4291,49 @@ h1, .h1 {
 
 .booking-seat-info {
   position: relative;
-  padding: 18px 24px 30px;
+  padding-bottom: 39px;
+
+  @media all and (min-width: @width-lg) {
+    padding: 18px 24px 30px;
+  }
   &__title {
     font-weight: 500;
     line-height: normal;
-    font-size: 26px;
-    margin-bottom: 9px;
+    font-size: 20px;
+    padding-left: 20px;
+    margin-bottom: 5px;
+
+    @media all and (min-width: @width-lg) {
+      font-size: 26px;
+      padding-left: 0;
+      margin-bottom: 9px;
+    }
   }
   &__subtitle {
     font-weight: 500;
     line-height: normal;
-    font-size: 18px;
+    font-size: 13px;
 
     color: #000000;
 
     opacity: 0.5;
+    padding-left: 20px;
     margin-bottom: 23px;
+    @media all and (min-width: @width-lg) {
+      font-size: 18px;
+      padding-left: 0;
+    }
   }
   &__date {
     position: absolute;
-    right: 12px;
-    top: 17px;
+    right: 20px;
+    top: 2px;
+    text-align: right;
+    @media all and (min-width: @width-lg) {
+      right: 12px;
+      top: 17px;
+      text-align: left;
+    }
   }
   &__date-title {
     font-weight: 500;
@@ -4302,43 +4349,70 @@ h1, .h1 {
   &__date-val {
     font-weight: 500;
     line-height: normal;
-    font-size: 25px;
+    font-size: 20px;
     letter-spacing: -0.02em;
 
     color: #000000;
+    @media all and (min-width: @width-lg) {
+      font-size: 25px;
+    }
   }
   &__body {
-    display: flex;
-    justify-content: space-between;
     margin-bottom: 24px;
+
+    @media all and (min-width: @width-lg) {
+      display: flex;
+      justify-content: space-between;
+    }
   }
   &__gallery {
 
-    width: 235px;
-    height: 224px;
+    width: 100%;
+    height: 191px;
     background: gray;
+
+    img {
+      height: 191px;
+    }
+
+    @media all and (min-width: @width-lg) {
+      width: 235px;
+      height: 224px;
+      img {
+        height: 224px;
+      }
+    }
   }
   &__info {
-
+    display: flex;
+    padding: 10px 20px;
+    justify-content: space-between;
+    @media all and (min-width: @width-lg) {
+      display: block;
+      padding: 0;
+    }
   }
   &__info-title {
 
     font-weight: 500;
     line-height: normal;
-    font-size: 13px;
+    font-size: 11px;
     letter-spacing: -0.02em;
 
     color: #000000;
 
     opacity: 0.5;
     margin-bottom: 5px;
+    @media all and (min-width: @width-lg) {
+      font-size: 13px;
+    }
   }
   &__info-val {
     margin-bottom: 23px;
 
     font-weight: 500;
     line-height: normal;
-    font-size: 25px;
+    font-size: 20px;
     letter-spacing: -0.02em;
 
     .f-13 {
@@ -4346,6 +4420,9 @@ h1, .h1 {
     }
     .f-21 {
       font-size: 21px;
+    }
+    @media all and (min-width: @width-lg) {
+      font-size: 25px;
     }
   }
   &__list {
@@ -4355,8 +4432,12 @@ h1, .h1 {
     letter-spacing: -0.02em;
 
     list-style: none;
-    padding-left: 5px;
     margin: 0;
+
+    padding: 0 20px 0 35px;
+    @media all and (min-width: @width-lg) {
+      padding: 0 0 0 5px;
+    }
   }
   &__list-item {
     margin-bottom: 13px;
@@ -4375,10 +4456,20 @@ h1, .h1 {
   }
   &__buttons {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
     .btn-orange_border {
-      flex: 1 1;
-      margin-left: 10px;
+      margin-top: 10px;
+    }
+    @media all and (min-width: @width-lg) {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      .btn-orange_border {
+        flex: 1 1;
+        margin-left: 10px;
+        margin-top: 0;
+      }
     }
   }
 }

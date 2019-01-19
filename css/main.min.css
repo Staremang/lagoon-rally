@@ -3561,7 +3561,15 @@ h1,
 }
 .btn-orange {
   font-family: inherit;
-  display: block;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   border-radius: 0;
   outline: none;
   border: 0;
@@ -3584,7 +3592,6 @@ h1,
   letter-spacing: 0.1em;
   color: #423700;
   height: 64px;
-  padding: 24px 0;
 }
 .btn-orange:hover {
   background-color: #FFDF34;
@@ -3592,7 +3599,6 @@ h1,
 .btn-orange_border {
   background: white;
   border: 2px solid #FFE872;
-  padding: 22px 0;
 }
 .icon {
   width: 30px;
@@ -5921,7 +5927,7 @@ h1,
 }
 .ocean {
   background: url("../img/water.png") no-repeat bottom;
-  background-size: auto;
+  background-size: 100% auto;
   position: absolute;
   width: 984px;
   height: 296px;
@@ -6017,7 +6023,6 @@ h1,
     -webkit-transform: translateX(-50%);
     -ms-transform: translateX(-50%);
     transform: translateX(-50%);
-    background-size: 100% auto;
   }
 }
 @media all and (min-width: 992px) {
@@ -7666,6 +7671,28 @@ h1,
   overflow: auto;
   padding-top: 60px;
 }
+.booking-pop-up__close {
+  display: inline-block;
+  border-radius: 0;
+  padding: 0;
+  outline: none;
+  border: 0;
+  cursor: pointer;
+  text-decoration: none;
+  position: absolute;
+  overflow: hidden;
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  text-align: center;
+  -webkit-tap-highlight-color: transparent;
+  width: 26px;
+  height: 26px;
+  background: url("data:image/svg+xml,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M8.8586%209.99993L4.86369%2013.9949L6.00508%2015.1362L10%2011.1413L13.9949%2015.1362L15.1363%2013.9949L11.1414%209.99993L15.1362%206.00509L13.9948%204.86369L10%208.85854L6.00515%204.8637L4.86376%206.00509L8.8586%209.99993Z%22%20fill%3D%22%23423700%22%2F%3E%0A%3C%2Fsvg%3E%0A") center no-repeat;
+  background-size: 20px 20px;
+  left: 20px;
+  top: 20px;
+}
 @media all and (min-width: 992px) {
   .booking-pop-up {
     -webkit-box-shadow: 0px 20px 34px rgba(0, 0, 0, 0.1);
@@ -7702,26 +7729,54 @@ h1,
 }
 .booking-seat-info {
   position: relative;
-  padding: 18px 24px 30px;
+  padding-bottom: 39px;
+}
+@media all and (min-width: 992px) {
+  .booking-seat-info {
+    padding: 18px 24px 30px;
+  }
 }
 .booking-seat-info__title {
   font-weight: 500;
   line-height: normal;
-  font-size: 26px;
-  margin-bottom: 9px;
+  font-size: 20px;
+  padding-left: 20px;
+  margin-bottom: 5px;
+}
+@media all and (min-width: 992px) {
+  .booking-seat-info__title {
+    font-size: 26px;
+    padding-left: 0;
+    margin-bottom: 9px;
+  }
 }
 .booking-seat-info__subtitle {
   font-weight: 500;
   line-height: normal;
-  font-size: 18px;
+  font-size: 13px;
   color: #000000;
   opacity: 0.5;
+  padding-left: 20px;
   margin-bottom: 23px;
+}
+@media all and (min-width: 992px) {
+  .booking-seat-info__subtitle {
+    font-size: 18px;
+    padding-left: 0;
+  }
 }
 .booking-seat-info__date {
   position: absolute;
-  right: 12px;
-  top: 17px;
+  right: 20px;
+  top: 2px;
+  text-align: right;
+}
+@media all and (min-width: 992px) {
+  .booking-seat-info__date {
+    right: 12px;
+    top: 17px;
+    text-align: left;
+  }
 }
 .booking-seat-info__date-title {
   font-weight: 500;
@@ -7735,38 +7790,79 @@ h1,
 .booking-seat-info__date-val {
   font-weight: 500;
   line-height: normal;
-  font-size: 25px;
+  font-size: 20px;
   letter-spacing: -0.02em;
   color: #000000;
 }
+@media all and (min-width: 992px) {
+  .booking-seat-info__date-val {
+    font-size: 25px;
+  }
+}
 .booking-seat-info__body {
+  margin-bottom: 24px;
+}
+@media all and (min-width: 992px) {
+  .booking-seat-info__body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+}
+.booking-seat-info__gallery {
+  width: 100%;
+  height: 191px;
+  background: gray;
+}
+.booking-seat-info__gallery img {
+  height: 191px;
+}
+@media all and (min-width: 992px) {
+  .booking-seat-info__gallery {
+    width: 235px;
+    height: 224px;
+  }
+  .booking-seat-info__gallery img {
+    height: 224px;
+  }
+}
+.booking-seat-info__info {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  padding: 10px 20px;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  margin-bottom: 24px;
 }
-.booking-seat-info__gallery {
-  width: 235px;
-  height: 224px;
-  background: gray;
+@media all and (min-width: 992px) {
+  .booking-seat-info__info {
+    display: block;
+    padding: 0;
+  }
 }
 .booking-seat-info__info-title {
   font-weight: 500;
   line-height: normal;
-  font-size: 13px;
+  font-size: 11px;
   letter-spacing: -0.02em;
   color: #000000;
   opacity: 0.5;
   margin-bottom: 5px;
 }
+@media all and (min-width: 992px) {
+  .booking-seat-info__info-title {
+    font-size: 13px;
+  }
+}
 .booking-seat-info__info-val {
   margin-bottom: 23px;
   font-weight: 500;
   line-height: normal;
-  font-size: 25px;
+  font-size: 20px;
   letter-spacing: -0.02em;
 }
 .booking-seat-info__info-val .f-13 {
@@ -7775,14 +7871,24 @@ h1,
 .booking-seat-info__info-val .f-21 {
   font-size: 21px;
 }
+@media all and (min-width: 992px) {
+  .booking-seat-info__info-val {
+    font-size: 25px;
+  }
+}
 .booking-seat-info__list {
   font-weight: 500;
   line-height: 19px;
   font-size: 13px;
   letter-spacing: -0.02em;
   list-style: none;
-  padding-left: 5px;
   margin: 0;
+  padding: 0 20px 0 35px;
+}
+@media all and (min-width: 992px) {
+  .booking-seat-info__list {
+    padding: 0 0 0 5px;
+  }
 }
 .booking-seat-info__list-item {
   margin-bottom: 13px;
@@ -7802,15 +7908,37 @@ h1,
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
 }
 .booking-seat-info__buttons .btn-orange_border {
-  -webkit-box-flex: 1;
-  -ms-flex: 1 1;
-  flex: 1 1;
-  margin-left: 10px;
+  margin-top: 10px;
+}
+@media all and (min-width: 992px) {
+  .booking-seat-info__buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+  }
+  .booking-seat-info__buttons .btn-orange_border {
+    -webkit-box-flex: 1;
+    -ms-flex: 1 1;
+    flex: 1 1;
+    margin-left: 10px;
+    margin-top: 0;
+  }
 }
 .faq {
   padding-top: 40px;
