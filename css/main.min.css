@@ -3306,6 +3306,7 @@ textarea.textarea:not(.browser-default).invalid {
     -webkit-transform: none;
     -ms-transform: none;
     transform: none;
+    z-index: 1000;
   }
   .header__phone-btn,
   .header__open-menu {
@@ -3562,7 +3563,6 @@ h1,
   font-family: inherit;
   display: block;
   border-radius: 0;
-  padding: 0;
   outline: none;
   border: 0;
   cursor: pointer;
@@ -3584,6 +3584,7 @@ h1,
   letter-spacing: 0.1em;
   color: #423700;
   height: 64px;
+  padding: 24px 0;
 }
 .btn-orange:hover {
   background-color: #FFDF34;
@@ -3591,6 +3592,7 @@ h1,
 .btn-orange_border {
   background: white;
   border: 2px solid #FFE872;
+  padding: 22px 0;
 }
 .icon {
   width: 30px;
@@ -5014,7 +5016,8 @@ h1,
     margin-bottom: 54px;
     text-align: right;
   }
-  .second-section-benefits__cirle {
+  .second-section-benefits__circle {
+    display: block;
     left: 21px;
     top: 56px;
     position: absolute;
@@ -5024,7 +5027,7 @@ h1,
     background-color: #FFF6C8;
     overflow: hidden;
   }
-  .second-section-benefits__cirle:before {
+  .second-section-benefits__circle:before {
     content: '';
     position: absolute;
     width: 100%;
@@ -5036,7 +5039,7 @@ h1,
     -o-transition: all .3s ease;
     transition: all .3s ease;
   }
-  .second-section-benefits__cirle:after {
+  .second-section-benefits__circle:after {
     content: '';
     position: absolute;
     width: 100%;
@@ -5916,9 +5919,173 @@ h1,
     font-size: 15px;
   }
 }
+.ocean {
+  background: url("../img/water.png") no-repeat bottom;
+  background-size: auto;
+  position: absolute;
+  width: 984px;
+  height: 296px;
+  bottom: 0;
+  left: -125px;
+  min-width: 100%;
+  overflow: hidden;
+}
+.ocean__fish-1 {
+  position: absolute;
+  background-image: url("../img/fish02.png");
+  background-size: contain;
+  width: 66.64px;
+  height: 117.64px;
+  left: 5%;
+  bottom: 84.32px;
+}
+.ocean__fish-2 {
+  position: absolute;
+  background-image: url("../img/fish04.png");
+  background-size: contain;
+  width: 63.92px;
+  height: 117.64px;
+  left: 22%;
+  bottom: 78.88px;
+}
+.ocean__fish-3 {
+  position: absolute;
+  background-image: url("../img/fish03.png");
+  background-size: contain;
+  width: 157.08px;
+  height: 86.36px;
+  left: 12%;
+  bottom: 42.84px;
+}
+.ocean__corall {
+  position: absolute;
+  background-image: url("../img/corall01.png");
+  background-size: contain;
+  width: 286.28px;
+  height: 225.08px;
+  left: -1%;
+  bottom: -81.6px;
+}
+.ocean__fish-4 {
+  position: absolute;
+  background-image: url("../img/fish06.png");
+  background-size: contain;
+  width: 78.2px;
+  height: 104.04px;
+  right: 22%;
+  bottom: 72.08px;
+}
+.ocean__fish-5 {
+  position: absolute;
+  background-image: url("../img/fish01.png");
+  background-size: contain;
+  width: 76.84px;
+  height: 132.6px;
+  right: 6%;
+  bottom: 78.88px;
+}
+.ocean__chest {
+  position: absolute;
+  background-image: url("../img/chest.png");
+  background-size: contain;
+  width: 176.8px;
+  height: 161.16px;
+  right: -3%;
+  bottom: -61.88px;
+}
+.ocean__fish-6 {
+  position: absolute;
+  background-image: url("../img/fish05.png");
+  background-size: contain;
+  width: 125.12px;
+  height: 95.2px;
+  right: 10%;
+  bottom: 36.04px;
+}
+.ocean__corall-2 {
+  position: absolute;
+  background-image: url("../img/corall02.png");
+  background-size: contain;
+  width: 114.24px;
+  height: 147.56px;
+  right: -4%;
+  bottom: -15.64px;
+}
+@media all and (min-width: 768px) {
+  .ocean {
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    background-size: 100% auto;
+  }
+}
+@media all and (min-width: 992px) {
+  .ocean {
+    width: 1440px;
+    height: 432px;
+  }
+  .ocean__fish-1 {
+    width: 98px;
+    height: 173px;
+    left: 5%;
+    bottom: 124px;
+  }
+  .ocean__fish-2 {
+    width: 94px;
+    height: 173px;
+    left: 22%;
+    bottom: 116px;
+  }
+  .ocean__fish-3 {
+    width: 231px;
+    height: 127px;
+    left: 12%;
+    bottom: 63px;
+  }
+  .ocean__corall {
+    width: 421px;
+    height: 331px;
+    left: -1%;
+    bottom: -120px;
+  }
+  .ocean__fish-4 {
+    width: 115px;
+    height: 153px;
+    right: 22%;
+    bottom: 106px;
+  }
+  .ocean__fish-5 {
+    width: 113px;
+    height: 195px;
+    right: 6%;
+    bottom: 116px;
+  }
+  .ocean__chest {
+    width: 260px;
+    height: 237px;
+    right: -3%;
+    bottom: -91px;
+  }
+  .ocean__fish-6 {
+    width: 184px;
+    height: 140px;
+    right: 10%;
+    bottom: 53px;
+  }
+  .ocean__corall-2 {
+    width: 168px;
+    height: 217px;
+    right: -4%;
+    bottom: -23px;
+  }
+}
+@media all and (min-width: 1440px) {
+  .ocean {
+    background-size: 100% 432px;
+  }
+}
 .catamaran-3d {
-  background: url("../img/ocean.png") no-repeat -120px bottom;
-  background-size: 992px auto;
   padding-bottom: 56px;
   position: relative;
 }
@@ -6009,6 +6176,7 @@ h1,
   background-size: contain;
 }
 .catamaran-3d__text {
+  position: relative;
   display: inline-block;
   font-weight: 600;
   line-height: 47px;
@@ -6018,6 +6186,7 @@ h1,
   margin: 0 44px;
 }
 .catamaran-3d__note {
+  position: relative;
   max-width: 300px;
   font-weight: 600;
   line-height: 23px;
@@ -7488,36 +7657,48 @@ h1,
 }
 .booking-pop-up {
   background: #FFFFFF;
-  -webkit-box-shadow: 0px 20px 34px rgba(0, 0, 0, 0.1);
-  box-shadow: 0px 20px 34px rgba(0, 0, 0, 0.1);
-  width: 688px;
   z-index: 99999;
-  position: absolute;
-  left: 598px;
-  top: 10662px;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: auto;
+  padding-top: 60px;
 }
-.booking-pop-up:before {
-  content: '';
-  position: absolute;
-  width: 22px;
-  height: 30px;
-  background: url("../img/icons/vector.svg") no-repeat;
-}
-.booking-pop-up.r-t:before {
-  right: 45px;
-  top: -15px;
-}
-.booking-pop-up.r-b:before {
-  right: 45px;
-  bottom: -15px;
-}
-.booking-pop-up.l-t:before {
-  left: 45px;
-  top: -15px;
-}
-.booking-pop-up.l-b:before {
-  left: 45px;
-  bottom: -15px;
+@media all and (min-width: 992px) {
+  .booking-pop-up {
+    -webkit-box-shadow: 0px 20px 34px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 20px 34px rgba(0, 0, 0, 0.1);
+    width: 688px;
+    position: absolute;
+    padding-top: 0;
+    height: auto;
+    overflow: visible;
+  }
+  .booking-pop-up:before {
+    content: '';
+    position: absolute;
+    width: 22px;
+    height: 30px;
+    background: url("../img/icons/vector.svg") no-repeat;
+  }
+  .booking-pop-up.r-t:before {
+    right: 45px;
+    top: -15px;
+  }
+  .booking-pop-up.r-b:before {
+    right: 45px;
+    bottom: -15px;
+  }
+  .booking-pop-up.l-t:before {
+    left: 45px;
+    top: -15px;
+  }
+  .booking-pop-up.l-b:before {
+    left: 45px;
+    bottom: -15px;
+  }
 }
 .booking-seat-info {
   position: relative;

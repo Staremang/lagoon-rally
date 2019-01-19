@@ -598,7 +598,7 @@ $('.booking-gallery').slick({
 });
 
 $('[data-fancybox="images"]').fancybox({
-    selector: '.slick-slide:not(.slick-cloned)',
+    selector: '.gallery .slick-slide:not(.slick-cloned)',
     animationEffect: "fade",
     transitionEffect: "slide",
 });
@@ -611,13 +611,16 @@ $('a[data-anchor]').anchor({
 // Booking pop up
 
 function initBookingPopup() {
-
-    $('.booking-seat-info__gallery').slick();
+    //
+    // $('.booking-seat-info__gallery').each(function (i) {
+    //     $(this).slick();
+    // });
 
     var $bookingPopup = $(".booking-pop-up"),
         $seat = $('.booking-ships__position'),
         $parentContainer,
-        popupTimer;
+        popupTimer,
+        slickInit = false;
 
     function getCoords(elem) {
         var box = elem.getBoundingClientRect();
@@ -632,74 +635,95 @@ function initBookingPopup() {
 
 
     $bookingPopup.hide();
-    $seat.on('mouseover', function () {
-        clearTimeout(popupTimer);
-        // console.log();
-        $('.booking-seat-info').hide();
-        $($(this).data('target')).show();
-
-        // $('.booking-seat-info__gallery').slick('unslick');
-        // $($(this).data('target')).find('.booking-seat-info__gallery').slick();
-
-        // $bookingPopup.empty().append( $($(this).data('target')).clone(true) );
-
-        // $bookingPopup.find('.booking-seat-info__gallery').slick();
-
-        $bookingPopup.show();
-        $bookingPopup.removeClass('r-t');
-        $bookingPopup.removeClass('r-b');
-        $bookingPopup.removeClass('l-t');
-        $bookingPopup.removeClass('l-b');
 
 
-        // show popup
-        var seatPos = getCoords(this),
-            popupHeight = 446,
-            popupWidth = 688;
+    if (document.documentElement.clientWidth >= widthPoint.lg) {
+        $seat.on('mouseover', function () {
+            clearTimeout(popupTimer);
+            // console.log();
+            $('.booking-seat-info').hide();
+            $($(this).data('target')).show();
 
-        if (document.documentElement.clientWidth - seatPos.left < popupWidth) { // Слева от места
+            // $('.booking-seat-info__gallery').slick('unslick');
+            // $($(this).data('target')).find('.booking-seat-info__gallery').slick();
 
-            if (this.getBoundingClientRect().top < popupHeight) { // Под местом
-                $bookingPopup.css({"top": seatPos.bottom + 20, "left": seatPos.right - popupWidth + 30});
-                $bookingPopup.addClass('r-t');
-            } else { // Над местом
-                $bookingPopup.css({"top": seatPos.top - popupHeight - 20, "left": seatPos.right - popupWidth + 30});
-                $bookingPopup.addClass('r-b');
+            // $bookingPopup.empty().append( $($(this).data('target')).clone(true) );
+
+            if (!$($(this).data('target')).find('.booking-seat-info__gallery').hasClass('slick-slider')) {
+                // $bookingPopup.find('.booking-seat-info__gallery').slick();
+                $($(this).data('target')).find('.booking-seat-info__gallery').slick();
+                // slickInit = true;
             }
-        } else {
-            if (this.getBoundingClientRect().top < popupHeight) {
-                $bookingPopup.css({"top": seatPos.bottom + 20, "left": seatPos.left - 30});
-                $bookingPopup.addClass('l-t');
+
+            $bookingPopup.show();
+
+            $bookingPopup.removeClass('r-t');
+            $bookingPopup.removeClass('r-b');
+            $bookingPopup.removeClass('l-t');
+            $bookingPopup.removeClass('l-b');
+
+
+            // show popup
+            var seatPos = getCoords(this),
+                popupHeight = 446,
+                popupWidth = 688;
+
+            if (document.documentElement.clientWidth - seatPos.left < popupWidth) { // Слева от места
+
+                if (this.getBoundingClientRect().top < popupHeight) { // Под местом
+                    $bookingPopup.css({"top": seatPos.bottom + 20, "left": seatPos.right - popupWidth + 30});
+                    $bookingPopup.addClass('r-t');
+                } else { // Над местом
+                    $bookingPopup.css({"top": seatPos.top - popupHeight - 20, "left": seatPos.right - popupWidth + 30});
+                    $bookingPopup.addClass('r-b');
+                }
             } else {
-                $bookingPopup.css({"top": seatPos.top - popupHeight - 20, "left": seatPos.left - 30});
-                $bookingPopup.addClass('l-b');
+                if (this.getBoundingClientRect().top < popupHeight) {
+                    $bookingPopup.css({"top": seatPos.bottom + 20, "left": seatPos.left - 30});
+                    $bookingPopup.addClass('l-t');
+                } else {
+                    $bookingPopup.css({"top": seatPos.top - popupHeight - 20, "left": seatPos.left - 30});
+                    $bookingPopup.addClass('l-b');
+                }
             }
-        }
-    });
 
-    $seat.on('mouseout', function () {
-        popupTimer = setTimeout(function () {
-            $bookingPopup.hide();
-            // $('.booking-seat-info__gallery').slick('unslick');
-            // $bookingPopup.removeClass('r-t');
-            // $bookingPopup.removeClass('r-b');
-            // $bookingPopup.removeClass('l-t');
-            // $bookingPopup.removeClass('l-b');
-        }, 500)
-    });
+        });
+
+        $seat.on('mouseout', function () {
+            popupTimer = setTimeout(function () {
+                $bookingPopup.hide();
+                // $('.booking-seat-info__gallery').slick('unslick');
+                // $bookingPopup.removeClass('r-t');
+                // $bookingPopup.removeClass('r-b');
+                // $bookingPopup.removeClass('l-t');
+                // $bookingPopup.removeClass('l-b');
+            }, 500)
+        });
 
 
-    $bookingPopup.on('mouseover', function () {
-        // $('.booking-seat-info__gallery').slick();
-        clearTimeout(popupTimer);
-    });
+        $bookingPopup.on('mouseover', function () {
+            // $('.booking-seat-info__gallery').slick();
+            clearTimeout(popupTimer);
+        });
 
-    $bookingPopup.on('mouseout', function () {
-        popupTimer = setTimeout(function () {
-            // $('.booking-seat-info__gallery').slick('unslick');
-            $bookingPopup.hide();
-        }, 500)
-    })
+        $bookingPopup.on('mouseout', function () {
+            popupTimer = setTimeout(function () {
+                // $('.booking-seat-info__gallery').slick('unslick');
+                $bookingPopup.hide();
+            }, 500)
+        })
+    } else {
+        $seat.on('click', function () {
+            $('.booking-seat-info').hide();
+            $($(this).data('target')).show();
+            if (!$($(this).data('target')).find('.booking-seat-info__gallery').hasClass('slick-slider')) {
+                // $bookingPopup.find('.booking-seat-info__gallery').slick();
+                $($(this).data('target')).find('.booking-seat-info__gallery').slick();
+                // slickInit = true;
+            }
+            $bookingPopup.show();
+        });
+    }
 }
 
 initBookingPopup();
@@ -848,6 +872,7 @@ function initMaps() {
         // $('.day-' + t).addClass('active');
     });
 }
+
 initMaps();
 
 
@@ -860,8 +885,20 @@ function initParallax() {
         offsetX = e.pageX - window.pageXOffset - startX;
         offsetY = e.pageY - window.pageYOffset - this.getBoundingClientRect().top;
 
-        $('.captain-photo__photo').css('transform', 'translateY(' + (offsetX)/30 + 'px)');
-        $('.captain-photo__waves').css('transform', 'translateX(' + (offsetY)/20 + 'px)');
+        $('.captain-photo__photo').css('transform', 'translateY(' + (offsetX) / 30 + 'px)');
+        $('.captain-photo__waves').css('transform', 'translateX(' + (offsetY) / 20 + 'px)');
+    });
+
+    $('body').on('mousemove.parallax', function (e) {
+        offsetX = e.pageX - window.pageXOffset - document.documentElement.clientWidth / 2;
+        offsetY = e.pageY - window.pageYOffset - document.documentElement.clientHeight / 2;
+
+        // console.log(offsetX, offsetY);
+
+        $('[data-parallax]').each(function () {
+            $(this).css('transform', 'translate(' + (offsetX * $(this).data('parallax')[0]) + 'px,' + (offsetY * $(this).data('parallax')[1]) + 'px)');
+        })
     });
 }
+
 initParallax();

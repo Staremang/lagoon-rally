@@ -66,7 +66,7 @@ h1, .h1 {
   font-family: inherit;
   display: block;
   border-radius: 0;
-  padding: 0;
+  //padding: 0;
   outline: none;
   border: 0;
   cursor: pointer;
@@ -89,6 +89,7 @@ h1, .h1 {
   letter-spacing: 0.1em;
   color: #423700;
   height: 64px;
+  padding: 24px 0;
   //display: flex;
   &:hover {
     background-color: #FFDF34;
@@ -96,6 +97,7 @@ h1, .h1 {
   &_border {
     background: white;
     border: 2px solid #FFE872;
+    padding: 22px 0;
   }
 }
 
@@ -1589,7 +1591,8 @@ h1, .h1 {
     &__block {
 
     }
-    &__cirle {
+    &__circle {
+      display: block;
 
       left: 21px;
       top: 56px;
@@ -2490,9 +2493,196 @@ h1, .h1 {
   }
 }
 
+.ocean {
+  background: url("../img/water.png") no-repeat bottom;
+  //background-size: 100% 432px;
+  background-size: auto;
+  position: absolute;
+  //height: 100%;
+  //width: 100%;
+  width: 984px;
+  height: 296px;
+  bottom: 0;
+  left: -125px;
+  min-width: 100%;
+
+  //min-width: 984px;
+  overflow: hidden;
+
+  &__fish-1 {
+    position: absolute;
+    background-image: url("../img/fish02.png");
+    background-size: contain;
+    width: 98px*0.68;
+    height: 173px*0.68;
+
+    left: 5%;
+    bottom: 124px*0.68;
+  }
+  &__fish-2 {
+    position: absolute;
+    background-image: url("../img/fish04.png");
+    background-size: contain;
+    width: 94px*0.68;
+    height: 173px*0.68;
+
+    left: 22%;
+    bottom: 116px*0.68;
+  }
+  &__fish-3 {
+    position: absolute;
+    background-image: url("../img/fish03.png");
+    background-size: contain;
+    width: 231px*0.68;
+    height: 127px*0.68;
+
+    left: 12%;
+    bottom: 63px*0.68;
+  }
+  &__corall {
+    position: absolute;
+    background-image: url("../img/corall01.png");
+    background-size: contain;
+    width: 421px*0.68;
+    height: 331px*0.68;
+
+    left: -1%;
+    bottom: -120px*0.68;
+  }
+
+
+  &__fish-4 {
+    position: absolute;
+    background-image: url("../img/fish06.png");
+    background-size: contain;
+    width: 115px*0.68;
+    height: 153px*0.68;
+
+    right: 22%;
+    bottom: 106px*0.68;
+  }
+  &__fish-5 {
+    position: absolute;
+    background-image: url("../img/fish01.png");
+    background-size: contain;
+    width: 113px*0.68;
+    height: 195px*0.68;
+
+    right: 6%;
+    bottom: 116px*0.68;
+  }
+  &__chest {
+    position: absolute;
+    background-image: url("../img/chest.png");
+    background-size: contain;
+    width: 260px*0.68;
+    height: 237px*0.68;
+
+    right: -3%;
+    bottom: -91px*0.68;
+  }
+  &__fish-6 {
+    position: absolute;
+    background-image: url("../img/fish05.png");
+    background-size: contain;
+    width: 184px*0.68;
+    height: 140px*0.68;
+
+    right: 10%;
+    bottom: 53px*0.68;
+  }
+  &__corall-2 {
+    position: absolute;
+    background-image: url("../img/corall02.png");
+    background-size: contain;
+    width: 168px*0.68;
+    height: 217px*0.68;
+
+    right: -4%;
+    bottom: -23px*0.68;
+  }
+  @media all and (min-width: @width-md) {
+    left: 50%;
+    transform: translateX(-50%);
+    background-size: 100% auto;
+  }
+  @media all and (min-width: @width-lg) {
+    width: 1440px;
+    height: 432px;
+
+    &__fish-1 {
+      width: 98px;
+      height: 173px;
+
+      left: 5%;
+      bottom: 124px;
+    }
+    &__fish-2 {
+      width: 94px;
+      height: 173px;
+
+      left: 22%;
+      bottom: 116px;
+    }
+    &__fish-3 {
+      width: 231px;
+      height: 127px;
+
+      left: 12%;
+      bottom: 63px;
+    }
+    &__corall {
+      width: 421px;
+      height: 331px;
+
+      left: -1%;
+      bottom: -120px;
+    }
+
+
+    &__fish-4 {
+      width: 115px;
+      height: 153px;
+
+      right: 22%;
+      bottom: 106px;
+    }
+    &__fish-5 {
+      width: 113px;
+      height: 195px;
+
+      right: 6%;
+      bottom: 116px;
+    }
+    &__chest {
+      width: 260px;
+      height: 237px;
+
+      right: -3%;
+      bottom: -91px;
+    }
+    &__fish-6 {
+      width: 184px;
+      height: 140px;
+
+      right: 10%;
+      bottom: 53px;
+    }
+    &__corall-2 {
+      width: 168px;
+      height: 217px;
+
+      right: -4%;
+      bottom: -23px;
+    }
+  }
+  @media all and (min-width: 1440px) {
+    background-size: 100% 432px;
+  }
+}
 .catamaran-3d {
-  background: url("../img/ocean.png") no-repeat -120px bottom;
-  background-size: 992px auto;
+  //background: url("../img/ocean.png") no-repeat -120px bottom;
+  //background-size: 992px auto;
 
   padding-bottom: 56px;
   position: relative;
@@ -2585,6 +2775,7 @@ h1, .h1 {
     background-size: contain;
   }
   &__text {
+    position: relative;
     display: inline-block;
     font-weight: 600;
     line-height: 47px;
@@ -2596,6 +2787,7 @@ h1, .h1 {
     margin: 0 44px;
   }
   &__note {
+    position: relative;
     max-width: 300px;
     font-weight: 600;
     line-height: 23px;
@@ -4026,36 +4218,49 @@ h1, .h1 {
 
 .booking-pop-up {
   background: #FFFFFF;
-  box-shadow: 0px 20px 34px rgba(0, 0, 0, 0.1);
-  width: 688px;
   //height: 451px;
   z-index: 99999;
-  position: absolute;
-  left: 598px;
-  top: 10662px;
+  //left: 598px;
+  //top: 10662px;
 
-  &:before {
-    content: '';
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: auto;
+  padding-top: 60px;
+
+  @media all and (min-width: @width-lg) {
+    box-shadow: 0px 20px 34px rgba(0, 0, 0, 0.1);
+    width: 688px;
     position: absolute;
-    width: 22px;
-    height: 30px;
-    background: url("../img/icons/vector.svg") no-repeat;
-  }
-  &.r-t:before {
-    right: 45px;
-    top: -15px;
-  }
-  &.r-b:before {
-    right: 45px;
-    bottom: -15px;
-  }
-  &.l-t:before {
-    left: 45px;
-    top: -15px;
-  }
-  &.l-b:before {
-    left: 45px;
-    bottom: -15px;
+    padding-top: 0;
+    height: auto;
+    overflow: visible;
+    &:before {
+      content: '';
+      position: absolute;
+      width: 22px;
+      height: 30px;
+      background: url("../img/icons/vector.svg") no-repeat;
+    }
+    &.r-t:before {
+      right: 45px;
+      top: -15px;
+    }
+    &.r-b:before {
+      right: 45px;
+      bottom: -15px;
+    }
+    &.l-t:before {
+      left: 45px;
+      top: -15px;
+    }
+    &.l-b:before {
+      left: 45px;
+      bottom: -15px;
+    }
   }
 }
 
