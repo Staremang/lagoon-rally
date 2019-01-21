@@ -899,6 +899,7 @@ function initParallax() {
 
         $('.captain-photo__photo').css('transform', 'translateY(' + (offsetX) / 30 + 'px)');
         $('.captain-photo__waves').css('transform', 'translateX(' + (offsetY) / 20 + 'px)');
+        $('.btn-view-video').css('transform', 'translateY(' + (offsetX) / 30 + 'px)');
     });
 
     $('body').on('mousemove.parallax', function (e) {

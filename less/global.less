@@ -93,8 +93,13 @@ h1, .h1 {
   height: 64px;
   //padding: 24px 0;
   //display: flex;
-  &:hover {
+  &:hover:not([disabled]) {
     background-color: #FFDF34;
+  }
+  &:disabled {
+    opacity: .8;
+    background-color: #d6d6d6;
+    cursor: not-allowed;
   }
   &_border {
     background: white;
@@ -1074,7 +1079,7 @@ h1, .h1 {
       &:last-child {
         margin-bottom: 0;
       }
-    } 
+    }
   }
   &__days {
     display: flex;
@@ -1404,7 +1409,7 @@ h1, .h1 {
  */
 .team-content {
   &__item {
-    height: 180px;
+    height: 290px;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -1413,7 +1418,7 @@ h1, .h1 {
     margin-bottom: 2px;
     background-size: cover;
     background-position: center;
-    padding-top: 74px;
+    padding-top: 120px;
 
     &:before {
       content: '';
@@ -1433,14 +1438,15 @@ h1, .h1 {
         opacity: 0.6;
       }
       .team-content__content {
-        transform: translateY(-25%);
+        transform: translateY(-45%);
       }
       .team-content__title {
         &:after {
           opacity: 0;
         }
       }
-      .team-content__link {
+      .team-content__link,
+      .team-content__text {
         opacity: 1;
       }
     }
@@ -1492,6 +1498,20 @@ h1, .h1 {
       bottom: -2px;
     }
   }
+  &__text {
+    opacity: 0;
+    color: white;
+    transform: translateZ(0);
+    text-decoration: none;
+    margin-top: 15px;
+    transition: all .3s ease;
+    font-weight: 500;
+    text-align: center;
+
+    font-size: 12px;
+    line-height: 1.4;
+    padding: 0 10px;
+  }
   @media all and (min-width: @width-sm) {
     &__title {
       &:after {
@@ -1502,10 +1522,13 @@ h1, .h1 {
   @media all and (min-width: @width-md) {
     display: flex;
 
-    &__content {
+    //&__content {
+    //  max-width: 135px;
+    //}
+
+    &__title {
       max-width: 135px;
     }
-
     &__item {
       flex: 1 1;
       margin-right: 2px;
@@ -1523,13 +1546,20 @@ h1, .h1 {
       padding-top: 300px;
     }
 
-    &__content {
-      max-width: 215px;
+    //&__content {
+    //  max-width: 215px;
+    //}
+
+    &__text {
+      line-height: 26px;
+      font-size: 18px;
+      padding: 15px 56px 0;
     }
 
     &__title {
       line-height: 48px;
       font-size: 36px;
+      max-width: 215px;
     }
 
     &__link {

@@ -3593,8 +3593,13 @@ h1,
   color: #423700;
   height: 64px;
 }
-.btn-orange:hover {
+.btn-orange:hover:not([disabled]) {
   background-color: #FFDF34;
+}
+.btn-orange:disabled {
+  opacity: .8;
+  background-color: #d6d6d6;
+  cursor: not-allowed;
 }
 .btn-orange_border {
   background: white;
@@ -4825,7 +4830,7 @@ h1,
  * Набери свою команду
  */
 .team-content__item {
-  height: 180px;
+  height: 290px;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4841,7 +4846,7 @@ h1,
   margin-bottom: 2px;
   background-size: cover;
   background-position: center;
-  padding-top: 74px;
+  padding-top: 120px;
 }
 .team-content__item:before {
   content: '';
@@ -4860,14 +4865,15 @@ h1,
   opacity: 0.6;
 }
 .team-content__item:hover .team-content__content {
-  -webkit-transform: translateY(-25%);
-  -ms-transform: translateY(-25%);
-  transform: translateY(-25%);
+  -webkit-transform: translateY(-45%);
+  -ms-transform: translateY(-45%);
+  transform: translateY(-45%);
 }
 .team-content__item:hover .team-content__title:after {
   opacity: 0;
 }
-.team-content__item:hover .team-content__link {
+.team-content__item:hover .team-content__link,
+.team-content__item:hover .team-content__text {
   opacity: 1;
 }
 .team-content__content {
@@ -4936,6 +4942,22 @@ h1,
   left: 0;
   bottom: -2px;
 }
+.team-content__text {
+  opacity: 0;
+  color: white;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  text-decoration: none;
+  margin-top: 15px;
+  -webkit-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+  font-weight: 500;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.4;
+  padding: 0 10px;
+}
 @media all and (min-width: 576px) {
   .team-content__title:after {
     display: none;
@@ -4947,7 +4969,7 @@ h1,
     display: -ms-flexbox;
     display: flex;
   }
-  .team-content__content {
+  .team-content__title {
     max-width: 135px;
   }
   .team-content__item {
@@ -4968,12 +4990,15 @@ h1,
     height: 650px;
     padding-top: 300px;
   }
-  .team-content__content {
-    max-width: 215px;
+  .team-content__text {
+    line-height: 26px;
+    font-size: 18px;
+    padding: 15px 56px 0;
   }
   .team-content__title {
     line-height: 48px;
     font-size: 36px;
+    max-width: 215px;
   }
   .team-content__link {
     font-size: 26px;
