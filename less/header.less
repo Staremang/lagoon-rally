@@ -99,6 +99,9 @@
           background-image: data-uri("../img/icons/call-blue.svg");
         }
       }
+      .header-menu__link {
+        
+      }
     }
   }
 
@@ -164,10 +167,12 @@
     background: data-uri("../img/icons/close.svg") no-repeat center;
   }
   &__nav {
-
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
   }
   &__link {
-    display: block;
+    //display: block;
     margin-bottom: 33px;
 
     text-decoration: none;
@@ -190,6 +195,7 @@
     }
 
     &:hover {
+      //color: #0B3E6A;
       &:before {
         width: 100%;
       }
@@ -240,6 +246,7 @@
 
     &__nav {
       display: flex;
+      flex-direction: row;
     }
 
     &__link {

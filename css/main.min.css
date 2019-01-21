@@ -3399,8 +3399,19 @@ textarea.textarea:not(.browser-default).invalid {
   height: 19px;
   background: url("data:image/svg+xml,%3Csvg%20width%3D%2220%22%20height%3D%2220%22%20viewBox%3D%220%200%2020%2020%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20fill-rule%3D%22evenodd%22%20clip-rule%3D%22evenodd%22%20d%3D%22M11.4143%209.99995L19.1924%202.22183L17.7782%200.807617L10.0001%208.58574L2.22193%200.807617L0.807721%202.22183L8.58584%209.99995L0.807617%2017.7782L2.22183%2019.1924L10.0001%2011.4142L17.7783%2019.1924L19.1925%2017.7782L11.4143%209.99995Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E%0A") no-repeat center;
 }
+.header-menu__nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
 .header-menu__link {
-  display: block;
   margin-bottom: 33px;
   text-decoration: none;
   font-weight: 500;
@@ -3470,6 +3481,10 @@ textarea.textarea:not(.browser-default).invalid {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
   }
   .header-menu__link {
     font-size: 12px;
@@ -3561,6 +3576,52 @@ h1,
 }
 a {
   color: #00A0D2;
+}
+.info-tooltip {
+  width: 18px;
+  height: 18px;
+  background: url("../img/icons/info.svg") no-repeat;
+  background-size: contain;
+  display: inline-block;
+  margin-bottom: -3px;
+  margin-left: 5px;
+}
+.tooltip {
+  position: absolute;
+  padding: 22px 21px;
+  z-index: 9999;
+  /* красивости... */
+  max-width: 336px;
+  border-radius: 6px;
+  line-height: 19px;
+  font-size: 13px;
+  color: #000;
+  background: #FFFBE4;
+  -webkit-box-shadow: 0px 24px 35px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 24px 35px rgba(0, 0, 0, 0.1);
+}
+.tooltip:before {
+  content: '';
+  position: absolute;
+  width: 22px;
+  height: 30px;
+  background: url("data:image/svg+xml,%3Csvg%20width%3D%2222%22%20height%3D%2230%22%20viewBox%3D%220%200%2022%2030%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Cpath%20d%3D%22M0%2015L11%2030L22%2015L11%200L0%2015Z%22%20fill%3D%22%23FFFBE4%22%2F%3E%0A%3C%2Fsvg%3E%0A") no-repeat;
+}
+.tooltip.r-t:before {
+  right: 45px;
+  top: -15px;
+}
+.tooltip.r-b:before {
+  right: 45px;
+  bottom: -15px;
+}
+.tooltip.l-t:before {
+  left: 42px;
+  top: -15px;
+}
+.tooltip.l-b:before {
+  left: 42px;
+  bottom: -15px;
 }
 .btn-orange {
   font-family: inherit;
@@ -4833,7 +4894,7 @@ a {
  * Набери свою команду
  */
 .team-content__item {
-  height: 290px;
+  height: 330px;
   position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4849,7 +4910,7 @@ a {
   margin-bottom: 2px;
   background-size: cover;
   background-position: center;
-  padding-top: 120px;
+  padding-top: 140px;
 }
 .team-content__item:before {
   content: '';
@@ -5028,6 +5089,16 @@ a {
   -ms-transform: translateX(-45%);
   transform: translateX(-45%);
 }
+.second-section-benefits__girls:before {
+  content: '';
+  position: absolute;
+  background: url("../img/circle-shadow.png") no-repeat center;
+  background-size: contain;
+  width: 253.5px;
+  height: 281.5px;
+  left: -90px;
+  top: 120px;
+}
 .second-section-benefits__circle {
   display: none;
 }
@@ -5107,6 +5178,12 @@ a {
     position: absolute;
     width: 571px;
     height: 518px;
+  }
+  .second-section-benefits__girls:before {
+    width: 507px;
+    height: 563px;
+    left: -200px;
+    top: 120px;
   }
   .second-section-benefits__girls.active .second-section-benefits__circle:before,
   .second-section-benefits__girls:hover .second-section-benefits__circle:before {
@@ -6693,16 +6770,82 @@ a {
   background-repeat: no-repeat;
   margin-left: auto;
   margin-right: auto;
+  position: relative;
+}
+.uniqueness__item-1 {
+  opacity: 0;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+.uniqueness__item-1.visible {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
 }
 .uniqueness__item-1 .uniqueness__figure {
   width: 280px;
   height: 385px;
   background-image: url("../img/uniqueness-1.png");
 }
+.uniqueness__item-2 {
+  opacity: 0;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+.uniqueness__item-2.visible {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+.uniqueness__item-2:before {
+  content: '';
+  position: absolute;
+  background: url("../img/circle-shadow.png") no-repeat center;
+  background-size: contain;
+  width: 253.5px;
+  height: 281.5px;
+  right: -110px;
+  top: -20px;
+}
 .uniqueness__item-2 .uniqueness__figure {
   width: 280px;
   height: 354px;
   background-image: url("../img/uniqueness-2.png");
+}
+.uniqueness__item-3 {
+  opacity: 0;
+  -webkit-transform: scale(0);
+  -ms-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+.uniqueness__item-3.visible {
+  opacity: 1;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+.uniqueness__item-3:before {
+  content: '';
+  position: absolute;
+  background: url("../img/circle-shadow.png") no-repeat center;
+  background-size: contain;
+  width: 253.5px;
+  height: 281.5px;
+  left: -120px;
+  top: 80px;
 }
 .uniqueness__item-3 .uniqueness__figure {
   width: 283px;
@@ -6714,6 +6857,7 @@ a {
   line-height: 26px;
   font-size: 18px;
   margin: 20px 0;
+  position: relative;
 }
 @media all and (min-width: 768px) {
   .uniqueness {
@@ -6731,9 +6875,39 @@ a {
   .uniqueness__item-1 {
     left: 50%;
     z-index: 2;
-    -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    transform: translateX(-50%);
+    opacity: 0;
+    -webkit-transform: translateX(-50%) scale(0);
+    -ms-transform: translateX(-50%) scale(0);
+    transform: translateX(-50%) scale(0);
+  }
+  .uniqueness__item-1.visible {
+    opacity: 1;
+    -webkit-transform: translateX(-50%) scale(1);
+    -ms-transform: translateX(-50%) scale(1);
+    transform: translateX(-50%) scale(1);
+  }
+  .uniqueness__item-1:before,
+  .uniqueness__item-1:after {
+    content: '';
+    position: absolute;
+    background: url(../img/icons/line-waves.svg) no-repeat;
+    background-size: contain;
+    width: 46px;
+    height: 30px;
+  }
+  .uniqueness__item-1:before {
+    left: -11px;
+    top: 87px;
+    -webkit-transform: rotate(-122.61deg);
+    -ms-transform: rotate(-122.61deg);
+    transform: rotate(-122.61deg);
+  }
+  .uniqueness__item-1:after {
+    left: 53px;
+    top: 38px;
+    -webkit-transform: rotate(-93.87deg);
+    -ms-transform: rotate(-93.87deg);
+    transform: rotate(-93.87deg);
   }
   .uniqueness__item-1 .uniqueness__figure {
     width: 319px;
@@ -6780,6 +6954,19 @@ a {
     max-width: 510px;
     margin-bottom: 55px;
   }
+  .uniqueness__item-1:before,
+  .uniqueness__item-1:after {
+    width: 76px;
+    height: 50px;
+  }
+  .uniqueness__item-1:before {
+    left: -30px;
+    top: 170px;
+  }
+  .uniqueness__item-1:after {
+    left: 88px;
+    top: 64px;
+  }
   .uniqueness__item-1 .uniqueness__figure {
     width: 534px;
     height: 735px;
@@ -6787,12 +6974,24 @@ a {
   .uniqueness__item-2 {
     top: 167px;
   }
+  .uniqueness__item-2:before {
+    width: 507px;
+    height: 563px;
+    right: -200px;
+    top: -80px;
+  }
   .uniqueness__item-2 .uniqueness__figure {
     width: 394px;
     height: 498px;
   }
   .uniqueness__item-3 {
     top: 250px;
+  }
+  .uniqueness__item-3:before {
+    width: 507px;
+    height: 563px;
+    left: -190px;
+    top: 50px;
   }
   .uniqueness__item-3 .uniqueness__figure {
     width: 400px;
@@ -6819,6 +7018,9 @@ a {
 .about-us__description {
   line-height: 24px;
   font-size: 14px;
+}
+.about-us__description > a {
+  font-weight: 500;
 }
 @media all and (min-width: 768px) {
   .about-us__container {

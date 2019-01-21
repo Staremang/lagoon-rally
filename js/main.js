@@ -277,10 +277,10 @@ function initForms() {
     };
     // Function to update labels of text fields
     Forms.updateTextFields = function () {
-        let input_selector =
+        var input_selector =
             'input[type=text], input[type=password], input[type=email], input[type=url], input[type=tel], input[type=number], input[type=search], input[type=date], input[type=time], textarea';
         $(input_selector).each(function (index, element) {
-            let $this = $(this);
+            var $this = $(this);
 
             if (
                 element.value.length > 0 ||
@@ -298,9 +298,9 @@ function initForms() {
     };
 
     Forms.validate_field = function (object) {
-        let hasLength = object.attr('data-length');
-        let lenAttr = parseInt(object.attr('data-length'));
-        let len = object[0].value.length;
+        var hasLength = object.attr('data-length');
+        var lenAttr = parseInt(object.attr('data-length'));
+        var len = object[0].value.length;
 
         if (len === 0 && object[0].validity.badInput === false && !object.is(':required')) {
             if (object.hasClass('validate')) {
@@ -336,22 +336,22 @@ function initForms() {
         }
 
         // Textarea Auto Resize
-        let hiddenDiv = $('.hiddendiv').first();
+        var hiddenDiv = $('.hiddendiv').first();
         if (!hiddenDiv.length) {
             hiddenDiv = $('<div class="hiddendiv common"></div>');
             $('body').append(hiddenDiv);
         }
 
         // Set font properties of hiddenDiv
-        let fontFamily = $textarea.css('font-family');
-        let fontSize = $textarea.css('font-size');
-        let lineHeight = $textarea.css('line-height');
+        var fontFamily = $textarea.css('font-family');
+        var fontSize = $textarea.css('font-size');
+        var lineHeight = $textarea.css('line-height');
 
         // Firefox can't handle padding shorthand.
-        let paddingTop = $textarea.css('padding-top');
-        let paddingRight = $textarea.css('padding-right');
-        let paddingBottom = $textarea.css('padding-bottom');
-        let paddingLeft = $textarea.css('padding-left');
+        var paddingTop = $textarea.css('padding-top');
+        var paddingRight = $textarea.css('padding-right');
+        var paddingBottom = $textarea.css('padding-bottom');
+        var paddingLeft = $textarea.css('padding-left');
 
         if (fontSize) {
             hiddenDiv.css('font-size', fontSize);
@@ -385,7 +385,7 @@ function initForms() {
         }
 
         hiddenDiv.text($textarea[0].value + '\n');
-        let content = hiddenDiv.html().replace(/\n/g, '<br>');
+        var content = hiddenDiv.html().replace(/\n/g, '<br>');
         hiddenDiv.html(content);
 
         // When textarea is hidden, width goes crazy.
@@ -417,7 +417,7 @@ function initForms() {
     $(document).ready(function () {
 
         // Text based inputs
-        let input_selector =
+        var input_selector =
             'input[type=text], input[type=password], input[type=email], input[type=url], input[type=tel], input[type=number], input[type=search], input[type=date], input[type=time], textarea';
 
         // Add active if form auto complete
@@ -437,7 +437,7 @@ function initForms() {
 
         // HTML DOM FORM RESET handling
         $(document).on('reset', function (e) {
-            let formReset = $(e.target);
+            var formReset = $(e.target);
             if (formReset.is('form')) {
                 formReset
                     .find(input_selector)
@@ -486,9 +486,9 @@ function initForms() {
         document.addEventListener(
             'blur',
             function (e) {
-                let $inputElement = $(e.target);
+                var $inputElement = $(e.target);
                 if ($inputElement.is(input_selector)) {
-                    let selector = '.prefix';
+                    var selector = '.prefix';
 
                     if (
                         $inputElement[0].value.length === 0 &&
@@ -506,12 +506,12 @@ function initForms() {
         );
 
         // Radio and Checkbox focus class
-        let radio_checkbox = 'input[type=radio], input[type=checkbox]';
+        var radio_checkbox = 'input[type=radio], input[type=checkbox]';
         $(document).on('keyup', radio_checkbox, function (e) {
             // TAB, check if tabbing to radio or checkbox.
             if (e.which === Forms.keys.TAB) {
                 $(this).addClass('tabbed');
-                let $this = $(this);
+                var $this = $(this);
                 $this.one('blur', function (e) {
                     $(this).removeClass('tabbed');
                 });
@@ -519,9 +519,9 @@ function initForms() {
             }
         });
 
-        let text_area_selector = '.textarea';
+        var text_area_selector = '.textarea';
         $(text_area_selector).each(function () {
-            let $textarea = $(this);
+            var $textarea = $(this);
             /**
              * Resize textarea on document load after storing
              * the original height and the original length
@@ -540,11 +540,11 @@ function initForms() {
 
         // File Input Path
         $(document).on('change', '.file-field input[type="file"]', function () {
-            let file_field = $(this).closest('.file-field');
-            let path_input = file_field.find('input.file-path');
-            let files = $(this)[0].files;
-            let file_names = [];
-            for (let i = 0; i < files.length; i++) {
+            var file_field = $(this).closest('.file-field');
+            var path_input = file_field.find('input.file-path');
+            var files = $(this)[0].files;
+            var file_names = [];
+            for (var i = 0; i < files.length; i++) {
                 file_names.push(files[i].name);
             }
             path_input[0].value = file_names.join(', ');
@@ -915,3 +915,54 @@ function initParallax() {
 }
 
 initParallax();
+
+
+
+$('.uniqueness__item-1').viewportChecker();
+$('.uniqueness__item-2').viewportChecker();
+$('.uniqueness__item-3').viewportChecker();
+
+
+var showingTooltip;
+
+$('[data-tooltip]').on("mouseover", function () {
+
+    var tooltip = $(this).data('tooltip');
+    if (!tooltip) return;
+
+    var tooltipElem = document.createElement('div');
+    tooltipElem.className = 'tooltip';
+    tooltipElem.innerHTML = tooltip;
+    document.body.appendChild(tooltipElem);
+
+    var coords = this.getBoundingClientRect();
+
+    var left = coords.left + window.pageXOffset - 42;
+
+    if (left < 0) {
+        left = 0;
+    } // не вылезать за левую границу окна
+
+    var top = coords.top - tooltipElem.offsetHeight - 20 + window.pageYOffset;
+
+    if (coords.top - tooltipElem.offsetHeight - 20 < 0) { // не вылезать за верхнюю границу окна
+        top = coords.top + this.offsetHeight + 20 + window.pageYOffset;
+        tooltipElem.classList.add('l-t');
+    } else {
+        tooltipElem.classList.add('l-b');
+    }
+
+
+
+    tooltipElem.style.left = left + 'px';
+    tooltipElem.style.top = top + 'px';
+
+    showingTooltip = tooltipElem;
+});
+
+$('[data-tooltip]').on("mouseout", function () {
+    if (showingTooltip) {
+        document.body.removeChild(showingTooltip);
+        showingTooltip = null;
+    }
+});
