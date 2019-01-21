@@ -269,7 +269,6 @@ function initCollapse() {
     })
 }
 
-
 function initForms() {
 
     var Forms = {
@@ -553,63 +552,6 @@ function initForms() {
     }); // End of $(document).ready
 }
 
-initHeader();
-// init3dTour();
-initBookingSlider();
-// initFaqCollapse();
-initCollapse();
-initForms();
-
-$('.gallery').slick({
-
-    slidesToScroll: 1,
-    slidesToShow: 4,
-    // variableWidth: true,
-    // centerPadding: '600px',
-
-    arrows: true,
-    centerMode: false,
-    dots: false,
-    infinite: false,
-    // draggable: false,
-    responsive: [
-        {
-            breakpoint: widthPoint.lg,
-            settings: {
-                arrows: false,
-                centerMode: true,
-                dots: true,
-                variableWidth: true,
-                infinite: true,
-                slidesToShow: 1
-                // draggable: true
-                // centerPadding: '40px',
-                // slidesToShow: 1
-            }
-        }
-    ]
-});
-
-$('.booking-gallery').slick({
-    slidesToScroll: 1,
-    slidesToShow: 1,
-    arrows: true,
-    dots: true
-});
-
-$('[data-fancybox="images"]').fancybox({
-    selector: '.gallery .slick-slide:not(.slick-cloned)',
-    animationEffect: "fade",
-    transitionEffect: "slide",
-});
-
-$('a[data-anchor]').anchor({
-    transitionDuration: 1000
-});
-
-
-// Booking pop up
-
 function initBookingPopup() {
     //
     // $('.booking-seat-info__gallery').each(function (i) {
@@ -738,9 +680,6 @@ function initBookingPopup() {
     }
 }
 
-initBookingPopup();
-
-
 function initCatamaram3d() {
 
     var $catamaran3d = $('.catamaran-3d__view'),
@@ -801,9 +740,6 @@ function initCatamaram3d() {
     });
 }
 
-initCatamaram3d();
-
-
 function initSpinner() {
     var total = 0,
         totalMax = 12;
@@ -830,11 +766,6 @@ function initSpinner() {
         });
     })
 }
-
-initSpinner();
-
-
-// Maps
 
 function initMaps() {
 
@@ -885,9 +816,6 @@ function initMaps() {
     });
 }
 
-initMaps();
-
-
 function initParallax() {
     var startX, startY, offsetX, offsetY;
     $('.section-captain').on('mouseenter', function (e) {
@@ -914,55 +842,129 @@ function initParallax() {
     });
 }
 
-initParallax();
+function initTooltip() {
+    var showingTooltip;
+
+    $('[data-tooltip]').on("mouseover", function () {
+
+        var tooltip = $(this).data('tooltip');
+        if (!tooltip) return;
+
+        var tooltipElem = document.createElement('div');
+        tooltipElem.className = 'tooltip';
+        tooltipElem.innerHTML = tooltip;
+        document.body.appendChild(tooltipElem);
+
+        var coords = this.getBoundingClientRect();
+
+        var left = coords.left + window.pageXOffset - 42;
+
+        if (left < 0) {
+            left = 0;
+        } // не вылезать за левую границу окна
+
+        var top = coords.top - tooltipElem.offsetHeight - 20 + window.pageYOffset;
+
+        if (coords.top - tooltipElem.offsetHeight - 20 < 0) { // не вылезать за верхнюю границу окна
+            top = coords.top + this.offsetHeight + 20 + window.pageYOffset;
+            tooltipElem.classList.add('l-t');
+        } else {
+            tooltipElem.classList.add('l-b');
+        }
+
+
+        tooltipElem.style.left = left + 'px';
+        tooltipElem.style.top = top + 'px';
+
+        showingTooltip = tooltipElem;
+    });
+
+    $('[data-tooltip]').on("mouseout", function () {
+        if (showingTooltip) {
+            document.body.removeChild(showingTooltip);
+            showingTooltip = null;
+        }
+    });
+}
+
+function initBookingFirstStep() {
+
+    $('[data-first-step]').on('click', function () {
+        $('.booking-first-step').fadeIn();
+        $('body').css('overflow', 'hidden');
+    });
+    $('.booking-first-step__close').on('click', function () {
+        $('.booking-first-step').fadeOut();
+        $('body').css('overflow', '');
+    });
+}
 
 
 
-$('.uniqueness__item-1').viewportChecker();
-$('.uniqueness__item-2').viewportChecker();
-$('.uniqueness__item-3').viewportChecker();
+$(document).ready(function () {
 
+    initHeader();
+// init3dTour();
+    initBookingSlider();
+// initFaqCollapse();
+    initCollapse();
+    initForms();
+    initBookingPopup();
+    initCatamaram3d();
+    initSpinner();
+    initMaps();
+    initParallax();
+    initTooltip();
+    initBookingFirstStep();
 
-var showingTooltip;
+    $('.gallery').slick({
 
-$('[data-tooltip]').on("mouseover", function () {
+        slidesToScroll: 1,
+        slidesToShow: 4,
+        // variableWidth: true,
+        // centerPadding: '600px',
 
-    var tooltip = $(this).data('tooltip');
-    if (!tooltip) return;
+        arrows: true,
+        centerMode: false,
+        dots: false,
+        infinite: false,
+        // draggable: false,
+        responsive: [
+            {
+                breakpoint: widthPoint.lg,
+                settings: {
+                    arrows: false,
+                    centerMode: true,
+                    dots: true,
+                    variableWidth: true,
+                    infinite: true,
+                    slidesToShow: 1
+                    // draggable: true
+                    // centerPadding: '40px',
+                    // slidesToShow: 1
+                }
+            }
+        ]
+    });
 
-    var tooltipElem = document.createElement('div');
-    tooltipElem.className = 'tooltip';
-    tooltipElem.innerHTML = tooltip;
-    document.body.appendChild(tooltipElem);
+    $('.booking-gallery').slick({
+        slidesToScroll: 1,
+        slidesToShow: 1,
+        arrows: true,
+        dots: true
+    });
 
-    var coords = this.getBoundingClientRect();
+    $('[data-fancybox="images"]').fancybox({
+        selector: '.gallery .slick-slide:not(.slick-cloned)',
+        animationEffect: "fade",
+        transitionEffect: "slide",
+    });
 
-    var left = coords.left + window.pageXOffset - 42;
+    $('a[data-anchor]').anchor({
+        transitionDuration: 1000
+    });
 
-    if (left < 0) {
-        left = 0;
-    } // не вылезать за левую границу окна
-
-    var top = coords.top - tooltipElem.offsetHeight - 20 + window.pageYOffset;
-
-    if (coords.top - tooltipElem.offsetHeight - 20 < 0) { // не вылезать за верхнюю границу окна
-        top = coords.top + this.offsetHeight + 20 + window.pageYOffset;
-        tooltipElem.classList.add('l-t');
-    } else {
-        tooltipElem.classList.add('l-b');
-    }
-
-
-
-    tooltipElem.style.left = left + 'px';
-    tooltipElem.style.top = top + 'px';
-
-    showingTooltip = tooltipElem;
-});
-
-$('[data-tooltip]').on("mouseout", function () {
-    if (showingTooltip) {
-        document.body.removeChild(showingTooltip);
-        showingTooltip = null;
-    }
+    $('.uniqueness__item-1').viewportChecker();
+    $('.uniqueness__item-2').viewportChecker();
+    $('.uniqueness__item-3').viewportChecker();
 });

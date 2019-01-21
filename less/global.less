@@ -65,6 +65,170 @@ h1, .h1 {
 a {
   color: #00A0D2;
 }
+.booking-first-step {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+
+  background: rgba(11, 62, 106, 0.97);
+  z-index: 999;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  &__header {
+    border-bottom: 2px solid rgba(256, 256, 256, 0.15);
+    text-align: center;
+    position: relative;
+    flex: 0 0 16%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__title {
+    font-weight: 500;
+    line-height: 29px;
+    font-size: 20px;
+    letter-spacing: -0.02em;
+
+    max-width: 200px;
+  }
+  &__close {
+    .btn-normalize();
+    position: absolute;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    background: white;
+    right: 20px;
+    top: 20%;
+
+    &:before,
+    &:after {
+      content: '';
+      background: #00A0D2;
+      height: 2px;
+      width: 12px;
+      position: absolute;
+      left: 8px;
+    }
+    &:before {
+      transform: rotate(45deg);
+    }
+    &:after {
+      transform: rotate(-45deg);
+    }
+
+  }
+  &__body {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 84%;
+  }
+  &__link {
+    flex: 0 0 50%;
+    color: white;
+    text-decoration: none;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    &:hover {
+      background: rgba(256, 256, 256, 0.06);
+    }
+    &:first-child {
+      border-bottom: 2px solid rgba(256, 256, 256, 0.15);
+    }
+  }
+  &__subtitle {
+    font-weight: 500;
+    line-height: 29px;
+    font-size: 20px;
+    letter-spacing: -0.02em;
+    margin-bottom: 7px;
+    max-width: 218px;
+  }
+  &__description {
+    font-weight: 500;
+    line-height: 20px;
+    font-size: 14px;
+    letter-spacing: -0.02em;
+    opacity: 0.5;
+    margin-bottom: 30px;
+  }
+  &__catamaran {
+    width: 126px;
+    height: 75px;
+  }
+
+  @media all and (orientation: landscape) {
+    &__body {
+      flex-direction: row;
+    }
+    &__link:first-child {
+      border-bottom: 0;
+      border-right: 2px solid rgba(256, 256, 256, 0.15);
+    }
+  }
+  @media all and (min-width: @width-md) {
+    &__close {
+      transform: scale(1.5);
+      right: 30px;
+    }
+    &__title {
+      line-height: 44px;
+      font-size: 30px;
+      max-width: 300px;
+    }
+    &__body {
+
+    }
+    &__subtitle {
+      line-height: 44px;
+      font-size: 30px;
+      margin-bottom: 19px;
+      max-width: 330px;
+    }
+    &__description {
+
+      line-height: 29px;
+      font-size: 20px;
+      margin-bottom: 43px;
+    }
+  }
+  @media all and (min-width: @width-lg) {
+    &__close {
+      transform: scale(1.5) translateY(-50%);
+      right: 126px;
+      top: 50%;
+    }
+    &__header {
+      flex: 0 0 25%;
+    }
+    &__title {
+      line-height: 54px;
+      font-size: 37px;
+      max-width: none;
+    }
+    &__body {
+      //flex-direction: row;
+      flex: 0 0 75%;
+    }
+    &__subtitle {
+      line-height: 47px;
+      font-size: 32px;
+      margin-bottom: 13px;
+    }
+    &__catamaran {
+      width: 179px;
+      height: 107px;
+      margin-bottom: 53px;
+    }
+  }
+}
 .info-tooltip {
   width: 18px;
   height: 18px;
