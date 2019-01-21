@@ -1067,6 +1067,14 @@ h1, .h1 {
   &__description {
     line-height: 23px;
     font-size: 14px;
+    > * {
+      &:first-child {
+        margin-top: 0;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    } 
   }
   &__days {
     display: flex;

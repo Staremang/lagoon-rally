@@ -113,6 +113,14 @@
     padding: 18px 20px 49px;
     line-height: 22px;
     font-size: 14px;
+    > * {
+      &:first-child {
+        margin-top: 0;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
   }
   @media all and (min-width: @width-md) {
     margin-bottom: 20px;
