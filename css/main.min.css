@@ -8333,10 +8333,13 @@ a {
 .booking-seat-info__gallery {
   width: 100%;
   height: 191px;
-  background: gray;
 }
 .booking-seat-info__gallery img {
   height: 191px;
+  margin: 0 5px;
+}
+.booking-seat-info__gallery .slick-dots {
+  bottom: 0;
 }
 @media all and (min-width: 992px) {
   .booking-seat-info__gallery {
@@ -9334,17 +9337,30 @@ a {
   }
 }
 .booking-set-seat {
+  width: 100%;
   max-width: 1180px;
-  margin-left: auto;
-  margin-right: auto;
 }
 .booking-set-seat__title {
   font-weight: 500;
-  line-height: 54px;
-  font-size: 37px;
   letter-spacing: -0.02em;
   color: #000000;
   max-width: 480px;
-  margin-bottom: 90px;
   margin-top: 0;
+  line-height: 29px;
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+@media all and (min-width: 768px) {
+  .booking-set-seat__title {
+    line-height: 38px;
+    font-size: 26px;
+    margin-bottom: 50px;
+  }
+}
+@media all and (min-width: 992px) {
+  .booking-set-seat__title {
+    line-height: 54px;
+    font-size: 37px;
+    margin-bottom: 90px;
+  }
 }

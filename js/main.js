@@ -917,6 +917,9 @@ $(document).ready(function () {
     initTooltip();
     initBookingFirstStep();
 
+    $('.special-offer-mobile__close').on('click', function () {
+       $('.special-offer-mobile').hide();
+    });
     $('.gallery').slick({
 
         slidesToScroll: 1,
