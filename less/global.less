@@ -136,6 +136,7 @@ a {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 5px;
     &:hover {
       background: rgba(256, 256, 256, 0.06);
     }
@@ -164,6 +165,11 @@ a {
     height: 75px;
   }
 
+  @media all and (max-height: 490px) {
+    &__description {
+      margin-bottom: 10px;
+    }
+  }
   @media all and (orientation: landscape) {
     &__body {
       flex-direction: row;

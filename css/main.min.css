@@ -3707,6 +3707,7 @@ a {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+  padding: 5px;
 }
 .booking-first-step__link:hover {
   background: rgba(255, 255, 255, 0.06);
@@ -3733,6 +3734,11 @@ a {
 .booking-first-step__catamaran {
   width: 126px;
   height: 75px;
+}
+@media all and (max-height: 490px) {
+  .booking-first-step__description {
+    margin-bottom: 10px;
+  }
 }
 @media all and (orientation: landscape) {
   .booking-first-step__body {
