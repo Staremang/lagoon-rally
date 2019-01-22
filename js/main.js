@@ -967,4 +967,7 @@ $(document).ready(function () {
     $('.uniqueness__item-1').viewportChecker();
     $('.uniqueness__item-2').viewportChecker();
     $('.uniqueness__item-3').viewportChecker();
+    $('.program-badge').viewportChecker();
+    $('.second-section__img').viewportChecker();
+    $('.route-text').viewportChecker();
 });

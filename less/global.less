@@ -838,7 +838,13 @@ a {
       right: auto;
       left: calc(50% - 730px);
       //bottom: -113px;
-      transform: matrix(-1, 0, 0, 1, 0, 0);
+      opacity: 0;
+      transform: translateX(-600px) matrix(-1, 0, 0, 1, 0, 0);
+      transition: all 1s ease;
+      &.visible {
+        opacity: 1;
+        transform: translateX(0) matrix(-1, 0, 0, 1, 0, 0);
+      }
     }
 
     &__title {
@@ -1211,7 +1217,16 @@ a {
 
     //width: 714px;
     //height: 458px;
+    transform: translateX(-400px);
+    opacity: 0;
+    transition: all 1s ease;
 
+  }
+  &.visible {
+    &:before {
+      opacity: 1;
+      transform: translateX(0);
+    }
   }
   &__title {
     margin-bottom: 20px;
@@ -2397,10 +2412,11 @@ a {
 }
 
 .program-badge {
-  //transform: rotate(19.03deg);
+  transform: rotate(-19.03deg);
   height: 230px;
   transform-origin: right bottom;
   position: relative;
+  transition: all 1s ease;
   &:before {
     content: '';
     background: url("../img/icons/ellipse.svg") no-repeat;
@@ -2415,6 +2431,11 @@ a {
     right: 50%;
     bottom: -60px;
   }
+
+  &.visible {
+    transform: rotate(0);
+  }
+
   &__plate {
 
     background: #0B3E6A;
@@ -4684,6 +4705,9 @@ a {
     &.l-b:before {
       left: 45px;
       bottom: -15px;
+    }
+    &__close {
+      display: none;
     }
   }
 }

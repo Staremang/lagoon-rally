@@ -4364,9 +4364,19 @@ a {
     bottom: -176px;
     right: auto;
     left: calc(50% - 730px);
-    -webkit-transform: matrix(-1, 0, 0, 1, 0, 0);
-    -ms-transform: matrix(-1, 0, 0, 1, 0, 0);
-    transform: matrix(-1, 0, 0, 1, 0, 0);
+    opacity: 0;
+    -webkit-transform: translateX(-600px) matrix(-1, 0, 0, 1, 0, 0);
+    -ms-transform: translateX(-600px) matrix(-1, 0, 0, 1, 0, 0);
+    transform: translateX(-600px) matrix(-1, 0, 0, 1, 0, 0);
+    -webkit-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
+  }
+  .second-section__img.visible {
+    opacity: 1;
+    -webkit-transform: translateX(0) matrix(-1, 0, 0, 1, 0, 0);
+    -ms-transform: translateX(0) matrix(-1, 0, 0, 1, 0, 0);
+    transform: translateX(0) matrix(-1, 0, 0, 1, 0, 0);
   }
   .second-section__title {
     margin-bottom: 32px;
@@ -4721,6 +4731,19 @@ a {
   height: 200.19496855px;
   top: -93px;
   left: -130px;
+  -webkit-transform: translateX(-400px);
+  -ms-transform: translateX(-400px);
+  transform: translateX(-400px);
+  opacity: 0;
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+.route-text.visible:before {
+  opacity: 1;
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
 }
 .route-text__title {
   margin-bottom: 20px;
@@ -5885,11 +5908,17 @@ a {
   }
 }
 .program-badge {
+  -webkit-transform: rotate(-19.03deg);
+  -ms-transform: rotate(-19.03deg);
+  transform: rotate(-19.03deg);
   height: 230px;
   -webkit-transform-origin: right bottom;
   -ms-transform-origin: right bottom;
   transform-origin: right bottom;
   position: relative;
+  -webkit-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
 }
 .program-badge:before {
   content: '';
@@ -5904,6 +5933,11 @@ a {
   transform: rotate(-17.32deg);
   right: 50%;
   bottom: -60px;
+}
+.program-badge.visible {
+  -webkit-transform: rotate(0);
+  -ms-transform: rotate(0);
+  transform: rotate(0);
 }
 .program-badge__plate {
   background: #0B3E6A;
@@ -8176,6 +8210,9 @@ a {
   .booking-pop-up.l-b:before {
     left: 45px;
     bottom: -15px;
+  }
+  .booking-pop-up__close {
+    display: none;
   }
 }
 .booking-seat-info {
