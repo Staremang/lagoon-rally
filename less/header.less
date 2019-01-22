@@ -101,6 +101,19 @@
       }
       .header-menu__link {
 
+        &.active-2 {
+          font-weight: bold;
+          color: #00A0D2;
+          &:before {
+            width: 100%;
+            background: #00A0D2;
+            opacity: .2;
+          }
+
+          &:hover {
+            opacity: .5;
+          }
+        }
       }
     }
   }
@@ -201,7 +214,8 @@
       }
 
     }
-    &.active {
+    &.active,
+    &.active-2{
       font-weight: bold;
       color: #FFE454;
     }
@@ -253,6 +267,7 @@
       font-size: 12px;
       margin-bottom: 0;
       margin-right: 20px;
+
     }
 
     &__tel {
