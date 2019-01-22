@@ -900,7 +900,6 @@ function initBookingFirstStep() {
 }
 
 
-
 $(document).ready(function () {
 
     initHeader();
@@ -918,7 +917,7 @@ $(document).ready(function () {
     initBookingFirstStep();
 
     $('.special-offer-mobile__close').on('click', function () {
-       $('.special-offer-mobile').hide();
+        $('.special-offer-mobile').hide();
     });
     $('.gallery').slick({
 
@@ -973,4 +972,17 @@ $(document).ready(function () {
     $('.program-badge').viewportChecker();
     $('.second-section__img').viewportChecker();
     $('.route-text').viewportChecker();
+
+
+    if ($('.question').length > 0) {
+        var $activeQuestion = $(location.hash);
+
+        $('html, body').animate({
+                scrollTop: $activeQuestion.offset().top - 80
+            }
+        );
+
+        $activeQuestion.find('[data-collapse="button"]').addClass('active');
+        $activeQuestion.find('[data-collapse="body"]').css('height', $activeQuestion.find('[data-collapse="body"]').children().innerHeight());
+    }
 });
