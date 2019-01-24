@@ -3359,6 +3359,12 @@ a {
   }
   &__container {
     height: 500px;
+    max-height: 70vh;
+
+    iframe {
+      height: 100%;
+      width: 100%;
+    }
   }
   @media all and (min-width: @width-lg) {
     &__btn {
@@ -4915,14 +4921,27 @@ a {
     .btn-orange_border {
       margin-top: 10px;
     }
+
+    &_desktop {
+      display: none;
+    }
+    &_mobile {
+      margin-bottom: 20px;
+    }
     @media all and (min-width: @width-lg) {
-      display: flex;
+      //display: flex;
       flex-direction: row;
       justify-content: space-between;
       .btn-orange_border {
         flex: 1 1;
         margin-left: 10px;
         margin-top: 0;
+      }
+      &_desktop {
+        display: flex;
+      }
+      &_mobile {
+        display: none;
       }
     }
   }

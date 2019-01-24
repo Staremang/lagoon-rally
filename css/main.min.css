@@ -6804,6 +6804,11 @@ a {
 }
 .pano-tour__container {
   height: 500px;
+  max-height: 70vh;
+}
+.pano-tour__container iframe {
+  height: 100%;
+  width: 100%;
 }
 @media all and (min-width: 992px) {
   .pano-tour__btn {
@@ -8451,11 +8456,14 @@ a {
 .booking-seat-info__buttons .btn-orange_border {
   margin-top: 10px;
 }
+.booking-seat-info__buttons_desktop {
+  display: none;
+}
+.booking-seat-info__buttons_mobile {
+  margin-bottom: 20px;
+}
 @media all and (min-width: 992px) {
   .booking-seat-info__buttons {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
@@ -8470,6 +8478,14 @@ a {
     flex: 1 1;
     margin-left: 10px;
     margin-top: 0;
+  }
+  .booking-seat-info__buttons_desktop {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .booking-seat-info__buttons_mobile {
+    display: none;
   }
 }
 .faq {
@@ -8905,12 +8921,6 @@ a {
 }
 .booking-gallery {
   margin-bottom: 50px;
-  display: none;
-}
-@media all and (min-width: 768px) {
-  .booking-gallery {
-    display: block;
-  }
 }
 .booking-page-button {
   font-family: 'Stem', sans-serif;
