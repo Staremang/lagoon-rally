@@ -1,8 +1,8 @@
 
-.idea/lagoon-rally.iml
-.idea/misc.xml
-.idea/modules.xml
-.idea/watcherTasks.xml
-.idea/workspace.xml
 .DS_Store
 prepros-6.config
+.idea/
+map.svg
+maps.svg
+*.sketch
+Untitled.svg
